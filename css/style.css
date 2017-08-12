@@ -1,0 +1,745 @@
+.
+/*----------FONTS------------*/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+    font-family: 'Geral';
+    src: url('../fonts/Lato-Light.ttf');
+}
+
+
+/*----------NORMALIZAÇÃO------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Roboto';
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+html,
+body {
+    height: 100%;
+    background-color: whitesmoke
+}
+
+body {
+    font-size: 62.5%;
+}
+
+::selection {
+    color: whitesmoke;
+    background-color: #e54347
+}
+
+
+/*----------CLASSES------------*/
+
+.menu-start {
+    margin-top: -10vh;
+    box-shadow: 0 0px 15px -10px rgba(0, 0, 0, 0.5);
+}
+
+.menu-fixed {
+    margin-top: 0;
+    box-shadow: none;
+}
+
+.nav-start {
+    position: absolute;
+    justify-content: center;
+}
+
+.nav-fixed {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.hide {
+    display: none;
+}
+
+.fade {
+    opacity: 0;
+}
+
+.redes {
+    margin-right: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 100px;
+}
+
+.redes img {
+    height: 5vh;
+    min-height: 30px;
+    opacity: 0.7;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+
+/*------------BLACK COVER-----------------*/
+
+#black-cover {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#alert {
+    height: 50vh;
+    width: 50vw;
+    background-color: indianred;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#close {
+    border: 2px solid dimgray;
+    cursor: pointer;
+    margin: -10px -10px 0 0;
+    padding: 5px;
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*------------BANNER-----------------*/
+
+#Banner {
+    background-color: whitesmoke;
+    background-image: url("../img/banner/banner-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    height: 95vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#logo {
+    width: 40vw;
+    min-width: 300px;
+    animation: fade ease 1.5s;
+    margin-top: -7vh;
+}
+
+#Banner .redes {
+    position: absolute;
+    float: right;
+    top: 10px;
+    right: 0;
+}
+
+
+/*----------MAIN------------*/
+
+#Main {
+    top: 0;
+    position: relative;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/*----------MENU------------*/
+
+#Nav {
+    max-width: auto;
+    width: 100%;
+    height: 7vh;
+    min-height: 40px;
+    margin: auto;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    float: left;
+    z-index: 90;
+    transition: background 1s;
+    background-color: whitesmoke;
+}
+
+#Nav #home {
+    height: 8vh;
+    width: 7vw;
+    min-width: 80px;
+    transition: opacity 0.7s
+}
+
+#Nav ul {
+    height: 100%;
+    font-size: 2em;
+    list-style: none;
+    display: flex;
+    transition: margin 0.5s ease-out;
+}
+
+#Nav ul:hover {}
+
+#Nav li {
+    height: 100%;
+    width: 10vw;
+    min-width: 80px;
+    transition: opacity 0.5s linear, margin 0.3s ease-in-out, padding 0.3s ease-in-out, background 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+#Nav li:hover {
+    opacity: 1;
+    color: gainsboro;
+}
+
+#sobre {
+    color: #5eafc2;
+    border-top: solid 4px #61b1c4;
+}
+
+#sobre:hover {
+    background-color: #61b1c4
+}
+
+#planos {
+    color: #611e54;
+    border-top: solid 4px #621e56;
+}
+
+#planos:hover {
+    background-color: #621e56
+}
+
+#artigos {
+    color: #f4b11a;
+    border-top: solid 4px #f3b31b;
+}
+
+#artigos:hover {
+    background-color: #f3b31b
+}
+
+#equipe {
+    color: #e74246;
+    border-top: solid 4px #e54347;
+}
+
+#equipe:hover {
+    background-color: #e54347
+}
+
+#contato {
+    color: #322e2f;
+    border-top: solid 4px #2e2d2c;
+}
+
+#contato:hover {
+    background-color: #2e2d2c
+}
+
+
+/*------------MANIFESTO-----------------*/
+
+#Manifesto {
+    padding: 9vh 30px 20px 30px;
+    box-sizing: content-box;
+    background-color: #e54347;
+    color: whitesmoke;
+    /*
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;*/
+}
+
+#Manifesto span{
+    text-transform: uppercase
+}
+
+#Manifesto content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#Manifesto content>p {
+    padding: 10px;
+    font-size: 2em;
+    text-align: justify;
+    display: inline-block;
+    vertical-align: top;
+    width: 33.33%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+    /*breakpoint*/
+    #Manifesto content>p {
+        display: block;
+        width: 100%;
+    }
+}
+
+#att {
+    text-align: right;
+    font-size: 2.5em;
+    font-style: italic
+}
+
+
+/*------------VIDEO-----------------*/
+
+#Video {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+#Video video {
+    width: 50%;
+    cursor: pointer;
+    object-fit: contain
+}
+
+#Video #descricao {
+    box-sizing: content-box;
+    padding: 20px;
+    background-color: #2e2d2c;
+    font-size: 1.7em;
+    color: gainsboro
+}
+
+
+/*------------PALAVRAS CHAVE-----------------*/
+
+#Palavras-chave {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(#e54347 , #f3b31b);
+    text-align: center
+}
+
+#Palavras-chave h1 {
+    text-align: center;
+    font-size: 5em;
+    color: dimgray
+}
+
+#Palavras-chave img {
+    width: 90vw
+}
+
+
+/*------------ARTIGOS-----------------*/
+
+#Artigos {
+    background-color: #621e56;
+    z-index: 2;
+    display: flex;
+    flex-flow: column;
+}
+
+#Artigos h1 {
+    text-align: center;
+    font-size: 5em;
+    color: whitesmoke;
+    padding: 10px 0;
+}
+
+#artigosContainer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: center
+}
+
+.artigo {
+    margin: 4px;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    overflow: hidden;
+}
+
+.artigo:hover {
+    transform: scale(1.02, 1.02)
+}
+
+.artigo img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: -2px
+}
+
+.artigo h2 {
+    text-align: center;
+    font-size: 2em;
+    background-color: gainsboro;
+    padding: 2px;
+    color: #2e2d2c
+}
+
+.artigo p {
+    box-sizing: border-box;
+    padding: 8px;
+    color: whitesmoke;
+    width: 100%;
+    font-size: 1.7em;
+    text-align: justify;
+    height: 100px
+}
+
+
+/*------------PLANOS-----------------*/
+
+#Planos {
+    background-color: whitesmoke;
+    border-top: 4px solid #2e2d2c;
+}
+
+#Planos h1 {
+    text-align: center;
+    font-size: 5em;
+    color: whitesmoke;
+    padding: 10px 0
+}
+
+#planosContainer {
+    box-sizing: content-box;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between
+}
+
+#planosContainer>.plano {
+    height: 400px;
+    background-image: url(../img/banner/banner-1.jpg);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    vertical-align: top;
+    width: 33%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+    /*breakpoint*/
+    #planosContainer>.plano {
+        min-width: 200px;
+        width: 100%;
+        margin-bottom: 10px
+    }
+    #planosContainer {
+        display: inherit;
+        padding: 20px 10px;
+    }
+}
+
+.plano_infos {
+    transition: 1.5s;
+}
+
+
+/*------------EQUIPE-----------------*/
+
+#Equipe {
+    background: linear-gradient(#e54347 50%, #e54347);
+}
+
+#Equipe h1 {
+    text-align: center;
+    font-size: 5em;
+    color: white;
+    padding: 10px 0
+}
+
+#membrosContainer {
+    box-sizing: border-box;
+    padding: 10px 10px 20px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.membro {
+    width: 250px;
+    height: 400px;
+    position: relative;
+    -webkit-perspective: 1900;
+    -moz-perspective: 1900;
+    perspective: 1900;
+    cursor: pointer;
+}
+
+.membro:hover>.membro_img {
+    z-index: 0;
+    width: 400px/*
+    transform: rotateY(180deg);*/
+}
+
+.membro:hover>.membro_infos {
+    width: 400px/*
+    transform: rotateY(0deg);*/
+}
+
+.membro img,
+.membro_infos {
+    width: 100%;
+    height: 100%;
+    transition: all 1.5s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.membro img {
+    object-fit: cover;
+    z-index: 3;
+}
+
+.membro_infos {
+    color: gainsboro;
+    background-color: #2e2d2c;
+    z-index: 2;
+    box-sizing: border-box;
+    padding: 10px;
+    transform: rotateY(180deg);
+}
+
+.membro_infos h2 {
+    text-align: center;
+    font-size: 3.5em;
+    margin-bottom: 10px
+}
+
+.membro_infos p {
+    text-align: justify
+}
+
+
+/*------------CONTATO-----------------*/
+
+#Contato {
+    color: gainsboro;
+    max-width: auto;
+    width: 100%;
+    background-color: #322e2f;
+    border-top: 10px solid dimgray;
+    box-shadow: 0 3px 0 10px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    padding: 0 50px 20px 50px
+}
+
+#Contato h1 {
+    text-align: center;
+    font-size: 5em;
+    color: whitesmoke;
+    box-sizing: content-box;
+    padding: 10px 0px
+}
+
+#Contato .desc {
+    font-size: 1.9em;
+    color: lavender;
+    margin-top: 5px;
+    box-sizing: border-box;
+    padding: 0 0 14px 0;
+}
+
+#contatoContainer {
+    width: 100%;
+    display: flex;
+}
+
+#Contato #termos {
+    margin-left: 10px
+}
+
+
+/*-------------EMAIL (right side)-------------*/
+
+#emailContainer {
+    width: 50%
+}
+
+#email_icon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 8px
+}
+
+#email_icon img {
+    height: 30px;
+    background-color: whitesmoke;
+    border-radius: 100%;
+    padding: 3px
+}
+
+#form {
+    width: 100%;
+}
+
+input::selection {
+    color: whitesmoke;
+    background-color: #9e715f
+}
+
+.txt {
+    height: 40px;
+    width: 100%;
+    font-size: 2.1em;
+    color: #2e2d2c;
+    text-align: center;
+    background-color: #c1e1ca;
+    border: 3px solid whitesmoke;
+}
+
+.txt::placeholder {
+    color: dimgray
+}
+
+#txtEmail,
+#txtAssunto {
+    margin-top: 2px;
+    max-width: 1600px;
+}
+
+#enviar {
+    margin-top: 2px;
+    min-width: 101%;
+    display: inline-flex;
+    height: 110px;
+    overflow: hidden;
+}
+
+#txtMensagem {
+    height: 100%;
+    width: 80%;
+    text-align: left;
+    font-size: 2em
+}
+
+#btnEnviar {
+    height: 100%;
+    width: 20%;
+    color: white;
+    font-weight: 900;
+    font-family: 'Geral';
+    cursor: pointer;
+    background-color: #9e715f;
+    margin-left: 2px;
+}
+
+#btnEnviar:active {
+    transition: 0.5s;
+    background-color: #3fb094
+}
+
+#newsletter {
+    display: flex;
+    margin-top: 7px;
+    align-items: center;
+    font-size: 1.4em
+}
+
+#newsletter p {
+    padding-left: 4px;
+    color: dimgray
+}
+
+#msgErro {
+    color: indianred;
+    margin-top: 7px;
+    display: none
+}
+
+
+/*-------------ENDEREÇO-------------*/
+
+#enderecoContainer {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#endereco {
+    box-sizing: border-box;
+    padding: 20px;
+    border: 3px solid whitesmoke;
+    background-color: dimgray;
+    color: whitesmoke;
+    font-size: 1.7em;
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+
+}
+
+/*
+#endereco {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    align-content: space-between;
+    justify-content: space-between;
+    /*
+    border-right: solid gainsboro 4px;
+    padding-right: 6px;
+    margin-top: 30px;
+}
+
+#endereco #local {
+    text-align: right;
+    font-size: 1.6em
+}
+
+#endereco #tel {
+    left: 50px;
+    font-size: 3em
+}
+*/
+
+/*------------FOOTER-----------------*/
+footer {
+    height: 0;
+    background-color: transparent
+}
