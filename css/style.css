@@ -140,8 +140,7 @@ body {
 /*------------BANNER-----------------*/
 
 #Banner {
-    background-color: whitesmoke;
-    background-image: url("../img/banner/banner-2.jpg");
+    background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
@@ -228,10 +227,9 @@ body {
 #Manifesto {
     padding: 9vh 30px 20px 30px;
     box-sizing: content-box;
-    background: linear-gradient(#e54347 100%, #f3b31b);
+    background: #e54347;
     color: whitesmoke;
     font-family: 'Open Sans Condensed', sans-serif;
-    padding-bottom: 20%
 }
 
 #Manifesto>h1,
@@ -243,7 +241,7 @@ svg {
 
 #Manifesto>svg {
     height: 4px;
-    width: 100%
+    width: 100%;
 }
 
 #Manifesto>svg>line {
@@ -252,7 +250,7 @@ svg {
 }
 
 #Manifesto span {
-    text-transform: uppercase
+    font-weight: bold
 }
 
 #Manifesto content {
@@ -264,7 +262,7 @@ svg {
 
 #Manifesto content>p {
     padding: 10px;
-    font-size: 2em;
+    font-size: 2.5em;
     text-align: justify;
     display: inline-block;
     vertical-align: top;
@@ -304,7 +302,78 @@ svg {
 
 #Nuvem img {
     width: 90vw;
+}
 
+
+/*------------EQUIPE-----------------*/
+
+#Equipe {
+    background-color: #f3b31b;
+    display: flex;
+    justify-content: center;
+}
+
+#equipe_infos {
+    color: whitesmoke;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between
+}
+
+#equipe_infos>h1 {
+    text-align: center;
+    font-size: 4em;
+}
+
+#equipe_infos>p {
+    font-size: 2em;
+    text-align: justify;
+    padding: 10px;
+    box-sizing: content-box
+}
+
+.membro {
+    width: 25%;
+    height: 300px;
+    transition: all 0.7s ease;
+    position: relative;
+
+    margin: 10px;
+}
+
+.membro:hover>.membro_infos {
+    opacity: 1;
+}
+
+.membro_img {
+    object-fit: cover;
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.membro_infos {
+    color: gainsboro;
+    background-color: #2e2d2c;
+    box-sizing: border-box;
+    padding: 10px;
+    z-index: 2;
+    opacity: 0;
+    transition: 1.5s ease, opacity 0.7s ease;
+    height: 100%;
+    width: 100%;
+    position: absolute
+}
+
+.membro_infos h2 {
+    text-align: center;
+    font-size: 3.5em;
+    margin-bottom: 10px
+}
+
+.membro_infos p {
+    text-align: justify
 }
 
 
@@ -348,7 +417,7 @@ svg {
 #v_right {
     width: 50%;
     background-color: whitesmoke;
-    box-sizing: content-box;
+    box-sizing: border-box;
     padding: 10px;
     display: flex;
     flex-flow: column;
@@ -374,6 +443,7 @@ svg {
     display: flex;
     flex-flow: column;
     align-items: flex-end;
+    margin-top: 20px
 }
 
 #outros_videos>p {
@@ -445,18 +515,16 @@ svg {
 /*------------ARTIGOS-----------------*/
 
 #Artigos {
-    background-color: whitesmoke;
+    background-color: #61b1c4;
     z-index: 2;
     display: flex;
     flex-flow: column;
     padding-bottom: 10px;
-    height: 100vh
 }
 
 #Artigos h1 {
     text-align: center;
     font-size: 5em;
-    background-color: #61b1c4;
     color: whitesmoke;
     padding: 10px 0;
     margin-bottom: 10px
@@ -465,7 +533,7 @@ svg {
 #artigosContainer {
     width: 100%;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 10px 10px 50px 10px;
     display: flex;
     justify-content: space-around
 }
@@ -491,25 +559,24 @@ svg {
     transition: 0.5s;
     width: 250px;
     overflow: hidden;
-    color: #61b1c4;
-    background-color: whitesmoke
+    color: whitesmoke;
 }
 
 .artigo:hover {
     transform: scale(1.02, 1.02)
 }
 
-.artigo img, .artigo h2{
+.artigo img,
+.artigo h2 {
     margin-bottom: 10px;
-
 }
 
 .artigo img {
-    height: 200px;
+    height: 250px;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     margin-bottom: -2px;
-    background-color: whitesmoke
+    background-color: black
 }
 
 .artigo h2 {
@@ -522,7 +589,6 @@ svg {
     font-size: 2em;
     text-align: justify;
     height: 200px;
-
 }
 
 #ver_todos {
@@ -531,6 +597,7 @@ svg {
     align-content: center;
     align-items: center;
     cursor: pointer;
+    padding-bottom: 10px
 }
 
 #ver_todos>p {
@@ -600,74 +667,6 @@ svg {
 
 .metodo_infos {
     transition: 1.5s;
-}
-
-
-/*------------EQUIPE-----------------*/
-
-#Equipe {
-    background-color: #f3b31b;
-}
-
-#Equipe h1 {
-    text-align: center;
-    font-size: 5em;
-    color: white;
-    padding: 10px 0
-}
-
-#membrosContainer {
-    box-sizing: border-box;
-    padding: 10px 10px 20px 10px;
-    display: flex;
-    justify-content: center;
-}
-
-.membro {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 250px;
-    height: 400px;
-    transition: all 1.5s ease;
-    position: relative;
-}
-
-.membro:hover {
-    width: 400px
-}
-
-.membro:hover>.membro_infos {
-    opacity: 1;
-}
-
-.membro_img {
-    object-fit: cover;
-    z-index: 1;
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-
-.membro_infos {
-    color: gainsboro;
-    background-color: #2e2d2c;
-    box-sizing: border-box;
-    padding: 10px;
-    z-index: 2;
-    opacity: 0;
-    transition: 1.5s ease, opacity 0.7s ease;
-    height: 100%;
-    width: 100%;
-    position: absolute
-}
-
-.membro_infos h2 {
-    text-align: center;
-    font-size: 3.5em;
-    margin-bottom: 10px
-}
-
-.membro_infos p {
-    text-align: justify
 }
 
 

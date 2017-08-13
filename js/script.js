@@ -32,7 +32,7 @@ $(document).ready(function () {
             $secaoAtual = 0;
             navIndex();
 
-            $('#Nav').css('background-color', $colors[$secaoAtual + 1]);
+            $('#Nav').css('background', $colors[$secaoAtual + 1]);
 
             if ($scrollTop >= $menuTop) {
                 $('#menu').removeClass('menu-start');
