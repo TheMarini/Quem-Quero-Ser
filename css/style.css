@@ -8,6 +8,7 @@
 }
  */
 
+
 /*----------NORMALIZAÇÃO------------*/
 
 * {
@@ -15,7 +16,6 @@
     padding: 0;
     border: none;
     list-style: none;
-
 }
 
 a {
@@ -91,6 +91,13 @@ body {
     overflow: hidden;
 }
 
+.center_child {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center
+}
+
 
 /*------------BLACK COVER-----------------*/
 
@@ -138,7 +145,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
-    height: 95vh;
+    height: 96vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -202,8 +209,6 @@ body {
     transition: margin 0.5s ease-out;
 }
 
-#Nav ul:hover {}
-
 #Nav li {
     height: 100%;
     min-width: 80px;
@@ -213,38 +218,9 @@ body {
     justify-content: center;
     box-sizing: border-box;
     background-color: white;
-    padding: 0px 15px
+    padding: 0px 15px;
+    border-top: solid 4px
 }
-
-#sobre {
-    color: #5eafc2;
-    border-top: solid 4px #e54347;
-}
-
-
-#planos {
-    color: #611e54;
-    border-top: solid 4px #621e56;
-}
-
-#artigos {
-    color: #f4b11a;
-    border-top: solid 4px #f3b31b;
-}
-
-
-#equipe {
-    color: #e74246;
-    border-top: solid 4px #61b1c4;
-}
-
-
-
-#contato {
-    color: #322e2f;
-    border-top: solid 4px #2e2d2c;
-}
-
 
 
 /*------------MANIFESTO-----------------*/
@@ -252,14 +228,27 @@ body {
 #Manifesto {
     padding: 9vh 30px 20px 30px;
     box-sizing: content-box;
-    background-color: #e54347;
+    background: linear-gradient(#e54347 50%, #f3b31b);
     color: whitesmoke;
     font-family: 'Open Sans Condensed', sans-serif;
+    padding-bottom: 20%
 }
 
-#Manifesto > h1{
+#Manifesto>h1,
+svg {
     font-size: 4em;
-    margin-left: 10px
+    box-sizing: border-box;
+    padding: 0 10px
+}
+
+#Manifesto>svg {
+    height: 4px;
+    width: 100%
+}
+
+#Manifesto>svg>line {
+    stroke: whitesmoke;
+    stroke-width: 4
 }
 
 #Manifesto span {
@@ -297,6 +286,29 @@ body {
 }
 
 
+/*------------NUVEM-----------------*/
+
+#Nuvem {
+    max-height: 100vh;
+    width: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 20px
+}
+
+#Nuvem h1 {
+    text-align: center;
+    font-size: 5em;
+    color: dimgray
+}
+
+#Nuvem img {
+    max-width: 100%;
+}
+
+/*------------RECOMENDADOS-----------------*/
+
+
 /*------------VIDEO-----------------*/
 
 #Video {
@@ -322,30 +334,10 @@ body {
 }
 
 
-/*------------PALAVRAS CHAVE-----------------*/
-
-#Palavras-chave {
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(#e54347, #f3b31b);
-    text-align: center
-}
-
-#Palavras-chave h1 {
-    text-align: center;
-    font-size: 5em;
-    color: dimgray
-}
-
-#Palavras-chave img {
-    width: 90vw
-}
-
-
 /*------------ARTIGOS-----------------*/
 
 #Artigos {
-    background-color: #621e56;
+    background-color: #61b1c4;
     z-index: 2;
     display: flex;
     flex-flow: column;
@@ -405,28 +397,28 @@ body {
 }
 
 
-/*------------PLANOS-----------------*/
+/*------------MÉTODOS-----------------*/
 
-#Planos {
-    background-color: whitesmoke;
-    border-top: 4px solid #2e2d2c;
+#Metodos {
+    background-color: #621e56;
+    height: 90vh
 }
 
-#Planos h1 {
+#Metodos h1 {
     text-align: center;
     font-size: 5em;
     color: whitesmoke;
     padding: 10px 0
 }
 
-#planosContainer {
+#MetodosContainer {
     box-sizing: content-box;
     padding: 20px 50px;
     display: flex;
     justify-content: space-between
 }
 
-#planosContainer>.plano {
+#MetodosContainer>.metodo {
     height: 400px;
     background-image: url(../img/banner/banner-1.jpg);
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
@@ -438,18 +430,18 @@ body {
 
 @media (max-width: 800px) {
     /*breakpoint*/
-    #planosContainer>.plano {
+    #MetodosContainer>.metodo {
         min-width: 200px;
         width: 100%;
         margin-bottom: 10px
     }
-    #planosContainer {
+    #MetodosContainer {
         display: inherit;
         padding: 20px 10px;
     }
 }
 
-.plano_infos {
+.metodo_infos {
     transition: 1.5s;
 }
 
@@ -457,7 +449,7 @@ body {
 /*------------EQUIPE-----------------*/
 
 #Equipe {
-    background-color: #e54347;
+    background-color: #f3b31b;
 }
 
 #Equipe h1 {
