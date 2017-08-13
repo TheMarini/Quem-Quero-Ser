@@ -303,7 +303,8 @@ svg {
 }
 
 #Nuvem img {
-    max-width: 100%;
+    width: 90vw;
+
 }
 
 
@@ -324,7 +325,7 @@ svg {
 #v_left {
     width: 50%;
     background-color: black;
-    position: relative
+    position: relative;
 }
 
 #v_left_controls {
@@ -444,18 +445,21 @@ svg {
 /*------------ARTIGOS-----------------*/
 
 #Artigos {
-    background-color: #61b1c4;
+    background-color: whitesmoke;
     z-index: 2;
     display: flex;
     flex-flow: column;
-    padding-bottom: 10px
+    padding-bottom: 10px;
+    height: 100vh
 }
 
 #Artigos h1 {
     text-align: center;
     font-size: 5em;
+    background-color: #61b1c4;
     color: whitesmoke;
     padding: 10px 0;
+    margin-bottom: 10px
 }
 
 #artigosContainer {
@@ -463,7 +467,7 @@ svg {
     box-sizing: border-box;
     padding: 10px;
     display: flex;
-    justify-content: center
+    justify-content: space-around
 }
 
 @media (max-width: 700px) {
@@ -485,38 +489,40 @@ svg {
     margin: 4px;
     cursor: pointer;
     transition: 0.5s;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     width: 250px;
     overflow: hidden;
-    background-color: whitesmoke;
+    color: #61b1c4;
+    background-color: whitesmoke
 }
 
 .artigo:hover {
     transform: scale(1.02, 1.02)
 }
 
+.artigo img, .artigo h2{
+    margin-bottom: 10px;
+
+}
+
 .artigo img {
-    height: 150px;
+    height: 200px;
     width: 100%;
-    object-fit: cover;
-    margin-bottom: -2px
+    object-fit: contain;
+    margin-bottom: -2px;
+    background-color: whitesmoke
 }
 
 .artigo h2 {
-    text-align: center;
     font-size: 2.3em;
     padding: 2px;
-    color: #2e2d2c
 }
 
 .artigo p {
-    box-sizing: border-box;
-    padding: 0 8px;
-    color: dimgray;
     width: 100%;
-    font-size: 1.7em;
+    font-size: 2em;
     text-align: justify;
-    height: 100px
+    height: 200px;
+
 }
 
 #ver_todos {
@@ -537,7 +543,8 @@ svg {
 }
 
 #ver_todos svg {
-    width: 120px color: whitesmoke;
+    width: 120px;
+    color: whitesmoke;
     height: 2px
 }
 
