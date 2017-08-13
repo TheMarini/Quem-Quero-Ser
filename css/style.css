@@ -107,20 +107,29 @@ body {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 9999;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #alert {
-    height: 50vh;
     width: 50vw;
     background-color: indianred;
+    position: relative;
     display: flex;
-    justify-content: flex-end;
+    flex-flow: column
 }
 
-#close {
+#alert_top{
+        position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    align-items: flex-end;
+    width: 100%
+}
+
+#alert_close {
     border: 2px solid dimgray;
     cursor: pointer;
     margin: -10px -10px 0 0;
@@ -131,11 +140,25 @@ body {
     color: white;
     font-size: 1.5em;
     border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
+#alert_infos{
+    color: whitesmoke;
+    box-sizing: content-box;
+    padding: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 50vh;
+}
+
+#alert_infos>h1{
+    font-size: 4em
+}
+#alert_infos>p{
+    font-size: 2em;
+}
 
 /*------------BANNER-----------------*/
 
@@ -211,7 +234,7 @@ body {
 
 #Nav li {
     height: 100%;
-    min-width: 150px;
+    width: 150px;
     transition: opacity 0.5s linear, margin 0.3s ease-in-out, padding 0.3s ease-in-out, background 1s;
     display: flex;
     align-items: center;

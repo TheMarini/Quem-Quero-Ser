@@ -105,7 +105,7 @@ $(document).ready(function () {
         }
 
         $('#menu li').on('mouseleave', function () {
-            $('#Nav').css('background-color', $colors[0]);
+            $('#Nav').css('background-color', $colors[$secaoAtual + 1]);
             navIndex();
         });
     });
@@ -125,6 +125,7 @@ $(document).ready(function () {
         }
     });
 
+    /* ALERT-OUT */
     var first_time = false;
     $(this).on('mouseleave', function () {
         if (first_time) {
