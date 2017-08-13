@@ -742,7 +742,7 @@ svg {
 }
 
 #Contato .desc {
-    font-size: 1.9em;
+    font-size: 2.2em;
     color: lavender;
     margin-top: 5px;
     box-sizing: border-box;
@@ -898,7 +898,7 @@ input::selection,textarea::selection {
     border: 3px solid whitesmoke;
     background-color: dimgray;
     color: whitesmoke;
-    font-size: 1.7em;
+    font-size: 2em;
     display: flex;
     flex-flow: column;
 }
