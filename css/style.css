@@ -31,7 +31,7 @@ body {
 
 body {
     font-size: 62.5%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     /* font-family: 'Open Sans Condensed', sans-serif; */
 }
 
@@ -448,6 +448,7 @@ svg {
     z-index: 2;
     display: flex;
     flex-flow: column;
+    padding-bottom: 10px
 }
 
 #Artigos h1 {
@@ -465,13 +466,29 @@ svg {
     justify-content: center
 }
 
+@media (max-width: 700px) {
+    /*breakpoint*/
+    #artigosContainer {
+        display: block;
+        width: 100%
+    }
+    #artigosContainer>div {
+        width: 100%;
+        margin: 10px 0;
+    }
+    #ver_todos>svg {
+        width: 120px;
+    }
+}
+
 .artigo {
     margin: 4px;
     cursor: pointer;
     transition: 0.5s;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 250px;
     overflow: hidden;
+    background-color: whitesmoke;
 }
 
 .artigo:hover {
@@ -487,20 +504,46 @@ svg {
 
 .artigo h2 {
     text-align: center;
-    font-size: 2em;
-    background-color: gainsboro;
+    font-size: 2.3em;
     padding: 2px;
     color: #2e2d2c
 }
 
 .artigo p {
     box-sizing: border-box;
-    padding: 8px;
-    color: whitesmoke;
+    padding: 0 8px;
+    color: dimgray;
     width: 100%;
     font-size: 1.7em;
     text-align: justify;
     height: 100px
+}
+
+#ver_todos {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#ver_todos>p {
+    text-align: center;
+    font-size: 2em;
+    color: #61b1c4;
+    background-color: whitesmoke;
+    transition: 0.5s;
+    padding: 0 15px;
+}
+
+#ver_todos svg {
+    width: 120px color: whitesmoke;
+    height: 2px
+}
+
+#ver_todos>svg>line {
+    stroke: whitesmoke;
+    stroke-width: 4
 }
 
 
@@ -624,7 +667,6 @@ svg {
 /*------------CONTATO-----------------*/
 
 #Contato {
-    margin-top: 10px;
     color: gainsboro;
     max-width: auto;
     width: 100%;
@@ -662,7 +704,7 @@ svg {
 
 @media (max-width: 500px) {
     /*breakpoint*/
-    #Contato{
+    #Contato {
         padding: 7px
     }
     #Contato>p {
@@ -678,7 +720,7 @@ svg {
     #emailContainer {
         margin-bottom: 20px
     }
-    #endereco{
+    #endereco {
         width: 100%;
         padding: 0
     }
@@ -789,7 +831,6 @@ input::selection {
 
 #enderecoContainer {
     width: 50%;
-
     display: flex;
     justify-content: center;
     align-items: center;
