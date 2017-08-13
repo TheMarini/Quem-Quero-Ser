@@ -141,10 +141,11 @@ body {
 
 #Banner {
     background-color: white;
+    background-image: url("../img/banner/1%20(medium).jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: right;
     height: 96vh;
+    background-position: top;
     width: 100%;
     display: flex;
     align-items: center;
