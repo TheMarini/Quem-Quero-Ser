@@ -204,7 +204,7 @@ body {
 
 #Nav li {
     height: 100%;
-    width: 10vw;
+    width: 8vw;
     min-width: 80px;
     transition: opacity 0.5s linear, margin 0.3s ease-in-out, padding 0.3s ease-in-out, background 1s;
     display: flex;
@@ -279,7 +279,7 @@ body {
     align-items: center;*/
 }
 
-#Manifesto span{
+#Manifesto span {
     text-transform: uppercase
 }
 
@@ -345,7 +345,7 @@ body {
 #Palavras-chave {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(#e54347 , #f3b31b);
+    background: linear-gradient(#e54347, #f3b31b);
     text-align: center
 }
 
@@ -493,48 +493,40 @@ body {
 }
 
 .membro {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 250px;
     height: 400px;
-    position: relative;
-    -webkit-perspective: 1900;
-    -moz-perspective: 1900;
-    perspective: 1900;
-    cursor: pointer;
+    transition: all 1.5s ease;
 }
 
-.membro:hover>.membro_img {
-    z-index: 0;
-    width: 400px/*
-    transform: rotateY(180deg);*/
+.membro:hover {
+    width: 400px
 }
 
 .membro:hover>.membro_infos {
-    width: 400px/*
-    transform: rotateY(0deg);*/
+    opacity: 1;
+    width: 400px
 }
 
-.membro img,
-.membro_infos {
-    width: 100%;
-    height: 100%;
-    transition: all 1.5s ease;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    backface-visibility: hidden;
-}
-
-.membro img {
+.membro_img {
     object-fit: cover;
-    z-index: 3;
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 .membro_infos {
     color: gainsboro;
     background-color: #2e2d2c;
-    z-index: 2;
     box-sizing: border-box;
     padding: 10px;
-    transform: rotateY(180deg);
+    z-index: 2;
+    opacity: 0;
+    transition: 1.5s ease, opacity 0.7s ease;
+    width: 250px;
+    height: 400px;
+    position: absolute
 }
 
 .membro_infos h2 {
