@@ -50,7 +50,7 @@ $(document).ready(function () {
                     if ($scrollTop >= $metodosTop - 100) {
                         if ($scrollTop >= $equipeTop - 100) {
                             if ($scrollTop >= $recomendadosTop - 100) {
-                                if ($scrollTop >= $contatoTop - 300) {
+                                if ($scrollTop + $(this).height() > $(document).height() - 200) {
                                     $secaoAtual = 4;
                                     navIndex();
                                 } else {

@@ -808,7 +808,7 @@ svg {
     width: 100%;
 }
 
-input::selection {
+input::selection,textarea::selection {
     color: whitesmoke;
     background-color: #9e715f
 }
@@ -869,7 +869,7 @@ input::selection {
     display: flex;
     margin-top: 7px;
     align-items: center;
-    font-size: 1.4em
+    font-size: 1.7em
 }
 
 #newsletter p {
