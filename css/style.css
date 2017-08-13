@@ -1,12 +1,12 @@
-.
-/*----------FONTS------------*/
+/* .
+----------FONTS------------
 
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 @font-face {
     font-family: 'Geral';
     src: url('../fonts/Lato-Light.ttf');
 }
-
+ */
 
 /*----------NORMALIZAÇÃO------------*/
 
@@ -14,8 +14,8 @@
     margin: 0;
     padding: 0;
     border: none;
-    font-family: 'Roboto';
     list-style: none;
+
 }
 
 a {
@@ -31,6 +31,8 @@ body {
 
 body {
     font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans Condensed', sans-serif; */
 }
 
 ::selection {
@@ -145,7 +147,7 @@ body {
 }
 
 #logo {
-    width: 40vw;
+    width: 35vw;
     min-width: 300px;
     animation: fade ease 1.5s;
     margin-top: -7vh;
@@ -194,7 +196,7 @@ body {
 
 #Nav ul {
     height: 100%;
-    font-size: 2em;
+    font-size: 1.8em;
     list-style: none;
     display: flex;
     transition: margin 0.5s ease-out;
@@ -204,7 +206,6 @@ body {
 
 #Nav li {
     height: 100%;
-    width: 8vw;
     min-width: 80px;
     transition: opacity 0.5s linear, margin 0.3s ease-in-out, padding 0.3s ease-in-out, background 1s;
     display: flex;
@@ -212,29 +213,18 @@ body {
     justify-content: center;
     box-sizing: border-box;
     background-color: white;
-}
-
-#Nav li:hover {
-    opacity: 1;
-    color: gainsboro;
+    padding: 0px 15px
 }
 
 #sobre {
     color: #5eafc2;
-    border-top: solid 4px #61b1c4;
+    border-top: solid 4px #e54347;
 }
 
-#sobre:hover {
-    background-color: #61b1c4
-}
 
 #planos {
     color: #611e54;
     border-top: solid 4px #621e56;
-}
-
-#planos:hover {
-    background-color: #621e56
 }
 
 #artigos {
@@ -242,27 +232,19 @@ body {
     border-top: solid 4px #f3b31b;
 }
 
-#artigos:hover {
-    background-color: #f3b31b
-}
 
 #equipe {
     color: #e74246;
-    border-top: solid 4px #e54347;
+    border-top: solid 4px #61b1c4;
 }
 
-#equipe:hover {
-    background-color: #e54347
-}
+
 
 #contato {
     color: #322e2f;
     border-top: solid 4px #2e2d2c;
 }
 
-#contato:hover {
-    background-color: #2e2d2c
-}
 
 
 /*------------MANIFESTO-----------------*/
@@ -272,11 +254,12 @@ body {
     box-sizing: content-box;
     background-color: #e54347;
     color: whitesmoke;
-    /*
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;*/
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#Manifesto > h1{
+    font-size: 4em;
+    margin-left: 10px
 }
 
 #Manifesto span {
@@ -311,7 +294,6 @@ body {
 #att {
     text-align: right;
     font-size: 2.5em;
-    font-style: italic
 }
 
 
@@ -475,7 +457,7 @@ body {
 /*------------EQUIPE-----------------*/
 
 #Equipe {
-    background: linear-gradient(#e54347 50%, #e54347);
+    background-color: #e54347;
 }
 
 #Equipe h1 {
