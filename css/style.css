@@ -113,8 +113,6 @@ body {
     position: absolute;
     display: flex;
     justify-content: flex-end;
-    align-content: flex-end;
-    align-items: flex-end;
     width: 100%
 }
 
@@ -144,6 +142,22 @@ body {
     font-size: 3em;
 }
 
+#alert_email {
+    display: flex;
+    height: 7vh
+}
+
+#alert_email>input {
+    width: 80%;
+    text-align: center;
+    font-size: 2em
+}
+
+#alert_email>button {
+    width: 20%;
+    cursor: pointer
+}
+
 
 /*------------ONDAS (SVG)-----------------*/
 
@@ -152,7 +166,6 @@ body {
     background-color: white;
     width: 100%;
     margin-bottom: -3px;
-
 }
 
 .t_r {
@@ -189,7 +202,7 @@ body {
 #Banner>div {
     height: 100%;
     width: 100%;
-    background: radial-gradient(rgba(255,255,255,0.3), transparent 80%);
+    background: radial-gradient(rgba(255, 255, 255, 0.3), transparent 80%);
     position: absolute
 }
 
@@ -212,6 +225,7 @@ body {
     position: absolute;
     top: 0*/
 }
+
 
 /*
 #Banner .redes {
@@ -236,7 +250,7 @@ body {
 #Nav {
     max-width: auto;
     width: 100%;
-    height: 55px;
+    height: 50px;
     min-height: 40px;
     margin: auto;
     display: flex;
@@ -249,7 +263,7 @@ body {
 }
 
 #Nav #home {
-    width: 80px;
+    width: 70px;
     transition: opacity 0.7s;
     padding: 4px 0 4px 4px;
     box-sizing: border-box
@@ -309,6 +323,7 @@ body {
     stroke: whitesmoke;
     stroke-width: 4
 }
+
 
 /*
 #Manifesto span {
@@ -395,7 +410,7 @@ body {
     width: 90vw
 }
 
-#planosContainer>h1{
+#planosContainer>h1 {
     color: #621e56;
 }
 
@@ -419,6 +434,7 @@ body {
     box-sizing: border-box;
 }
 
+
 /*
 @media (max-width: 800px) {
     #planosContainer>.plano {
@@ -440,12 +456,11 @@ body {
 /*------------EQUIPE-----------------*/
 
 @media (min-width: 1100px) {
-    #Equipe{
+    #Equipe {
         min-height: 50vh;
         padding: 0 20px;
         box-sizing: content-box
     }
-
     #Equipe>div {
         display: flex;
         width: 50%;
@@ -455,10 +470,9 @@ body {
         width: 50%;
         height: 300px;
     }
-    #equipe_infos{
-         height: auto;
+    #equipe_infos {
+        height: auto;
     }
-
     .membro_infos {
         opacity: 0
     }
@@ -669,7 +683,7 @@ body {
     width: 100%
 }
 
-.v_other_play>img{
+.v_other_play>img {
     height: 25px
 }
 
@@ -906,8 +920,8 @@ body {
     width: 100%;
 }
 
-input::selection,
-textarea::selection {
+#form input::selection,
+#form textarea::selection {
     color: whitesmoke;
     background-color: #9e715f
 }
@@ -1001,31 +1015,6 @@ textarea::selection {
     display: flex;
     flex-flow: column;
 }
-
-
-/*
-#endereco {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    align-content: space-between;
-    justify-content: space-between;
-    /*
-    border-right: solid gainsboro 4px;
-    padding-right: 6px;
-    margin-top: 30px;
-}
-
-#endereco #local {
-    text-align: right;
-    font-size: 1.6em
-}
-
-#endereco #tel {
-    left: 50px;
-    font-size: 3em
-}
-*/
 
 
 /*------------FOOTER-----------------*/
