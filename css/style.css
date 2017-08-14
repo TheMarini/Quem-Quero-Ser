@@ -43,19 +43,14 @@ body {
 
 /*----------CLASSES------------*/
 
-.menu-start {
-    margin-top: -10vh;
-    box-shadow: 0 0px 15px -10px rgba(0, 0, 0, 0.5);
-}
-
-.menu-fixed {
-    margin-top: 0;
-    box-shadow: none;
-}
-
 .nav-start {
     position: absolute;
     justify-content: center;
+}
+
+.nav-start>#menu {
+    margin-top: -10vh;
+    box-shadow: 0 0px 15px -10px rgba(0, 0, 0, 0.5);
 }
 
 .nav-fixed {
@@ -64,6 +59,11 @@ body {
     top: 0;
     justify-content: space-between;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.nav-fixed>#menu {
+    margin-top: 0;
+    box-shadow: none;
 }
 
 .hide {
@@ -107,21 +107,25 @@ body {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 9999;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 #alert {
-    width: 50vw;
-    background-color: indianred;
+    min-height: 20vh;
+    min-width: 50vw;
+    background-color: #f3b31b;
+    color: #2e2d2c;
     position: relative;
     display: flex;
-    flex-flow: column
+    flex-flow: column;
+    justify-content: space-between;
+    align-content: space-between;
 }
 
-#alert_top{
-        position: absolute;
+#alert_top {
+    position: absolute;
     display: flex;
     justify-content: flex-end;
     align-content: flex-end;
@@ -142,23 +146,41 @@ body {
     border-radius: 100%;
 }
 
-#alert_infos{
-    color: whitesmoke;
+#alert_infos {
     box-sizing: content-box;
     padding: 10px;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-    align-content: space-between;
-    height: 50vh;
 }
 
-#alert_infos>h1{
+#alert_infos>h1 {
     font-size: 4em
 }
-#alert_infos>p{
-    font-size: 2em;
+
+#alert_infos>p {
+    font-size: 3em;
 }
+
+
+/*------------ONDAS-----------------*/
+
+.onda {
+    height: 150px;
+    background-color: white;
+    width: 100%;
+    margin-bottom: -3px
+}
+
+.reverse {
+    transform: rotate(180deg)
+}
+
+#svg_manifesto>path {
+    fill: #e54347
+}
+
+#svg_metodos>path {
+    fill: #621e56
+}
+
 
 /*------------BANNER-----------------*/
 
@@ -167,21 +189,49 @@ body {
     background-image: url("../img/banner/1%20(medium).jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 96vh;
+    height: 97vh;
     background-position: top;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
+    /*position: relative;*/
+}
+
+#Banner>div {
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(transparent 70%, white);
+    position: absolute
+}
+
+#Banner>svg {
+    width: 100%;
+    -webkit-filter: drop-shadow( -5px -5px 5px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow( 0px 0px 5px rgba(0, 0, 0, 0.5));
+}
+
+#Banner>svg>path {
+    fill: white;
 }
 
 #logo {
-    width: 35vw;
+    z-index: 10;
+    width: 40vw;
     min-width: 300px;
-    animation: fade ease 1.5s;
-    margin-top: -7vh;
+    /*
+    float: left;
+    position: absolute;
+    top: 0*/
 }
+
+
+/*
+#onda {
+    margin-top: -340px;
+    margin-left: -320px;
+    z-index: 1;
+    position: absolute
+}
+
 
 #Banner .redes {
     position: absolute;
@@ -257,7 +307,7 @@ body {
 }
 
 #Manifesto>h1,
-svg {
+#Manifesto>svg {
     font-size: 4em;
     box-sizing: border-box;
     padding: 0 10px
@@ -300,6 +350,9 @@ svg {
         display: block;
         width: 100%;
     }
+    #Manifesto {
+        padding: 9vh 3px 20px 3px;
+    }
 }
 
 #att {
@@ -311,7 +364,7 @@ svg {
 /*------------NUVEM-----------------*/
 
 #Nuvem {
-    max-height: 100vh;
+    min-height: 120vh;
     width: 100%;
     background-color: white;
     box-sizing: border-box;
@@ -326,6 +379,55 @@ svg {
 
 #Nuvem img {
     width: 90vw;
+}
+
+
+/*------------MÉTODOS-----------------*/
+
+#Metodos {
+    background-color: #621e56;
+    height: 90vh
+}
+
+#Metodos h1 {
+    text-align: center;
+    font-size: 5em;
+    color: whitesmoke;
+    padding: 10px 0
+}
+
+#MetodosContainer {
+    box-sizing: content-box;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between
+}
+
+#MetodosContainer>.metodo {
+    height: 400px;
+    background-image: url(../img/banner/banner-1.jpg);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    vertical-align: top;
+    width: 33%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+    /*breakpoint*/
+    #MetodosContainer>.metodo {
+        min-width: 200px;
+        width: 100%;
+        margin-bottom: 10px
+    }
+    #MetodosContainer {
+        display: inherit;
+        padding: 20px 10px;
+    }
+}
+
+.metodo_infos {
+    transition: 1.5s;
 }
 
 
@@ -681,9 +783,10 @@ svg {
     background-color: whitesmoke;
     transition: 0.5s;
     padding: 0 15px;
+    margin: 0 10px
 }
 
-#ver_todos svg {
+#ver_todos>svg {
     width: 120px;
     color: whitesmoke;
     height: 2px
@@ -692,55 +795,6 @@ svg {
 #ver_todos>svg>line {
     stroke: whitesmoke;
     stroke-width: 4
-}
-
-
-/*------------MÉTODOS-----------------*/
-
-#Metodos {
-    background-color: #621e56;
-    height: 90vh
-}
-
-#Metodos h1 {
-    text-align: center;
-    font-size: 5em;
-    color: whitesmoke;
-    padding: 10px 0
-}
-
-#MetodosContainer {
-    box-sizing: content-box;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between
-}
-
-#MetodosContainer>.metodo {
-    height: 400px;
-    background-image: url(../img/banner/banner-1.jpg);
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-    display: inline-block;
-    vertical-align: top;
-    width: 33%;
-    box-sizing: border-box;
-}
-
-@media (max-width: 800px) {
-    /*breakpoint*/
-    #MetodosContainer>.metodo {
-        min-width: 200px;
-        width: 100%;
-        margin-bottom: 10px
-    }
-    #MetodosContainer {
-        display: inherit;
-        padding: 20px 10px;
-    }
-}
-
-.metodo_infos {
-    transition: 1.5s;
 }
 
 
@@ -832,7 +886,8 @@ svg {
     width: 100%;
 }
 
-input::selection,textarea::selection {
+input::selection,
+textarea::selection {
     color: whitesmoke;
     background-color: #9e715f
 }

@@ -1,6 +1,6 @@
 var $colors = ['whitesmoke', ' #e54347', '#621e56', '#f3b31b', '#61b1c4', '#2e2d2c'];
 var $secoes = [0, 1, 2, 3, 4, 5];
-var $secaoAtual;
+var $secaoAtual = null;
 
 $(document).ready(function () {
     /* Nav */
@@ -32,52 +32,48 @@ $(document).ready(function () {
             $secaoAtual = 0;
             navIndex();
 
-            $('#Nav').css('background', $colors[$secaoAtual + 1]);
+            $('#Nav').css('background', $colors[$secaoAtual + 1]); //Nav (combinar com a 1ª section)
 
-            if ($scrollTop >= $menuTop) {
-                $('#menu').removeClass('menu-start');
-                $('#menu').addClass('menu-fixed');
 
-                if ($scrollTop > $mainTop) {
-                    $('#Nav').css('background-color', $colors[0]);
+            if ($scrollTop > $mainTop) {
+                $('#Nav').css('background-color', $colors[0]); //Nav (padrão)
 
-                    $('#Nav').removeClass('nav-start');
-                    $('#Nav').addClass('nav-fixed');
+                //Nav Fixed
+                $('#Nav').removeClass('nav-start');
+                $('#Nav').addClass('nav-fixed');
 
-                    $('#Nav #home').removeClass('hide');
-                    $('#Nav .redes').removeClass('hide');
+                //Home & Redes Sociais
+                $('#Nav #home').removeClass('hide');
+                $('#Nav .redes').removeClass('hide');
 
-                    if ($scrollTop >= $metodosTop - 100) {
-                        if ($scrollTop >= $equipeTop - 100) {
-                            if ($scrollTop >= $recomendadosTop - 100) {
-                                if ($scrollTop + $(this).height() > $(document).height() - 200) {
-                                    $secaoAtual = 4;
-                                    navIndex();
-                                } else {
-                                    $secaoAtual = 3;
-                                    navIndex();
-                                }
-
+                if ($scrollTop >= $metodosTop - 100) {
+                    if ($scrollTop >= $equipeTop - 100) {
+                        if ($scrollTop >= $recomendadosTop - 100) {
+                            if ($scrollTop + $(this).height() > $(document).height() - 200) {
+                                $secaoAtual = 4;
+                                navIndex();
                             } else {
-                                $secaoAtual = 2;
+                                $secaoAtual = 3;
                                 navIndex();
                             }
+
                         } else {
-                            $secaoAtual = 1;
+                            $secaoAtual = 2;
                             navIndex();
                         }
+                    } else {
+                        $secaoAtual = 1;
+                        navIndex();
                     }
-                } else {
-                    $('#Nav').removeClass('nav-fixed');
-                    $('#Nav').addClass('nav-start');
-
-                    $('#menu').removeClass('menu-fixed');
-                    $('#menu').addClass('menu-start');
-
-                    $('#Nav #home').addClass('hide');
-                    $('#Nav .redes').addClass('hide');
                 }
+            } else {
+                $('#Nav').removeClass('nav-fixed');
+                $('#Nav').addClass('nav-start');
+
+                $('#Nav #home').addClass('hide');
+                $('#Nav .redes').addClass('hide');
             }
+
         } else {
             $secaoAtual = null;
 
@@ -93,19 +89,32 @@ $(document).ready(function () {
     $('#menu li').on('mouseenter', function () {
         var $itemIndex = $("li").index(this);
 
-        $('#Nav').css('background-color', $colors[$itemIndex + 1]);
-
         if ($itemIndex != $secaoAtual) {
+            //Destaque item -> hover
             $(this).css('background-color', $colors[$itemIndex + 1]);
             $(this).css('color', $colors[0]);
 
+            //Window all top não tem destaque
+            if ($secaoAtual != null) {
+                //Remover destaque item -> atual
+                $("#menu li").eq($secaoAtual).css('background-color', $colors[0]);
+                $("#menu li").eq($secaoAtual).css('color', $colors[$secaoAtual + 1]);
+            }
 
-            $("li").eq($secaoAtual).css('background-color', $colors[0]);
-            $("li").eq($secaoAtual).css('color', $colors[$secaoAtual + 1]);
+            //Nav change bg-color somente qndo estiver fixo
+            if ($('#Nav').hasClass('nav-start')) {
+                $('#Nav').css('background-color', $colors[$itemIndex + 1]);
+            }
         }
 
         $('#menu li').on('mouseleave', function () {
-            $('#Nav').css('background-color', $colors[$secaoAtual + 1]);
+
+            if ($('#Nav').hasClass('nav-start') && $secaoAtual != null) {
+                $('#Nav').css('background-color', $colors[$secaoAtual + 1])
+            } else {
+                $('#Nav').css('background-color', $colors[0]);
+            }
+
             navIndex();
         });
     });
@@ -131,7 +140,7 @@ $(document).ready(function () {
         if (first_time) {
             $('#black-cover').css('display', 'flex');
 
-            $('#close').on('click', function () {
+            $('#alert_close').on('click', function () {
                 $('#black-cover').css('display', 'none')
             });
         }
@@ -178,39 +187,18 @@ $(document).ready(function () {
 
 function navIndex() {
     $("#menu li").each(function (index) {
+        //Volta item para padrão se não for o atual
         if (index != $secaoAtual) {
             $(this).css('background-color', $colors[0]);
             $(this).css('color', $colors[index + 1]);
         }
     });
 
-    $('#menu').find("li").eq($secaoAtual).css('background-color', $colors[$secaoAtual + 1]);
-    $('#menu').find("li").eq($secaoAtual).css('color', $colors[0]);
+    //Coloca item atual em destaque
+    if ($secaoAtual != null) {
+        $('#menu').find("li").eq($secaoAtual).css('background-color', $colors[$secaoAtual + 1]);
+        $('#menu').find("li").eq($secaoAtual).css('color', $colors[0]);
+    } else {
+
+    }
 };
-
-/*
-       if ($scrollTop > 300) {
-            $secaoAtual = 1;
-
-            $('#Nav').css('background-color', $colors[$secaoAtual]);
-            $('#menu').find("li").eq(0).css('background-color', $colors[$secaoAtual]);
-            $('#menu').find("li").eq(0).css('color', $colors[0]);
-
-        } else {
-            $secaoAtual = 0;
-
-            $('#Nav').css('background-color', $colors[$secaoAtual]);
-            $('#menu').find("li").eq(0).css('background-color', $colors[$secaoAtual]);
-            $('#menu').find("li").eq(0).css('color', $colors[1]);
-        }
-        */
-
-/*
-            if ($(this).prop('muted')) {
-
-                $(this).prop('muted', false);
-                $(this).prop('controls', true);
-            } else {
-                $(this).prop('muted', true);
-                $(this).prop('controls', false);
-            }*/
