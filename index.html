@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width , initial-scale=1.0">
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
-    <link rel="shortcut icon" type="image/png" href="img/icons/logo-png%201.png" />
+    <link rel="shortcut icon" type="image/png" href="img/logos/vermelho.png" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300" rel="stylesheet">
 </head>
 
@@ -43,7 +43,7 @@
     </section>
 
     <nav id="Nav" class="nav-start">
-        <a href="#Banner"><img id="home" class="hide" src="img/icons/logo-png%201.png" alt="Quem Quero Ser" /></a>
+        <a href="#Banner"><img id="home" class="hide" src="img/logos/vermelho.png" alt="Quem Quero Ser" /></a>
         <ul id="menu" class="menu-start">
             <a href="#Sobre">
                 <li id="sobre" class="menu_item">Sobre</li>
@@ -98,12 +98,14 @@
             </section>
         </section>
 
-        <svg id="svg_metodos" class="onda reverse" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
+        <svg id="svg_metodos" class="onda b_r" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
                 <path d="M0,25 C60,70 200,0 500,1 L10000,00 L0,0 Z"/>
         </svg>
 
         <section id="Metodos">
             <h1>Metodos</h1>
+            <img src="" alt="">
+
             <div id="metodosContainer">
                 <div class="metodo">
                     <div class="metodo_infos">
@@ -171,7 +173,9 @@
 
             <section id="Videos">
                 <div id="v_left">
-                    <div id="v_left_controls" class="center_child">habilitar som</div>
+                    <div id="v_left_controls" class="center_child">
+                        <img src="img/icons/speaker.svg" alt="">
+                    </div>
                     <iframe src="https://player.vimeo.com/video/217723625?autoplay=1&loop=1&title=0&byline=0&portrait=0&background=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     <!-- <video src="https://youtu.be/KB-GVV68U5s" autoplay muted loop></video> -->
                 </div>
@@ -189,11 +193,11 @@
 
                         <div id="v_othersContainer">
                             <div class="v_other">
-                                <div class="v_other_play center_child">PLAY</div>
+                                <div class="v_other_play center_child"><img src="img/icons/play.svg" alt=""></div>
                                 <img src="img/videos/2_thumb.jpg" alt="">
                             </div>
                             <div class="v_other">
-                                <div class="v_other_play center_child">PLAY</div>
+                                <div class="v_other_play center_child"><img src="img/icons/play.svg" alt=""></div>
                                 <img src="img/videos/3_thumb.jpg" alt="">
                             </div>
                             <!-- 5 no total -->
@@ -201,6 +205,10 @@
                     </div>
                 </div>
             </section>
+
+            <svg id="svg_video" class="onda t_r" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
+                <path d="M0,25 C60,70 200,0 500,1 L10000,00 L0,0 Z"/>
+            </svg>
 
             <section id="Artigos">
                 <h1>Artigos</h1>
