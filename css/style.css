@@ -189,7 +189,7 @@ body {
 #Banner>div {
     height: 100%;
     width: 100%;
-    background: radial-gradient(transparent 70%, white);
+    background: radial-gradient(rgba(255,255,255,0.3), transparent 80%);
     position: absolute
 }
 
@@ -205,7 +205,7 @@ body {
 
 #logo {
     z-index: 10;
-    width: 40vw;
+    width: 35vw;
     min-width: 300px;
     /*
     float: left;
@@ -531,13 +531,6 @@ body {
 .membro {
     transition: opacity 0.7s ease;
     position: relative;
-}
-
-#equipe_first .membro:last-child {
-    margin-right: 0;
-}
-.membro:last-child {
-    margin-left: 0;
 }
 
 .membro:hover>.membro_infos {
