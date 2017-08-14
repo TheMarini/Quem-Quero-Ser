@@ -442,7 +442,7 @@ body {
 @media (min-width: 1100px) {
     #Equipe{
         min-height: 50vh;
-        padding: 0 10px;
+        padding: 0 20px;
         box-sizing: content-box
     }
 
@@ -456,7 +456,7 @@ body {
         height: 300px;
     }
     #equipe_infos{
-         height: auto
+         height: auto;
     }
 
     .membro_infos {
