@@ -50,30 +50,12 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.nav-fixed>#menu {
-    margin-top: 0;
-    box-shadow: none;
-}
-
 .hide {
     display: none;
 }
 
 .fade {
     opacity: 0;
-}
-
-.redes {
-    margin-right: 10px;
-    box-sizing: border-box;
-    background-color: white;
-    border-radius: 100px;
-}
-
-.redes img {
-    height: 5vh;
-    min-height: 30px;
-    opacity: 0.7;
 }
 
 .center_child {
@@ -257,7 +239,7 @@ body {
     flex-flow: row;
     align-items: center;
     float: left;
-    z-index: 90;
+    z-index: 99;
     transition: background 1s;
     background-color: whitesmoke;
 }
@@ -269,31 +251,86 @@ body {
     box-sizing: border-box
 }
 
+#redes {
+    margin-right: 10px;
+    z-index: 1;
+}
+
+#redes img {
+    height: 5vh;
+    min-height: 30px;
+    opacity: 0.7;
+    background-color: white;
+    border-radius: 100px;
+}
+
 #Nav ul {
     height: 100%;
     font-size: 2em;
     list-style: none;
     display: flex;
-    transition: margin 0.5s ease-out;
+    z-index: 2;
+    background-color: whitesmoke;
+    transition: 1s
 }
 
 #Nav li {
     height: 100%;
     width: 150px;
-    transition: opacity 0.5s linear, margin 0.3s ease-in-out, padding 0.3s ease-in-out, background 1s;
+    transition: opacity 0.5s linear, background 1s;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    background-color: white;
     padding: 0px 15px;
     border-top: solid 4px
 }
 
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    margin: 10px;
+    padding: 10px;
+    background-color: #2e2d2c;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: none;
+    transition: transform 1s
+}
+@media (min-width: 900px){
+    #Nav{margin-left: 0}
+}
 @media (max-width: 900px) {
     #Nav {
+        height: 100vh;
+        flex-flow: column;
+        width: auto;
+        position: fixed;
+        float: none;
+        margin-left: -135px;
+    }
+    #Nav ul {
+        flex-flow: column;
+        background-color: transparent
+    }
+    #Nav li {
+        height: 20vh;
+        border-top: none;
+        width: 130px;
+        transition: none;
+        background-color: transparent
+    }
+    #Nav #home {
+        width: 100px;
+        padding: 0;
         display: none
     }
+    #mobile-menu {
+        display: flex
+    }
+    #redes{display: none}
 }
 
 
@@ -665,6 +702,7 @@ body {
 
 #v_othersContainer {
     height: 22vh;
+    min-height: 140px;
     display: flex;
     flex-flow: row-reverse
 }
