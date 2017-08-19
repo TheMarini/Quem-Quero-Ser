@@ -170,22 +170,20 @@ body {
 /*------------BANNER-----------------*/
 
 #Banner {
-    background-color: white;
-    background-image: url("../img/banner/1%20(medium).jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
+    background-color: black;
     height: 97vh;
     width: 100%;
     overflow: hidden;
-    /*position: relative;*/
+    position: relative;
 }
 
 #Banner>div {
     height: 100%;
     width: 100%;
-    background: radial-gradient(rgba(255, 255, 255, 0.3), transparent 80%);
-    position: absolute
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
 }
 
 #Banner>svg {
@@ -805,9 +803,10 @@ body {
     margin: 4px;
     cursor: pointer;
     transition: 0.5s;
-    width: 340px;
+    width: 320px;
     overflow: hidden;
-    color: whitesmoke;
+    color: #2e2d2c;
+    text-align: center;
 }
 
 .artigo:hover {
@@ -821,15 +820,18 @@ body {
 
 .artigo img {
     height: 250px;
-    width: 100%;
+    width: 90%;
     object-fit: cover;
     margin-bottom: -2px;
-    background-color: black
+    background-color: black;
+    border-radius: 10px
 }
 
 .artigo h2 {
     font-size: 2.4em;
     padding: 2px;
+    text-align: left;
+    margin-top: 4px
 }
 
 .artigo p {

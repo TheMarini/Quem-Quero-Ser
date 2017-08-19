@@ -1,8 +1,13 @@
-var $colors = ['whitesmoke', ' #e54347', '#621e56', '#f3b31b', '#61b1c4', '#2e2d2c'];
-var $secoes = [0, 1, 2, 3, 4, 5];
+var $colors = ['whitesmoke', '#e54347', '#621e56', '#f3b31b', '#61b1c4', '#2e2d2c'];
+var $banners = [];
+var $currentBanner = 0;
 var $secaoAtual = null;
+var $menu_mobile = true;    //menu_mobile first click
 
-var $menu = true;
+var reA = /[^a-zA-Z]/g; // |search|global match -> NOT alphabetic
+var reN = /[^0-9]/g; // |search|global match -> NOT digit
+
+var $img_folder = "/img/banner";
 
 $(document).ready(function () {
     /* VARIABLES */
@@ -45,18 +50,62 @@ $(document).ready(function () {
             if ($secaoAtual != null) {
                 $('#menu').find("li").eq($secaoAtual).css('background-color', $colors[$secaoAtual + 1]);
                 $('#menu').find("li").eq($secaoAtual).css('color', $colors[0]);
+                $('#menu').find("li").eq($secaoAtual).css('border-color', $colors[$secaoAtual + 1]);
             }
         } else {
             //Todos em focus
             $("#menu li").each(function (index) {
                 $(this).css('background-color', $colors[index + 1]);
                 $(this).css('color', $colors[0]);
-                $(this).css('border-color', $colors[index + 1]);
             });
         }
     };
 
+    //Ordernar Alfanumérico
+    //LEGENDA: 0 = mesma posição | 1 = acima do comparado | -1 = abaixo do comparado
+    function sortAlphaNum(a, b) {
+        //remover todos os carac. que se encontram dentro do espectro "reA"
+        var aA = a.replace(reA, ""); //letras do comparado a
+        var bA = b.replace(reA, ""); //letras do comparado b
+        if (aA === bA) { //letras de ambos na mesma ordenação
+            var aN = parseInt(a.replace(reN, ""), 10); //números do comparado a | passar para base 10
+            var bN = parseInt(b.replace(reN, ""), 10); //números do comparado b | passar para base 10
+            return aN === bN ? 0 : aN > bN ? 1 : -1; //números iguais | numeros A > numeros B
+        } else {
+            return aA > bA ? 1 : -1; //letras A > letras B
+        }
+    }
+
+    //Banner Background Images
+    function nextBackground() {
+        $('#banner_bg').fadeTo('slow', 0, function () {
+            $currentBanner++;
+            $currentBanner = $currentBanner % $banners.length; //Ao chegar o nº total zera novamente (módulo de 21 é 0)
+            $("#banner_bg").css('background-image', "url(../img/banner/" + $banners[$currentBanner] + ")");
+        }).fadeTo('slow', 1);
+    }
+    setInterval(nextBackground, 5000);
+
     /* EVENTS & CODING */
+    //Preparar imagens
+    $.ajax({
+        async: false,
+        url: $img_folder,
+        success: function (data) {
+            console.log(data);
+
+            $(data).find("ul>li>a").attr("title", function (i, val) {
+                if (val.match(/.(jpe?g|png|gif)$/g)) {
+                    $banners.push(val);
+                }
+            });
+        }
+    });
+    $banners.sort(sortAlphaNum);
+
+    $("#banner_bg").css('background-image', "url(../img/banner/" + $banners[$currentBanner] + ")"); //Começar com a 1ª img
+
+    //Configurações de acordo com o dispositivo
     if ($(window).width() < 900) { //Mobile
         $("#Nav").addClass("nav-fixed");
         navIndex(true); //Mobile Nav colors config
@@ -65,22 +114,18 @@ $(document).ready(function () {
             $("#mobile-menu").click();
         });
     } else { //Desktop
-        $("#menu li").each(function (index) { //Desktoop Nav colors config
-            $(this).css('background-color', $colors[0]);
-            $(this).css('color', $colors[index + 1]);
-            $(this).css('border-color', $colors[index + 1]);
-        });
+        navIndex();  //Desktop Nav colors config
+        navPos(); //Posição da Nav em relação a posição da tela observada
     }
 
-    navPos(); //Posição da Nav em relação a posição da tela observada
-
+    //Responsividade on resize
     $(window).resize(function () {
         if ($(window).outerWidth() < 900) { //Mobile
             $("#Nav").removeClass("nav-start");
             $("#Nav").addClass("nav-fixed");
 
             navIndex(true); //Mobile Nav colors config
-            $menu = false; //Voltar menu-mobile padrão
+            $menu_mobile = false; //Voltar menu-mobile padrão
             $("#mobile-menu").click();
         } else { //Desktop
             navIndex(); //Desktop Nav colors config
@@ -93,23 +138,23 @@ $(document).ready(function () {
         }
     });
 
-    $("#mobile-menu").on('click', function () {
-        if ($menu) {
+    $("#mobile-menu").on('click', function () { //Mobile menu click-transitions + show menu
+        if ($menu_mobile) {
             $("#Nav").css('transition', 'margin 0.7s');
             $(this).css('transform', 'rotate(-90deg)')
             $("#Nav").css('margin-left', '0');
-            $menu = false
+            $menu_mobile = false
         } else {
             $(this).css('transform', 'none');
             $("#Nav").css('margin-left', '-135px');
-            $menu = true
+            $menu_mobile = true
         }
     });
 
     $(window).scroll(function () {
         if ($(window).innerWidth() > 900) { //Fora da quebra mobile
-            /* Distância do scroll até o top da tela */
-            $scrollTop = $(this).scrollTop();
+
+            $scrollTop = $(this).scrollTop(); //Distância atual do scroll até o topo da tela
 
             if ($scrollTop > 0) {
                 $secaoAtual = 0;
