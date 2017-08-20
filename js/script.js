@@ -7,7 +7,7 @@ var $menu_mobile = true;    //menu_mobile first click
 var reA = /[^a-zA-Z]/g; // |search|global match -> NOT alphabetic
 var reN = /[^0-9]/g; // |search|global match -> NOT digit
 
-var $img_folder = "/img/banner";
+var $img_folder = "http://" + $(location).attr('host') + "/img/banner/";
 
 $(document).ready(function () {
     /* VARIABLES */
