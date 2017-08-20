@@ -154,7 +154,6 @@ button {
 
 .onda {
     height: 150px;
-    background-color: white;
     width: 100%;
     margin-bottom: -3px;
 }
@@ -439,10 +438,10 @@ button {
 
 #Metodos {
     background-color: #621e56;
-    min-height: 100vh;
     display: flex;
     flex-flow: column;
-    justify-content: space-between
+    justify-content: space-between;
+    align-items:center
 }
 
 #Metodos h1 {
@@ -453,7 +452,7 @@ button {
 }
 
 #Metodos>img {
-    width: 90vw
+    width: 90vw;
 }
 
 #planosContainer>h1 {
@@ -461,13 +460,13 @@ button {
 }
 
 #planosContainer {
-    box-sizing: content-box;
+    box-sizing: border-box;
     padding: 20px 50px;
     display: flex;
     justify-content: center;
     background-color: whitesmoke;
     min-height: 30vh;
-    margin-top: 10vh
+    width: 100%
 }
 
 #planosContainer>.metodo {
@@ -682,8 +681,8 @@ button {
 
 #outros_videos>p {
     text-align: center;
-    width: 15vw;
-    min-width: 180px;
+    width: 18vw;
+    min-width: 220px;
     background-color: #61b1c4;
     color: whitesmoke;
     font-size: 2em;
@@ -692,7 +691,7 @@ button {
 }
 
 #v_othersContainer {
-    height: 22vh;
+    height: 26vh;
     min-height: 140px;
     display: flex;
     flex-flow: row-reverse
@@ -700,8 +699,8 @@ button {
 
 .v_other {
     height: 100%;
-    width: 7.5vw;
-    min-width: 90px;
+    width: 9vw;
+    min-width: 110px;
     margin-left: 4px;
     cursor: pointer;
     position: relative
@@ -713,7 +712,7 @@ button {
 }
 
 .v_other_play>img {
-    height: 25px
+    height: 35px
 }
 
 .v_other_play {
@@ -870,10 +869,13 @@ button {
     color: gainsboro;
     max-width: auto;
     width: 100%;
-    background-color: #322e2f;
+    background-color: #2e2d2c;
     /*box-shadow: 0 3px 0 10px rgba(0, 0, 0, 0.5);*/
-    box-sizing: border-box;
-    padding: 0 50px 20px 50px
+    position: relative
+}
+
+#Contato svg{
+    margin-top: -100px;
 }
 
 #Contato h1 {
@@ -884,54 +886,19 @@ button {
     padding: 10px 0px
 }
 
-#Contato .desc {
+#Contato>p {
     font-size: 2.2em;
     color: lavender;
     margin-top: 5px;
     box-sizing: border-box;
-    padding: 0 0 14px 0;
-}
-
-#contatoContainer {
-    width: 100%;
-    display: flex;
+    padding: 0 50px 14px 50px;
 }
 
 #Contato #termos {
     margin-left: 10px
 }
 
-@media (max-width: 1000px) {
-    /*breakpoint*/
-    #Contato {
-        padding: 7px
-    }
-    #Contato>p {
-        text-align: justify
-    }
-    #contatoContainer {
-        display: flex;
-        flex-flow: column;
-    }
-    #contatoContainer>div {
-        width: 100%;
-    }
-    #emailContainer {
-        margin-bottom: 20px
-    }
-    #endereco {
-        width: 100%;
-        padding: 0
-    }
-}
-
-
 /*-------------EMAIL (left side)-------------*/
-
-#emailContainer {
-    width: 50%;
-    margin: 20px 0
-}
 
 #email_icon {
     width: 100%;
@@ -949,7 +916,9 @@ button {
 }
 
 #form {
-    width: 100%;
+    width: 60%;
+       box-sizing: border-box;
+    padding: 0 50px 20px 50px
 }
 
 #form>input, #form textarea{
@@ -1026,23 +995,35 @@ button {
 }
 
 
-/*-------------ENDEREÇO-------------*/
+#enderecoContainer{background-color: blue;padding-bottom: 100px}
 
-#enderecoContainer {
-    width: 50%;
-    align-items: flex-end
-}
+/*-------------ENDEREÇO-------------*/
 
 #endereco {
     box-sizing: border-box;
-    max-width: 100%;
-    padding: 20px 40% 20px 20px;
-    border: 3px solid whitesmoke;
-    background-color: dimgray;
     color: whitesmoke;
     font-size: 2em;
-    display: flex;
-    flex-flow: column;
+
+    padding-right: 50px;
+    position: absolute;
+    right: 0;
+    bottom: 0
+}
+
+
+@media (max-width: 1000px) {
+    /*breakpoint*/
+    #Contato{
+        padding: 0
+    }
+    #Contato>p {
+        text-align: justify;
+        padding: 10px
+    }
+    #form{width: 100%;padding: 10px}
+    #Contato svg{
+        margin-top: -40px
+    }
 }
 
 
