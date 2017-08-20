@@ -2,12 +2,19 @@ var $colors = ['whitesmoke', '#e54347', '#621e56', '#f3b31b', '#61b1c4', '#2e2d2
 var $banners = [];
 var $currentBanner = 0;
 var $secaoAtual = null;
-var $menu_mobile = true;    //menu_mobile first click
+var $menu_mobile = true; //menu_mobile first click
 
 var reA = /[^a-zA-Z]/g; // |search|global match -> NOT alphabetic
 var reN = /[^0-9]/g; // |search|global match -> NOT digit
 
-var $img_folder = "http://" + $(location).attr('host') + "/img/banner/";
+var $img_folder;
+
+if ($(location).attr('host') == "") {
+    $img_folder = $(location).attr('href').replace("index.html","img/banner/");
+}
+else{
+    $img_folder = "http://" + $(location).attr('host') + "/img/banner/";
+};
 
 $(document).ready(function () {
     /* VARIABLES */
@@ -114,7 +121,7 @@ $(document).ready(function () {
             $("#mobile-menu").click();
         });
     } else { //Desktop
-        navIndex();  //Desktop Nav colors config
+        navIndex(); //Desktop Nav colors config
         navPos(); //Posição da Nav em relação a posição da tela observada
     }
 
