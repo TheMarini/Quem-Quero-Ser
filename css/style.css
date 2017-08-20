@@ -29,6 +29,18 @@ body {
     background-color: black
 }
 
+input, textarea{
+    font-size: 2em
+}
+
+input {
+    text-align: center;
+}
+
+button {
+    cursor: pointer
+}
+
 
 /*----------CLASSES------------*/
 
@@ -131,13 +143,10 @@ body {
 
 #alert_email>input {
     width: 80%;
-    text-align: center;
-    font-size: 2em
 }
 
 #alert_email>button {
     width: 20%;
-    cursor: pointer
 }
 
 
@@ -161,11 +170,6 @@ body {
 .b_r {
     transform: rotate(180deg)
 }
-
-#svg_video {
-    background-color: #61b1c4
-}
-
 
 /*------------BANNER-----------------*/
 
@@ -949,25 +953,18 @@ body {
     width: 100%;
 }
 
-#form input::selection,
-#form textarea::selection {
-    color: whitesmoke;
-    background-color: #9e715f
-}
-
-.txt {
-    height: 40px;
-    width: 100%;
-    font-size: 2.1em;
+#form>input, #form textarea{
     color: #2e2d2c;
-    text-align: center;
-    background-color: #c1e1ca;
-    border: 3px solid whitesmoke;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
-.txt::placeholder {
+#form>input::placeholder, #form textarea::placeholder{
     color: dimgray
+}
+
+#form>input{
+        width: 100%;
+    height: 40px;
 }
 
 #txtEmail,
@@ -988,7 +985,6 @@ body {
     height: 100%;
     width: 80%;
     text-align: left;
-    font-size: 2em
 }
 
 #btnEnviar {
@@ -998,7 +994,6 @@ body {
     font-weight: 900;
     font-family: 'Geral';
     cursor: pointer;
-    background-color: #9e715f;
     margin-left: 2px;
 }
 
@@ -1010,8 +1005,14 @@ body {
 #newsletter {
     display: flex;
     margin-top: 7px;
-    align-items: center;
-    font-size: 1.7em
+    font-size: 1.7em;
+    align-content: center;
+    align-items: center
+}
+
+#newsletter input{
+    height: 14px;
+    width: 14px
 }
 
 #newsletter p {
