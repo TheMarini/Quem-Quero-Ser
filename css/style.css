@@ -432,6 +432,9 @@ button {
     width: 100%;
     min-height: 90vh;
     padding: 30px 0 50px 0;
+    background-image: url(../img/nuvem/bg.png);
+    background-size: 40%;
+    background-position: center
 }
 
 #Nuvem h1 {
