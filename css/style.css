@@ -43,7 +43,8 @@ button {
 }
 
 .titulo {
-    text-transform: uppercase
+    text-transform: uppercase;
+    font-size: 5em
 }
 
 
@@ -398,6 +399,10 @@ button {
     width: 100%;
 }
 
+#txt_right>img:first-child {
+    width: 60%;
+    float: left
+}
 
 @media (max-width: 800px) {
     /*breakpoint*/
@@ -443,7 +448,14 @@ button {
     background-color: #621e56;
     display: flex;
     flex-flow: column;
-    align-items: center
+    align-items: center;
+    position: relative
+}
+
+#Metodos>h1 {
+    position: absolute;
+    top: 70px;
+    left: 60px;
 }
 
 #Metodos h1 {
@@ -471,22 +483,42 @@ button {
     box-sizing: border-box;
     padding: 20px 50px;
     width: 100%;
-
     display: flex;
     justify-content: space-around;
     align-items: center
 }
 
 .modulo {
+    min-height: 400px;
     min-width: 25vw;
     /* background-image: url("../img/metodos/note%20(big).svg");  */
     background-repeat: no-repeat;
     background-position: center;
+    background-color: gainsboro;
+    transition: transform 1s
 }
 
-.modulo img{
-    height: 100%;
-    min-width: 25vw;
+.modulo:hover {
+    transform: scale(1.04, 1.04)
+}
+
+.modulo_titulo {
+    text-align: center;
+    font-size: 2em;
+    padding: 10px 0;
+    color: whitesmoke
+}
+
+.modulo:nth-child(1)>.modulo_titulo {
+    background-color: #f3b31b
+}
+
+.modulo:nth-child(2)>.modulo_titulo {
+    background-color: #61b1c4
+}
+
+.modulo:nth-child(3)>.modulo_titulo {
+    background-color: #e54347
 }
 
 .modulo_infos {
@@ -508,18 +540,28 @@ button {
 }*/
 
 
-
 /*------------EQUIPE-----------------*/
 
 #Equipe {
     background-color: #f3b31b;
-    display: flex;
     min-height: 50vh;
-    padding: 0 20px;
-    box-sizing: content-box
+    color: whitesmoke;
+    position: relative
 }
 
-#Equipe>div {
+#Equipe>h1 {
+    position: absolute;
+    top: 70px;
+    margin-left: 60px;
+}
+
+#equipeContainer {
+    display: flex;
+    padding: 20px 0px 0 20px;
+    box-sizing: content-box;
+}
+
+#equipeContainer>div {
     display: flex;
     width: 50%;
     align-items: center
@@ -588,10 +630,13 @@ button {
 }
 
 @media (max-width: 1100px) {
-    #Equipe {
+    #Equipe>h1 {
+        margin-left: 6vw;
+    }
+    #equipeContainer {
         padding: 0%;
     }
-    #Equipe>div {
+    #equipeContainer>div {
         width: 50%;
         display: block
     }
@@ -605,10 +650,13 @@ button {
 }
 
 @media (max-width: 640px) {
-    #Equipe {
+    #Equipe>h1 {
+        margin-left: 12vw;
+    }
+    #equipeContainer {
         flex-flow: column
     }
-    #Equipe>div {
+    #equipeContainer>div {
         width: 100%;
     }
     #equipe_infos {
@@ -766,18 +814,18 @@ button {
 
 #Artigos {
     background-color: #61b1c4;
-    z-index: 2;
     display: flex;
     flex-flow: column;
-    padding-bottom: 10px;
+    position: relative
 }
 
 #Artigos h1 {
     text-align: center;
     font-size: 5em;
     color: whitesmoke;
-    padding: 10px 0;
-    margin-bottom: 10px
+    position: absolute;
+    top: 40px;
+    left: 25px
 }
 
 #artigosContainer {
@@ -788,26 +836,11 @@ button {
     justify-content: space-around
 }
 
-@media (max-width: 700px) {
-    /*breakpoint*/
-    #artigosContainer {
-        display: block;
-        width: 100%
-    }
-    #artigosContainer>div {
-        width: 100%;
-        margin: 10px 0;
-    }
-    #ver_todos>svg {
-        width: 120px;
-    }
-}
-
 .artigo {
     margin: 4px;
     cursor: pointer;
     transition: 0.5s;
-    width: 320px;
+    max-width: 300px;
     overflow: hidden;
     color: white;
     text-align: center;
@@ -817,24 +850,20 @@ button {
     transform: scale(1.02, 1.02)
 }
 
-.artigo img,
-.artigo h2 {
-    margin-bottom: 10px;
-}
-
 .artigo img {
-    height: 250px;
+    height: 220px;
     width: 100%;
     object-fit: cover;
-    margin-bottom: -2px;
-    background-color: black;
+    background-color: whitesmoke;
 }
 
 .artigo h2 {
     font-size: 2.4em;
-    padding: 2px;
+    padding: 5px;
     text-align: left;
-    margin-top: 4px
+    background-color: whitesmoke;
+    color: #61b1c4;
+    margin: -3px 0 5px 0;
 }
 
 .artigo p {
@@ -850,7 +879,6 @@ button {
     align-content: center;
     align-items: center;
     cursor: pointer;
-    padding-bottom: 10px
 }
 
 #ver_todos>p {
@@ -874,6 +902,21 @@ button {
     stroke-width: 4
 }
 
+@media (max-width: 700px) {
+    /*breakpoint*/
+    #artigosContainer {
+        flex-flow: column;
+        width: 100%
+    }
+    #artigosContainer>div {
+        width: 100%;
+        margin: 10px 0;
+    }
+    #ver_todos>svg {
+        width: 120px;
+    }
+}
+
 
 /*------------CONTATO-----------------*/
 
@@ -882,18 +925,17 @@ button {
     width: 100%;
     background-color: #2e2d2c;
     /*box-shadow: 0 3px 0 10px rgba(0, 0, 0, 0.5);*/
-    color: whitesmoke
-}
-
-#Contato svg {
-    margin-top: -100px;
+    color: whitesmoke;
+    position: relative
 }
 
 #Contato h1 {
-    text-align: center;
     font-size: 5em;
     box-sizing: content-box;
-    padding: 10px 0px
+    padding: 10px 0px;
+    position: absolute;
+    top: 70px;
+    margin-left: 50px;
 }
 
 #Contato #termos {
@@ -967,17 +1009,24 @@ button {
 #btnEnviar {
     height: 100%;
     width: 20%;
-    color: white;
-    font-weight: 900;
-    font-family: 'Geral';
+    font-size: 2em;
+    color: transparent;
     cursor: pointer;
     margin-left: 2px;
-    background-color: whitesmoke
+    background-color: whitesmoke;
+    background-image: url(../img/icons/send.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+    transition: 0.5s
+}
+#btnEnviar:hover{
+    background-position: 100px;
+    color: #2e2d2c;
 }
 
 #btnEnviar:active {
-    transition: 0.5s;
-    background-color: #3fb094
+    background-color: #61b1c4
 }
 
 #newsletter {
@@ -1042,9 +1091,6 @@ button {
     #form {
         width: 100%;
         padding: 10px
-    }
-    #Contato svg {
-        margin-top: -40px
     }
 }
 

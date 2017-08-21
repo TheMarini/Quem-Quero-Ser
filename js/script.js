@@ -91,7 +91,7 @@ $(document).ready(function () {
             $("#banner_bg").css('background-image', "url(../img/banner/" + $banners[$currentBanner] + ")");
         }).fadeTo('slow', 1);
     }
-    setInterval(nextBackground, 5000);
+    setInterval(nextBackground, 8000);
 
     /* EVENTS & CODING */
     //Preparar imagens
