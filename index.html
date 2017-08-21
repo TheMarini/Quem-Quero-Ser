@@ -56,7 +56,7 @@
                 <li id="sobre" class="menu_item">Sobre</li>
             </a>
             <a href="#Metodos">
-                <li id="metodos" class="menu_item">Método</li>
+                <li id="metodos" class="menu_item">Métodos</li>
             </a>
             <a href="#Equipe">
                 <li id="artigos" class="menu_item">Equipe</li>
@@ -77,7 +77,7 @@
     <section id="Main">
         <section id="Sobre">
             <section id="Manifesto">
-                <h1>Manifesto</h1>
+                <h1 class="titulo">Manifesto</h1>
                 <svg>
                     <line x1="0" y1="0" x2="100%" y2="0" />
                 </svg>
@@ -89,44 +89,53 @@
                         <img src="img/manifesto/2%20(whitesmoke).png" alt=""> Pelo contrário! Convidamos o jovem à ampliar seu campo de visão, desenvolver sua vocação e se conectar com o universo das profissões. Trabalhamos com o que há de mais importante e atual em pesquisas sobre a juventude e a inserção no mercado de trabalho. <img src="img/manifesto/3%20(whitesmoke).png" alt="">
                     </p>
                 </content>
-                <p id="att">Quem Quero Ser</p>
+                <!-- <p id="att">Quem Quero Ser</p> -->
             </section>
 
-            <svg class="onda" style="fill:#e54347; background-color: white" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
+            <svg class="onda t_r" style="fill:#e54347" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
                 <path d="M0,25 C60,70 200,0 500,1 L10000,00 L0,0 Z"/>
             </svg>
 
             <section id="Nuvem" class="center_child">
-                <img src="img/nuvem/4.png" alt="">
+                <img src="img/nuvem/5.png" alt="">
             </section>
         </section>
 
-        <svg class="onda b_r" style="fill:#621e56; background-color: white" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
+        <svg class="onda b_l" style="fill:#621e56" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
             <path d="M0,25 C60,70 200,0 500,1 L10000,00 L0,0 Z"/>
         </svg>
 
         <section id="Metodos">
-            <h1>Metodos</h1>
-            <img src="img/metodos/fluxograma.png" alt="">
+            <h1 class="titulo">Como fazemos</h1>
+            <img src="img/metodos/fluxograma%20(azul).png" alt="">
 
-            <div id="planosContainer">
-                <h1>Planos</h1>
-                <div class="plano">
-                    <div class="plano_infos">
+            <svg class="onda b_r" style="fill:whitesmoke" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
+                <path d="M0,25 C60,70 200,0 500,1 L10000,00 L0,0 Z"/>
+            </svg>
 
+            <section id="Modulos">
+                <h1 class="titulo">Modulos</h1>
+                <div id="modulosContainer">
+                    <div class="modulo">
+                       <img src="img/metodos/note%20(big).svg" alt="">
+                        <div class="modulo_infos">
+
+                        </div>
+                    </div>
+                    <div class="modulo">
+                       <img src="img/metodos/note%20(big).svg" alt="">
+                        <div class="modulo_infos">
+
+                        </div>
+                    </div>
+                    <div class="modulo">
+                       <img src="img/metodos/note%20(big).svg" alt="">
+                        <div class="modulo_infos">
+
+                        </div>
                     </div>
                 </div>
-                <div class="plano">
-                    <div class="plano_infos">
-
-                    </div>
-                </div>
-                <div class="plano">
-                    <div class="plano_infos">
-
-                    </div>
-                </div>
-            </div>
+            </section>
         </section>
         <svg class="onda b_l" style="fill:#f3b31b; background-color: whitesmoke" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
                 <path d="M0,25 C60,70 200,0 500,1 L10000,00 L0,0 Z"/>
@@ -134,7 +143,7 @@
         <section id="Equipe">
             <div id="equipe_first">
                 <div id="equipe_infos" class="membro">
-                    <h1>Quem Somos</h1>
+                    <h1 class="titulo">Quem Somos</h1>
                     <p>Contamos com um time de especialistas inteiramente capacitados nas áreas de psicologia, sociologia, orientação de carreiras e comunicação, com o objetivo de provocar o jovem refletir sobre si, se conhecer, buscar os seus talentos e habilidades para escolher e decidir, melhor e de forma mais segura, o seu futuro.</p>
                 </div>
                 <div class="membro">
@@ -216,7 +225,7 @@
             </svg>
 
             <section id="Artigos">
-                <h1>Artigos</h1>
+                <h1 class="titulo">Artigos</h1>
 
                 <div id="artigosContainer">
                     <div class="artigo">
@@ -260,47 +269,56 @@
 
         <section id="Contato" class="info">
             <h1 class="titulo">Fale com a gente</h1>
-            <p>Ficou interessado? Quer saber mais? Mande uma mensagem que te responderemos o mais breve possível. Se preferir, pode nos ligar, estamos aqui para te ajudar.</p>
-
-            <!--  <div id="email_icon">
+            <div id="contatoContainer">
+                <div id="c_left">
+                    <!--  <div id="email_icon">
                         <img src="img/icons/email.svg" alt="">
                     </div> -->
-            <form id="form">
-                <input id="txtNome" class="txt" placeholder="nome" required></input>
-                <input id="txtEmail" class="txt" placeholder="email" type="email" required></input>
-                <br />
-                <input id="txtAssunto" class="txt" placeholder="assunto (opcional)"></input>
-                <br />
-                <div id="enviar">
-                    <textarea id="txtMensagem" class="txt" required></textarea>
-                    <button id="btnEnviar" onclick="btnEnviar_Click" type="submit"></button>
+                    <form id="form">
+                        <input id="txtNome" class="txt" placeholder="nome" required></input>
+                        <input id="txtEmail" class="txt" placeholder="email" type="email" required></input>
+                        <br />
+                        <input id="txtAssunto" class="txt" placeholder="assunto (opcional)"></input>
+                        <br />
+                        <div id="enviar">
+                            <textarea id="txtMensagem" class="txt" required></textarea>
+                            <button id="btnEnviar" onclick="btnEnviar_Click" type="submit"></button>
+                        </div>
+                        <div id="newsletter">
+                            <input type="checkbox" checked>
+                            <p>Desejo receber informações de <i>Quem Quero Ser</i> e seus parceiros</p>
+                        </div>
+
+                        <p id="msgErro">*mensagem de erro</p>
+                    </form>
+
+
                 </div>
-                <div id="newsletter">
-                    <input type="checkbox" checked>
-                    <p>Desejo receber informações de <i>Quem Quero Ser</i> e seus parceiros</p>
+
+                <div id="c_right">
+                    <p>Ficou interessado? Quer saber mais? Mande uma mensagem que te responderemos o mais breve possível. Se preferir, pode nos ligar, estamos aqui para te ajudar.</p>
+
+                    <div id="endereco">
+                        <p>(31) 2516-6281 <br> contato@quemqueroser.com.br <br> Av. Prudente de Morais - 135 - sala 203<br> Santo Antônio - BH 30350-093
+                        </p>
+                    </div>
                 </div>
-
-                <p id="msgErro">*mensagem de erro</p>
-            </form>
-
-            <svg class="onda b_r" style="fill: #e54347" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
-                <path d="M0,25 C60,70 200,0 500,1 L10000,00 L0,0 Z"/>
-            </svg>
-
-
-            <div id="endereco">
-                <p>(31) 2516-6281 <br> contato@quemqueroser.com.br <br> Av. Prudente de Morais - 135 - sala 203<br> Santo Antônio - BH 30350-093
-                </p>
             </div>
 
+            <!--             <svg class="onda b_r" style="fill: #e54347" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
+                <path d="M0,25 C60,70 200,0 500,1 L10000,00 L0,0 Z"/>
+            </svg>
+             -->
+
+
+
         </section>
-
-
+        <!--     <footer id="Footer">
+       <p>Todos direitos reservados</p>
+        <p> Desenvolvido por <a href="">New Program</a></p>
+    </footer> -->
     </section>
 
-    <footer id="Footer">
-        <!--  Desenvolvido por <a href="">New Program</a> -->
-    </footer>
 </body>
 
 </html>
