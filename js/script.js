@@ -228,6 +228,7 @@ $(document).ready(function () {
                 //Destaque item -> hover
                 $(this).css('background-color', $colors[$itemIndex + 1]);
                 $(this).css('color', $colors[0]);
+                $(this).css('border-color', $colors[$itemIndex + 1]);
 
                 //Window all top não tem destaque
                 if ($secaoAtual != null) {
@@ -236,14 +237,14 @@ $(document).ready(function () {
                     $("#menu li").eq($secaoAtual).css('color', $colors[$secaoAtual + 1]);
                 }
 
-                //Nav change bg-color somente qndo estiver fixo
+                //Nav change bg-color somente qndo não estiver fixo
                 if ($('#Nav').hasClass('nav-start')) {
                     $('#Nav').css('background-color', $colors[$itemIndex + 1]);
                 }
             }
 
             $('#menu li').on('mouseleave', function () {
-
+                //Nav change bg-color somente qndo não estiver fixo && Window all top não tem destaque
                 if ($('#Nav').hasClass('nav-start') && $secaoAtual != null) {
                     $('#Nav').css('background-color', $colors[$secaoAtual + 1])
                 } else {

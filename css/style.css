@@ -91,6 +91,28 @@ button {
 }
 
 
+/*------------ONDAS (SVG)-----------------*/
+
+.onda {
+    height: 150px;
+    width: 100%;
+    margin-bottom: -3px;
+    background-color: transparent
+}
+
+.t_r {
+    transform: rotateY(180deg)
+}
+
+.b_l {
+    transform: rotateX(180deg)
+}
+
+.b_r {
+    transform: rotate(180deg)
+}
+
+
 /*------------BLACK COVER-----------------*/
 
 #black-cover {
@@ -163,28 +185,6 @@ button {
 }
 
 
-/*------------ONDAS (SVG)-----------------*/
-
-.onda {
-    height: 150px;
-    width: 100%;
-    margin-bottom: -3px;
-    background-color: transparent
-}
-
-.t_r {
-    transform: rotateY(180deg)
-}
-
-.b_l {
-    transform: rotateX(180deg)
-}
-
-.b_r {
-    transform: rotate(180deg)
-}
-
-
 /*------------BANNER-----------------*/
 
 #Banner {
@@ -218,19 +218,11 @@ button {
     z-index: 10;
     width: 35vw;
     min-width: 300px;
+    animation: fade ease-in 1.5s
     /*
     float: left;
     position: absolute;
     top: 0*/
-}
-
-
-/*
-#Banner .redes {
-    position: absolute;
-    float: right;
-    top: 10px;
-    right: 0;
 }
 
 
@@ -243,18 +235,14 @@ button {
 }
 
 
-/*----------MENU------------*/
+/*----------NAV------------*/
 
 #Nav {
-    max-width: auto;
     width: 100%;
     height: 50px;
-    min-height: 40px;
-    margin: auto;
     display: flex;
     flex-flow: row;
     align-items: center;
-    float: left;
     z-index: 99;
     transition: background 1s;
     background-color: whitesmoke;
@@ -267,7 +255,7 @@ button {
     box-sizing: border-box;
 }
 
-#Nav div {
+#Nav>div {
     height: 5vh;
     min-height: 30px;
     margin-right: 10px;
@@ -277,20 +265,16 @@ button {
 #Nav ul {
     height: 100%;
     font-size: 2em;
-    list-style: none;
     display: flex;
     z-index: 2;
     background-color: whitesmoke;
-    transition: 1s
+    transition: 1s;
 }
 
 #Nav li {
     height: 100%;
     width: 150px;
     transition: opacity 0.5s linear, background 1s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-sizing: border-box;
     padding: 0px 15px;
     border-top: solid 4px
@@ -364,7 +348,8 @@ button {
 #Manifesto>svg {
     font-size: 4em;
     box-sizing: border-box;
-    padding: 0 10px
+    padding: 0 10px;
+    display: none
 }
 
 #Manifesto>svg {
@@ -410,13 +395,18 @@ button {
     /*breakpoint*/
     #Manifesto content>p {
         display: block;
-        width: 100%;
+        width: 100%;;
+        margin-top: 10px
     }
     #Manifesto {
-        padding: 9vh 3px 20px 3px;
+        padding: 5vh 3px 20px 3px;
     }
     #txt_right>img:first-child {
         width: 100%;
+    }
+    #Manifesto>h1,
+    #Manifesto>svg {
+        display: flex
     }
 }
 
@@ -1097,7 +1087,7 @@ button {
 }
 
 #endereco {
-    justify-content:flex-end ;
+    justify-content: flex-end;
     text-align: right;
 }
 
@@ -1114,8 +1104,7 @@ button {
 }
 
 @media (max-width: 100px) {
-    breakpoint
-    #Contato {
+    breakpoint #Contato {
         display: none;
         padding: 0
     }
@@ -1129,6 +1118,7 @@ button {
     }
 }
 
+
 /*------------FOOTER-----------------*/
 
 footer {
@@ -1139,6 +1129,18 @@ footer {
     justify-content: space-between;
     box-sizing: content-box;
     padding: 0 20px
+}
+
+
+/*------------ANIMATIONS-----------------*/
+
+@keyframes fade {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
 }
 
 
