@@ -413,6 +413,9 @@ button {
     #Manifesto {
         padding: 9vh 3px 20px 3px;
     }
+    #txt_right>img:first-child {
+        width: 100%;
+    }
 }
 
 #att {
@@ -470,6 +473,8 @@ button {
     margin-top: 20px;
 }
 
+/*------------MÓDULOS-----------------*/
+
 #Modulos {
     background-color: whitesmoke;
     width: 100%
@@ -479,7 +484,13 @@ button {
     color: #621e56;
 }
 
+#Modulos>p{
+    font-size: 2.2em;
+    text-align: center
+}
+
 #modulosContainer {
+    margin-top: 20px;
     box-sizing: border-box;
     padding: 20px 50px;
     width: 100%;
@@ -816,7 +827,8 @@ button {
     background-color: #61b1c4;
     display: flex;
     flex-flow: column;
-    position: relative
+    position: relative;
+    padding-bottom: 30px
 }
 
 #Artigos h1 {
@@ -887,14 +899,15 @@ button {
     color: #61b1c4;
     background-color: whitesmoke;
     transition: 0.5s;
-    padding: 0 15px;
+    padding: 0 20px;
     margin: 0 10px
 }
 
 #ver_todos>svg {
     width: 120px;
     color: whitesmoke;
-    height: 2px
+    height: 2px;
+    transition: 0.5s
 }
 
 #ver_todos>svg>line {
@@ -1020,7 +1033,8 @@ button {
     background-size: 90%;
     transition: 0.5s
 }
-#btnEnviar:hover{
+
+#btnEnviar:hover {
     background-position: 100px;
     color: #2e2d2c;
 }
