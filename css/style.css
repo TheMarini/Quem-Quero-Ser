@@ -42,11 +42,6 @@ button {
     cursor: pointer
 }
 
-.titulo {
-    text-transform: uppercase;
-    font-size: 5em
-}
-
 
 /*----------CLASSES------------*/
 
@@ -83,6 +78,18 @@ button {
     justify-content: center
 }
 
+.titulo {
+    text-transform: uppercase;
+    font-size: 5em
+}
+
+.aba {
+    z-index: 10;
+    position: absolute;
+    top: 70px;
+    left: 60px;
+}
+
 
 /*------------BLACK COVER-----------------*/
 
@@ -99,7 +106,7 @@ button {
 
 #alert {
     min-height: 20vh;
-    min-width: 50vw;
+    min-width: 30vw;
     background-color: #f3b31b;
     color: #2e2d2c;
     position: relative;
@@ -257,20 +264,14 @@ button {
     width: 70px;
     transition: opacity 0.7s;
     padding: 4px 0 4px 4px;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
-#redes {
-    margin-right: 10px;
-    z-index: 1;
-}
-
-#redes img {
+#Nav div {
     height: 5vh;
     min-height: 30px;
-    opacity: 0.7;
-    background-color: white;
-    border-radius: 100px;
+    margin-right: 10px;
+    z-index: 1;
 }
 
 #Nav ul {
@@ -401,7 +402,8 @@ button {
 
 #txt_right>img:first-child {
     width: 60%;
-    float: left
+    float: left;
+    padding-right: 22px
 }
 
 @media (max-width: 800px) {
@@ -451,6 +453,25 @@ button {
 /*------------MÉTODOS-----------------*/
 
 #Metodos {
+    position: relative
+}
+
+#Metodos .aba {
+    color: whitesmoke
+}
+
+#Metodos .desc {
+    font-size: 2em
+}
+
+#metodosContainer h1 {
+    text-align: center;
+    font-size: 5em;
+    color: whitesmoke;
+    padding: 10px 0
+}
+
+#metodosContainer {
     background-color: #621e56;
     display: flex;
     flex-flow: column;
@@ -458,23 +479,11 @@ button {
     position: relative
 }
 
-#Metodos>h1 {
-    position: absolute;
-    top: 70px;
-    left: 60px;
-}
-
-#Metodos h1 {
-    text-align: center;
-    font-size: 5em;
-    color: whitesmoke;
-    padding: 10px 0
-}
-
-#Metodos>img {
+#metodosContainer>img {
     width: 80vw;
     margin-top: 20px;
 }
+
 
 /*------------MÓDULOS-----------------*/
 
@@ -487,7 +496,7 @@ button {
     color: #621e56;
 }
 
-#Modulos>p{
+#Modulos>p {
     font-size: 2.2em;
     text-align: center
 }
@@ -922,11 +931,12 @@ button {
     /*breakpoint*/
     #artigosContainer {
         flex-flow: column;
-        width: 100%
+        width: 100%;
     }
     #artigosContainer>div {
         width: 100%;
         margin: 10px 0;
+        max-width: inherit;
     }
     #ver_todos>svg {
         width: 120px;
@@ -1033,12 +1043,12 @@ button {
     background-image: url(../img/icons/send.svg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 90%;
+    background-size: 60%;
     transition: 0.5s
 }
 
 #btnEnviar:hover {
-    background-position: 100px;
+    background-position: 200px;
     color: #2e2d2c;
 }
 
@@ -1087,18 +1097,24 @@ button {
 }
 
 #endereco {
-    box-sizing: border-box;
-    display: flex;
-    flex-flow: column;
-    align-content: flex-end;
-    align-items: flex-end;
-    justify-content: flex-end;
-    text-align: right
+    justify-content:flex-end ;
+    text-align: right;
 }
 
-@media (max-width: 1000px) {
-    /*breakpoint*/
+.redes {
+    z-index: 1;
+}
+
+.redes img {
+    height: 5vh;
+    min-height: 30px;
+    margin-left: 100px
+}
+
+@media (max-width: 100px) {
+    breakpoint
     #Contato {
+        display: none;
         padding: 0
     }
     #Contato>p {
@@ -1110,7 +1126,6 @@ button {
         padding: 10px
     }
 }
-
 
 /*------------FOOTER-----------------*/
 
