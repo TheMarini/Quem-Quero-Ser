@@ -10,9 +10,8 @@ var reN = /[^0-9]/g; // |search|global match -> NOT digit
 var $img_folder;
 
 if ($(location).attr('host') == "") {
-    $img_folder = $(location).attr('href').replace("index.html","img/banner/");
-}
-else{
+    $img_folder = $(location).attr('href').replace("index.html", "img/banner/");
+} else {
     $img_folder = "http://" + $(location).attr('host') + "/img/banner/";
 };
 
@@ -169,6 +168,10 @@ $(document).ready(function () {
 
                 $('#Nav').css('background', $colors[$secaoAtual + 1]); //Nav (combinar com a 1ª section)
 
+                $('#Manifesto content').css('animation', 'fade 2s');
+
+                $('#m_left').css('animation', 'm_left  2s');
+                $('#m_right').css('animation', 'm_right 2s');
 
                 if ($scrollTop > $mainTop) {
                     $('#Nav').css('background-color', $colors[0]); //Nav (padrão)
@@ -272,7 +275,7 @@ $(document).ready(function () {
     });
 
     /* ALERT-OUT */
-    var first_time = true;
+    var first_time = false;
     $(this).on('mouseleave', function () {
         if (first_time) {
             $('#black-cover').css('display', 'flex');

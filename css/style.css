@@ -15,11 +15,11 @@ a {
 html,
 body {
     height: 100%;
-    background-color: whitesmoke
 }
 
 body {
     font-size: 62.5%;
+    /* IMPORTANTE */
     font-family: 'Open Sans Condensed', sans-serif;
     /* font-family: 'Open Sans', sans-serif; */
 }
@@ -97,7 +97,10 @@ button {
     height: 150px;
     width: 100%;
     margin-bottom: -3px;
-    background-color: transparent
+    background-color: transparent;
+
+   /*  -webkit-filter: drop-shadow( -5px -5px 5px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow( 0px 0px 5px rgba(0, 0, 0, 0.2)); */
 }
 
 .t_r {
@@ -128,7 +131,7 @@ button {
 
 #alert {
     min-height: 20vh;
-    min-width: 30vw;
+    min-width: 40vw;
     background-color: #f3b31b;
     color: #2e2d2c;
     position: relative;
@@ -219,7 +222,7 @@ button {
     z-index: 10;
     width: 35vw;
     min-width: 300px;
-    animation: fade ease-in 1.5s
+    animation: fade ease-in 1.5s;
     /*
     float: left;
     position: absolute;
@@ -343,6 +346,7 @@ button {
     background: #e54347;
     color: whitesmoke;
     font-family: 'Open Sans Condensed', sans-serif;
+    position: relative
 }
 
 #Manifesto>h1,
@@ -386,7 +390,7 @@ button {
     width: 100%;
 }
 
-#txt_right>img:first-child {
+#m_right>img:first-child {
     width: 60%;
     float: left;
     padding-right: 22px
@@ -396,13 +400,14 @@ button {
     /*breakpoint*/
     #Manifesto content>p {
         display: block;
-        width: 100%;;
+        width: 100%;
+        ;
         margin-top: 10px
     }
     #Manifesto {
         padding: 5vh 3px 20px 3px;
     }
-    #txt_right>img:first-child {
+    #m_right>img:first-child {
         width: 100%;
     }
     #Manifesto>h1,
@@ -557,10 +562,9 @@ button {
 /*------------EQUIPE-----------------*/
 
 #Equipe {
-    background-color: #f3b31b;
     min-height: 50vh;
     color: whitesmoke;
-    position: relative
+    position: relative;
 }
 
 #Equipe>h1 {
@@ -571,8 +575,10 @@ button {
 
 #equipeContainer {
     display: flex;
-    padding: 20px 0px 0 20px;
+    padding-top: 20px;
     box-sizing: content-box;
+
+    background-color: #f3b31b;
 }
 
 #equipeContainer>div {
@@ -586,7 +592,6 @@ button {
     display: flex;
     flex-flow: column;
     justify-content: space-around;
-    height: auto;
 }
 
 #equipe_infos>h1 {
@@ -686,7 +691,6 @@ button {
 
 
 /*------------RECOMENDADOS-----------------*/
-
 
 /*------------VIDEO-----------------*/
 
@@ -831,7 +835,8 @@ button {
     display: flex;
     flex-flow: column;
     position: relative;
-    padding-bottom: 30px
+    padding-bottom: 150px;
+    margin-bottom: -150px
 }
 
 #Artigos h1 {
@@ -938,31 +943,25 @@ button {
 /*------------CONTATO-----------------*/
 
 #Contato {
-    max-width: auto;
     width: 100%;
-    background-color: #2e2d2c;
     /*box-shadow: 0 3px 0 10px rgba(0, 0, 0, 0.5);*/
     color: whitesmoke;
     position: relative
 }
 
 #Contato h1 {
-    font-size: 5em;
     box-sizing: content-box;
-    padding: 10px 0px;
     position: absolute;
     top: 70px;
     margin-left: 50px;
 }
 
-#Contato #termos {
-    margin-left: 10px
-}
-
 #contatoContainer {
     display: flex;
     box-sizing: content-box;
-    padding: 50px
+    padding: 50px 50px 20px 50px;
+
+    background-color: #2e2d2c;
 }
 
 #contatoContainer>div {
@@ -1104,18 +1103,31 @@ button {
     border-radius: 100%
 }
 
-@media (max-width: 100px) {
-    breakpoint #Contato {
-        display: none;
-        padding: 0
+@media (max-width: 900px) {
+    #contatoContainer {
+        flex-flow: column-reverse;
+        padding: 10px 30px;
     }
-    #Contato>p {
-        text-align: justify;
-        padding: 10px
+    #contatoContainer>div {
+        width: 100%
     }
-    #form {
+    #c_right {
+        padding-left: 0;
+    }
+    #Contato h1 {
+        margin-left: 30px;
+    }
+    #endereco {}
+}
+
+@media (max-width: 500px) {
+    #contatoContainer {
+        padding: 10px 8px;
+    }
+    #Contato h1 {
+        margin-left: 0;
         width: 100%;
-        padding: 10px
+        text-align: center
     }
 }
 
@@ -1137,12 +1149,32 @@ footer {
 
 @keyframes fade {
     0% {
-        opacity: 0
+        opacity: 0;
     }
     100% {
-        opacity: 1
+        opacity: 1;
     }
 }
+
+@keyframes m_left {
+    0% {
+       margin-left: -30px
+    }
+    100% {
+        margin-left: 0
+    }
+}
+
+@keyframes m_right {
+     0% {
+       margin-right: -30px
+    }
+    100% {
+        margin-right: 0
+    }
+}
+
+
 
 
 /* #email_icon {
