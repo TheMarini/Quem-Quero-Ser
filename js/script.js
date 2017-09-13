@@ -275,7 +275,7 @@ $(document).ready(function () {
     });
 
     /* ALERT-OUT */
-    var first_time = false;
+    var first_time = true;
     $(this).on('mouseleave', function () {
         if (first_time) {
             $('#black-cover').css('display', 'flex');
