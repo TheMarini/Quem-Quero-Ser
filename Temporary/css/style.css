@@ -31,6 +31,7 @@ input {
     text-align: center;
 }
 
+
 /*----------CLASSES------------*/
 
 .hide {
@@ -48,22 +49,23 @@ input {
     justify-content: center
 }
 
-/*----------BODY------------*/
-body{
-    position: relative;
 
+/*----------BODY------------*/
+
+body {
+    position: relative;
     display: flex;
     flex-flow: column;
     align-items: center;
-
     font-size: 1.4em;
     background-color: whitesmoke;
     color: #2e2d2c
 }
 
-#msg{
+#msg {
     text-align: center;
-    margin-top: 12vh
+    margin-top: 12vh;
+    z-index: 1
 }
 
 form {
@@ -72,52 +74,69 @@ form {
     justify-content: center;
 }
 
-input:not([type="submit"]){
+input:not([type="submit"]) {
     font-size: 1em;
     padding: 8px 0;
     width: 400px
 }
 
 input[type="submit"] {
-	height: 42px;
+    height: 42px;
     width: 35px;
     font-size: 1em;
     color: white;
     transition: background 0.7s;
     cursor: pointer
 }
-input[type="submit"]:focus{
+
+input[type="submit"]:focus {
     background-color: cadetblue
 }
 
-#mce-responses{
+#mce-responses {
     width: 435px;
     background-color: cadetblue;
     color: whitesmoke;
     margin: auto
 }
 
-#mce-error-response{
+#mce-error-response {
     background-color: indianred
 }
 
+#imgContainer {
+    width: 100%;
+    height: 65%;
+    z-index: 0;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
+
 footer {
-	position: absolute;
-    bottom: 15px;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 15px;
     width: 100%;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    text-align: center;
+    z-index: 0;
+    background-color: whitesmoke
 }
-
 
 footer>p>span {
-	font-weight: bold;
+    font-weight: bold;
 }
 
-footer>img{
-    width: 100px;
-    height: auto;
-    position: absolute;
-    right: 15px;
-    bottom: 0
+@media (max-width: 500px) {
+    input:not([type="submit"]) {
+        width: 80vw;
+    }
+
+    #mce-responses{
+        width: 88.6vw;
+    }
 }
