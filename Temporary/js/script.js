@@ -1,8 +1,6 @@
-var $colors = ['whitesmoke', '#e54347', '#621e56', '#f3b31b', '#61b1c4', '#2e2d2c'];
-
 $(document).ready(function () {
-    var txt = $("#email>input");
-    var btn = $("#email>button");
+    var txt = $("input[type=email]");
+    var btn = $("input[type=submit]");
 
     //Button send form only if txt contains a value (+ the input type email specification)
     $(btn).on('click', function () {
@@ -11,6 +9,7 @@ $(document).ready(function () {
         }
     });
 
+    //Button bg-color change on txt focus in & out
     $(txt).on('focusin', function () {
         $(btn).css('background-color', 'cadetblue');
         $(btn).css('cursor', 'pointer');

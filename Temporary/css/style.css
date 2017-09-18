@@ -48,44 +48,6 @@ input {
     justify-content: center
 }
 
-.titulo {
-    text-transform: uppercase;
-    font-size: 5em
-}
-
-.aba {
-    z-index: 10;
-    position: absolute;
-    top: 70px;
-    left: 60px;
-}
-
-
-/*------------ONDAS (SVG)-----------------*/
-
-.onda {
-    height: 150px;
-    width: 100%;
-    margin-bottom: -3px;
-    background-color: transparent;
-
-   /*  -webkit-filter: drop-shadow( -5px -5px 5px rgba(0, 0, 0, 0.5));
-    filter: drop-shadow( 0px 0px 5px rgba(0, 0, 0, 0.2)); */
-}
-
-.t_r {
-    transform: rotateY(180deg)
-}
-
-.b_l {
-    transform: rotateX(180deg)
-}
-
-.b_r {
-    transform: rotate(180deg)
-}
-
-
 /*----------BODY------------*/
 body{
     position: relative;
@@ -99,30 +61,44 @@ body{
     color: #2e2d2c
 }
 
-
 #msg{
     text-align: center;
     margin-top: 12vh
 }
 
-#email {
+form {
     margin-top: 30px;
     display: flex;
-    justify-content: center
+    justify-content: center;
 }
 
-#email>input{
+input:not([type="submit"]){
     font-size: 1em;
     padding: 8px 0;
     width: 400px
 }
 
-#email>button {
+input[type="submit"] {
 	height: 42px;
     width: 35px;
-    font-weight: bold;
+    font-size: 1em;
     color: white;
     transition: background 0.7s;
+    cursor: pointer
+}
+input[type="submit"]:focus{
+    background-color: cadetblue
+}
+
+#mce-responses{
+    width: 435px;
+    background-color: cadetblue;
+    color: whitesmoke;
+    margin: auto
+}
+
+#mce-error-response{
+    background-color: indianred
 }
 
 footer {
@@ -145,49 +121,3 @@ footer>img{
     right: 15px;
     bottom: 0
 }
-/*------------ANIMATIONS-----------------*/
-
-@keyframes fade {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes m_left {
-    0% {
-       margin-left: -30px
-    }
-    100% {
-        margin-left: 0
-    }
-}
-
-@keyframes m_right {
-     0% {
-       margin-right: -30px
-    }
-    100% {
-        margin-right: 0
-    }
-}
-
-
-
-
-/* #email_icon {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding-bottom: 8px
-}
-
-#email_icon img {
-    height: 30px;
-    background-color: whitesmoke;
-    border-radius: 100%;
-    padding: 3px
-} */
