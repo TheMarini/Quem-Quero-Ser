@@ -10,9 +10,9 @@ var reN = /[^0-9]/g; // |search|global match -> NOT digit
 var $img_folder;
 
 if ($(location).attr('host') == "") {
-    $img_folder = $(location).attr('href').replace("index.html", "img/banner/");
+    $img_folder = $(location).attr('href').replace("index.html", "Main/img/Index/banner/");
 } else {
-    $img_folder = "http://" + $(location).attr('host') + "/img/banner/";
+    $img_folder = "http://" + $(location).attr('host') + "/Main/img/Index/banner/";
 };
 
 $(document).ready(function () {
@@ -87,7 +87,7 @@ $(document).ready(function () {
         $('#banner_bg').fadeTo('slow', 0, function () {
             $currentBanner++;
             $currentBanner = $currentBanner % $banners.length; //Ao chegar o nº total zera novamente (módulo de 21 é 0)
-            $("#banner_bg").css('background-image', "url(../img/banner/" + $banners[$currentBanner] + ")");
+            $("#banner_bg").css('background-image', "url(img/Index/banner/" + $banners[$currentBanner] + ")");
         }).fadeTo('slow', 1);
     }
     setInterval(nextBackground, 8000);
@@ -98,8 +98,6 @@ $(document).ready(function () {
         async: false,
         url: $img_folder,
         success: function (data) {
-            console.log(data);
-
             $(data).find("ul>li>a").attr("title", function (i, val) {
                 if (val.match(/.(jpe?g|png|gif)$/g)) {
                     $banners.push(val);
@@ -109,7 +107,7 @@ $(document).ready(function () {
     });
     $banners.sort(sortAlphaNum);
 
-    $("#banner_bg").css('background-image', "url(../img/banner/" + $banners[$currentBanner] + ")"); //Começar com a 1ª img
+    $("#banner_bg").css('background-image', "url(img/Index/banner/" + $banners[$currentBanner] + ")"); //Começar com a 1ª img
 
     //Configurações de acordo com o dispositivo
     if ($(window).width() < 900) { //Mobile
@@ -273,54 +271,4 @@ $(document).ready(function () {
             return false;
         }
     });
-
-    /* ALERT-OUT */
-    var first_time = false;
-    $(this).on('mouseleave', function () {
-        if (first_time) {
-            $('#black-cover').css('display', 'flex');
-
-            $('#alert_close').on('click', function () {
-                $('#black-cover').css('display', 'none')
-            });
-        }
-        first_time = false;
-    });
-
-    /* SMOOTH SCROLL LINK*/
-    // Select all links with hashes
-    $('a[href*="#"]')
-        // Remove links that don't actually link to anything
-        .not('[href="#"]')
-        .not('[href="#0"]')
-        .click(function (event) {
-            // On-page links
-            if (
-                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
-                location.hostname == this.hostname
-            ) {
-                // Figure out element to scroll to
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                // Does a scroll target exist?
-                if (target.length) {
-                    // Only prevent default if animation is actually gonna happen
-                    event.preventDefault();
-                    $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000, function () {
-                        // Callback after animation
-                        // Must change focus!
-                        var $target = $(target);
-                        $target.focus();
-                        if ($target.is(":focus")) { // Checking if the target was focused
-                            return false;
-                        } else {
-                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-                            $target.focus(); // Set focus again
-                        };
-                    });
-                }
-            }
-        });
 });

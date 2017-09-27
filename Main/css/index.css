@@ -1,194 +1,3 @@
-/*----------NORMATIZAÇÃO------------*/
-
-* {
-    margin: 0;
-    padding: 0;
-    border: none;
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit
-}
-
-html,
-body {
-    height: 100%;
-}
-
-body {
-    font-size: 62.5%;
-    /* IMPORTANTE */
-    font-family: 'Open Sans Condensed', sans-serif;
-    /* font-family: 'Open Sans', sans-serif; */
-}
-
-::selection {
-    color: whitesmoke;
-    background-color: black
-}
-
-input,
-textarea {
-    font-size: 2em
-}
-
-input {
-    text-align: center;
-}
-
-button {
-    cursor: pointer
-}
-
-
-/*----------CLASSES------------*/
-
-.nav-start {
-    position: absolute;
-    justify-content: center;
-}
-
-.nav-start>#menu {
-    margin-top: -10vh;
-    box-shadow: 0 0px 15px -10px rgba(0, 0, 0, 0.5);
-}
-
-.nav-fixed {
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    justify-content: space-between;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.hide {
-    display: none;
-}
-
-.fade {
-    opacity: 0;
-}
-
-.center_child {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center
-}
-
-.titulo {
-    text-transform: uppercase;
-    font-size: 5em
-}
-
-.aba {
-    z-index: 10;
-    position: absolute;
-    top: 70px;
-    left: 60px;
-}
-
-
-/*------------ONDAS (SVG)-----------------*/
-
-.onda {
-    height: 150px;
-    width: 100%;
-    margin-bottom: -3px;
-    background-color: transparent;
-
-   /*  -webkit-filter: drop-shadow( -5px -5px 5px rgba(0, 0, 0, 0.5));
-    filter: drop-shadow( 0px 0px 5px rgba(0, 0, 0, 0.2)); */
-}
-
-.t_r {
-    transform: rotateY(180deg)
-}
-
-.b_l {
-    transform: rotateX(180deg)
-}
-
-.b_r {
-    transform: rotate(180deg)
-}
-
-
-/*------------BLACK COVER-----------------*/
-
-#black-cover {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-#alert {
-    min-height: 20vh;
-    min-width: 40vw;
-    background-color: #f3b31b;
-    color: #2e2d2c;
-    position: relative;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-    align-content: space-between;
-}
-
-#alert_top {
-    position: absolute;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%
-}
-
-#alert_close {
-    border: 2px solid dimgray;
-    cursor: pointer;
-    margin: -10px -10px 0 0;
-    padding: 5px;
-    height: 20px;
-    width: 20px;
-    background-color: black;
-    color: white;
-    font-size: 1.5em;
-    border-radius: 100%;
-}
-
-#alert_infos {
-    box-sizing: content-box;
-    padding: 10px;
-}
-
-#alert_infos>h1 {
-    font-size: 4em;
-    margin-bottom: 5px
-}
-
-#alert_infos>p {
-    font-size: 3em;
-}
-
-#alert_email {
-    display: flex;
-    height: 7vh
-}
-
-#alert_email>input {
-    width: 80%;
-}
-
-#alert_email>button {
-    width: 20%;
-}
-
-
 /*------------BANNER-----------------*/
 
 #Banner {
@@ -239,105 +48,6 @@ button {
 }
 
 
-/*----------NAV------------*/
-
-#Nav {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    z-index: 99;
-    transition: background 1s;
-    background-color: whitesmoke;
-}
-
-#Nav #home {
-    width: 70px;
-    transition: opacity 0.7s;
-    padding: 4px 0 4px 4px;
-    box-sizing: border-box;
-}
-
-#Nav>div {
-    height: 5vh;
-    min-height: 30px;
-    margin-right: 10px;
-    z-index: 1;
-}
-
-#Nav ul {
-    height: 100%;
-    font-size: 2em;
-    display: flex;
-    z-index: 2;
-    background-color: whitesmoke;
-    transition: 1s;
-}
-
-#Nav li {
-    height: 100%;
-    width: 150px;
-    transition: opacity 0.5s linear, background 1s;
-    box-sizing: border-box;
-    padding: 0px 15px;
-    border-top: solid 4px
-}
-
-#mobile-menu {
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    margin: 10px;
-    padding: 10px;
-    background-color: #2e2d2c;
-    border-radius: 100%;
-    cursor: pointer;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    display: none;
-    transition: transform 1s
-}
-
-@media (min-width: 900px) {
-    #Nav {
-        margin-left: 0
-    }
-}
-
-@media (max-width: 900px) {
-    #Nav {
-        height: 100vh;
-        flex-flow: column;
-        width: auto;
-        position: fixed;
-        float: none;
-        margin-left: -135px;
-    }
-    #Nav ul {
-        flex-flow: column;
-        background-color: transparent
-    }
-    #Nav li {
-        height: 20vh;
-        border-top: none;
-        width: 130px;
-        transition: none;
-        background-color: transparent
-    }
-    #Nav #home {
-        width: 100px;
-        padding: 0;
-        display: none
-    }
-    #mobile-menu {
-        display: flex
-    }
-    #redes {
-        display: none
-    }
-}
-
-
 /*------------MANIFESTO-----------------*/
 
 #Manifesto {
@@ -351,7 +61,7 @@ button {
 
 #Manifesto>h1,
 #Manifesto>svg {
-    font-size: 4em;
+    font-size: 2em;
     box-sizing: border-box;
     padding: 0 10px;
     display: none
@@ -378,7 +88,7 @@ button {
 
 #Manifesto content>p {
     padding: 10px;
-    font-size: 2.5em;
+    font-size: 1.5em;
     text-align: justify;
     vertical-align: top;
     width: 49.9%;
@@ -430,16 +140,10 @@ button {
     width: 100%;
     min-height: 90vh;
     padding: 60px 0 50px 0;
-    background-image: url(../img/nuvem/bg.png);
+    background-image: url(../img/Index/nuvem/bg.png);
     background-size: 20%;
     background-position: center;
     background-color: whitesmoke;
-}
-
-#Nuvem h1 {
-    text-align: center;
-    font-size: 5em;
-    color: dimgray
 }
 
 #Nuvem img {
@@ -458,12 +162,12 @@ button {
 }
 
 #Metodos .desc {
-    font-size: 2em
+    font-size: 1.3em
 }
 
 #metodosContainer h1 {
     text-align: center;
-    font-size: 5em;
+    font-size: 2.5em;
     color: whitesmoke;
     padding: 10px 0
 }
@@ -494,7 +198,7 @@ button {
 }
 
 #Modulos>p {
-    font-size: 2.2em;
+    font-size: 1.5em;
     text-align: center
 }
 
@@ -511,7 +215,7 @@ button {
 .modulo {
     min-height: 400px;
     min-width: 25vw;
-    /* background-image: url("../img/metodos/note%20(big).svg");  */
+    /* background-image: url("../img/Index/metodos/note%20(big).svg");  */
     background-repeat: no-repeat;
     background-position: center;
     background-color: gainsboro;
@@ -524,7 +228,7 @@ button {
 
 .modulo_titulo {
     text-align: center;
-    font-size: 2em;
+    font-size: 1.2em;
     padding: 10px 0;
     color: whitesmoke
 }
@@ -595,13 +299,8 @@ button {
     justify-content: space-around;
 }
 
-#equipe_infos>h1 {
-    text-align: center;
-    font-size: 4em;
-}
-
 #equipe_infos>p {
-    font-size: 2.3em;
+    font-size: 1.5em;
     text-align: justify;
     box-sizing: content-box;
     padding: 10px;
@@ -641,7 +340,7 @@ button {
 
 .membro_infos h2 {
     text-align: center;
-    font-size: 3.5em;
+    font-size: 2.2em;
     margin-bottom: 10px
 }
 
@@ -714,9 +413,6 @@ button {
     height: 100%;
     position: absolute;
     cursor: pointer;
-    font-size: 3em;
-    color: white;
-    text-shadow: 1px 1px 2px black;
 }
 
 #v_left iframe {
@@ -742,11 +438,11 @@ button {
 }
 
 #video_titulo {
-    font-size: 3.5em;
+    font-size: 2.2em;
 }
 
 #video_descricao {
-    font-size: 2.2em;
+    font-size: 1.3em;
     color: dimgray;
     text-align: justify
 }
@@ -764,7 +460,7 @@ button {
     min-width: 220px;
     background-color: #61b1c4;
     color: whitesmoke;
-    font-size: 2em;
+    font-size: 1.3em;
     border-right: 4px solid #61b1c4;
     margin-bottom: 4px;
 }
@@ -795,8 +491,6 @@ button {
 }
 
 .v_other_play {
-    font-size: 2em;
-    color: whitesmoke;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -841,8 +535,6 @@ button {
 }
 
 #Artigos h1 {
-    text-align: center;
-    font-size: 5em;
     color: whitesmoke;
     position: absolute;
     top: 40px;
@@ -879,7 +571,7 @@ button {
 }
 
 .artigo h2 {
-    font-size: 2.4em;
+    font-size: 1.4em;
     padding: 5px;
     text-align: left;
     background-color: whitesmoke;
@@ -889,7 +581,7 @@ button {
 
 .artigo p {
     width: 100%;
-    font-size: 2em;
+    font-size: 1.3em;
     text-align: justify;
     height: 200px;
 }
@@ -904,7 +596,7 @@ button {
 
 #ver_todos>p {
     text-align: center;
-    font-size: 2em;
+    font-size: 1.3em;
     color: #61b1c4;
     background-color: whitesmoke;
     transition: 0.5s;
@@ -1026,13 +718,13 @@ button {
 #btnEnviar {
     height: 100%;
     width: 20%;
-    font-size: 2em;
+    font-size: 1.3em;
     font-weight: 900;
     color: transparent;
     cursor: pointer;
     margin-left: 2px;
     background-color: whitesmoke;
-    background-image: url(../img/icons/send.svg);
+    background-image: url(../img/_others/icons/send.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -1050,7 +742,7 @@ button {
 #newsletter {
     display: flex;
     margin-top: 7px;
-    font-size: 1.7em;
+    font-size: 1em;
     align-content: center;
     align-items: center
 }
@@ -1075,7 +767,7 @@ button {
 /*-------------ENDEREÇO (right side)-------------*/
 
 #c_right {
-    font-size: 2.2em;
+    font-size: 1.4em;
     padding-left: 20px;
     display: flex;
     flex-flow: column;
@@ -1133,18 +825,6 @@ button {
 }
 
 
-/*------------FOOTER-----------------*/
-
-footer {
-    background-color: black;
-    color: black;
-    font-size: 2em;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: content-box;
-    padding: 0 20px
-}
-
 
 /*------------ANIMATIONS-----------------*/
 
@@ -1174,8 +854,6 @@ footer {
         margin-right: 0
     }
 }
-
-
 
 
 /* #email_icon {
