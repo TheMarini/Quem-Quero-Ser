@@ -3,10 +3,10 @@ $(document).ready(function () {
     var first_time = false;
     $(this).on('mouseleave', function () {
         if (first_time) {
-            $('#black-cover').css('display', 'flex');
+            $('.black-cover').css('display', 'flex');
 
             $('#alert_close').on('click', function () {
-                $('#black-cover').css('display', 'none')
+                $('.black-cover').css('display', 'none')
             });
         }
         first_time = false;

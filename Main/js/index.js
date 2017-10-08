@@ -10,7 +10,7 @@ var reN = /[^0-9]/g; // |search|global match -> NOT digit
 var $img_folder;
 
 if ($(location).attr('host') == "") {
-    $img_folder = $(location).attr('href').replace("index.html", "Main/img/Index/banner/");
+    $img_folder = $(location).attr('href').replace("index.html", "img/Index/banner/");
 } else {
     $img_folder = "http://" + $(location).attr('host') + "/Main/img/Index/banner/";
 };
@@ -61,8 +61,8 @@ $(document).ready(function () {
         } else {
             //Todos em focus
             $("#menu li").each(function (index) {
-                $(this).css('background-color', $colors[index + 1]);
-                $(this).css('color', $colors[0]);
+                $(this).css('border-color', $colors[index + 1]);
+                 $(this).css('color', $colors[index + 1]);
             });
         }
     };
@@ -150,7 +150,7 @@ $(document).ready(function () {
             $menu_mobile = false
         } else {
             $(this).css('transform', 'none');
-            $("#Nav").css('margin-left', '-135px');
+            $("#Nav").css('margin-left', '-180px');
             $menu_mobile = true
         }
     });

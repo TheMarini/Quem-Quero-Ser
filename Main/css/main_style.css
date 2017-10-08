@@ -18,7 +18,7 @@ body {
 }
 
 body {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     /* font-family: 'Open Sans', sans-serif; */
 }
 
@@ -48,7 +48,7 @@ button {
     justify-content: center;
 }
 
-.nav-start>#menu {
+.nav-start > #menu {
     margin-top: -10vh;
     box-shadow: 0 0px 15px -10px rgba(0, 0, 0, 0.5);
 }
@@ -72,27 +72,60 @@ button {
 .center_child {
     display: flex;
     flex-flow: column;
+    /* Distribuição */
     align-items: center;
-    justify-content: center
+    /* Alinhar horizontal (eixo X) */
+    justify-content: center/* Alinhar vertical (eixo Y) */
 }
 
-.center_childs {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+.center_X {
+    margin: 0 auto
 }
 
-.titulo {
-    text-transform: uppercase;
-    font-size: 2.8em;
-    text-align: center
-}
 
 .aba {
     z-index: 10;
     position: absolute;
-    top: 70px;
-    left: 60px;
+    top: 90px;
+    left: 30px;
+    max-width: 500px;
+    box-sizing: content-box;
+    padding: 0px 15px;
+}
+
+.titulo {
+    text-transform: uppercase;
+    font-size: 2em;
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.desc {
+    text-align: justify;
+    margin-top: 15px;
+    font-size: 1.3em
+}
+
+.btn {
+    text-align: center;
+
+    background-color: transparent;
+    border: 2px solid;
+    font-size: 0.8em;
+    transition: 1s;
+
+    border-radius: 40px;
+    width: 150px;
+    height: 40px;
+
+    text-transform: uppercase;
+
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: scale(1.04, 1.04);
 }
 
 /*------------ONDAS (SVG)-----------------*/
@@ -103,7 +136,7 @@ button {
     margin-bottom: -5px;
     background-color: transparent;
 
-   /*  -webkit-filter: drop-shadow( -5px -5px 5px rgba(0, 0, 0, 0.5));
+    /*  -webkit-filter: drop-shadow( -5px -5px 5px rgba(0, 0, 0, 0.5));
     filter: drop-shadow( 0px 0px 5px rgba(0, 0, 0, 0.2)); */
 }
 
@@ -121,7 +154,7 @@ button {
 
 /*------------BLACK COVER-----------------*/
 
-#black-cover {
+.black-cover {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -134,7 +167,7 @@ button {
 
 #alert {
     min-height: 20vh;
-    min-width: 40vw;
+    width: 40vw;
     background-color: #f3b31b;
     color: #2e2d2c;
     position: relative;
@@ -160,35 +193,66 @@ button {
     width: 20px;
     background-color: black;
     color: white;
-    font-size: 1.5em;
+    font-size: 1em;
     border-radius: 100%;
 }
 
 #alert_infos {
-    box-sizing: content-box;
+    box-sizing: border-box;
     padding: 10px;
 }
 
-#alert_infos>h1 {
-    font-size: 4em;
-    margin-bottom: 5px
+#alert_infos > h1 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+    font-weight: 600
 }
 
-#alert_infos>p {
-    font-size: 3em;
+#alert_infos > p {
+    font-size: 1.6em;
+    font-weight: 100
 }
 
-#alert_email {
+#mc-embedded-subscribe-form {
     display: flex;
-    height: 7vh
+    height: 7vh;
 }
 
-#alert_email>input {
+.mc-field-group {
     width: 80%;
 }
 
-#alert_email>button {
+#mc-embedded-subscribe-form input:not([type="submit"]) {
+    width: 100%;
+    height: 100%
+}
+
+#mc-embedded-subscribe-form input[type="submit"] {
     width: 20%;
+    cursor: pointer
+}
+
+#mce-responses {
+    width: 100%;
+    color: whitesmoke;
+    font-size: 1.2em;
+    text-align: justify;
+    ;
+    font-weight: 100
+}
+
+#mce-success-response,
+#mce-error-response {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#mce-success-response {
+    background-color: cadetblue
+}
+
+#mce-error-response {
+    background-color: indianred;
 }
 
 /*----------NAV------------*/
@@ -202,6 +266,8 @@ button {
     z-index: 99;
     transition: background 1s;
     background-color: whitesmoke;
+    font-weight: 100;
+    font-size: 1em;
 }
 
 #Nav #home {
@@ -209,9 +275,11 @@ button {
     transition: opacity 0.7s;
     padding: 4px 0 4px 4px;
     box-sizing: border-box;
+    position: absolute;
+    top: 0
 }
 
-#Nav>div {
+#Nav > div {
     height: 5vh;
     min-height: 30px;
     margin-right: 10px;
@@ -220,20 +288,22 @@ button {
 
 #Nav ul {
     height: 100%;
-    font-size: 1.3em;
+
     display: flex;
     z-index: 2;
     background-color: whitesmoke;
     transition: 1s;
+    text-transform: uppercase
 }
 
 #Nav li {
     height: 100%;
-    width: 150px;
+    min-width: 180px;
     transition: opacity 0.5s linear, background 1s;
     box-sizing: border-box;
-    padding: 0px 15px;
-    border-top: solid 4px
+    padding: 0px 10px;
+    border-top: solid 4px;
+    text-align: center
 }
 
 #mobile-menu {
@@ -250,20 +320,13 @@ button {
     transition: transform 1s
 }
 
-@media (min-width: 900px) {
-    #Nav {
-        margin-left: 0
-    }
-}
-
 @media (max-width: 900px) {
     #Nav {
         height: 100vh;
         flex-flow: column;
-        width: auto;
         position: fixed;
-        float: none;
-        margin-left: -135px;
+        margin-left: -180px;
+        width: auto;
     }
     #Nav ul {
         flex-flow: column;
@@ -272,20 +335,20 @@ button {
     #Nav li {
         height: 20vh;
         border-top: none;
-        width: 130px;
         transition: none;
-        background-color: transparent
-    }
-    #Nav #home {
-        width: 100px;
+        border-left: solid 4px;
         padding: 0;
+        transition: background 0.7s
+    }
+    #Nav li:hover {
+        background-color: rgba(0, 0, 0, 0.1)
+    }
+
+    #Nav #home {
         display: none
     }
     #mobile-menu {
         display: flex
-    }
-    #redes {
-        display: none
     }
 }
 
