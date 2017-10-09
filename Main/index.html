@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="css/main_style.css">
     <link rel="stylesheet" href="css/index.css">
 
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
     <script src="js/jquery.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+
     <script src="js/main_script.js"></script>
     <script src="js/index.js"></script>
 
@@ -48,7 +53,7 @@
         <div id="banner_bg"></div>
         <div id="banner_fade"></div>
         <img id="logo" src="img/_others/logos/vermelho.png" alt="New Program" />
-        <p id="banner_txt">AJUDANDO JOVENS A DEFINIR SEU PROJETO DE VIDA</p>
+        <p id="banner_txt">AJUDANDO A <span>TRAÇAR SEU PROJETO DE CARREIRA</span></p>
         <a href="#Sobre" class="btn center_child">DESCUBRA</a>
     </section>
 
@@ -83,21 +88,19 @@
         <section id="Sobre">
             <section id="Manifesto">
                 <h1 class="titulo">Manifesto</h1>
-                <svg>
+                <!-- <svg>
                     <line x1="0" y1="0" x2="100%" y2="0" />
-                </svg>
+                </svg> -->
                 <section class="content">
-                    <p class="p_destaque">A escolha de uma profissão implica esboçar o projeto de sua vida: </p>
+                   <img src="img/Index/manifesto/01.png" alt="">
                     <p>
-                        envolve interesses, sonhos e olhar para o futuro. Escolher a profissão vai além do curso técnico ou superior, e qualificar a busca é essencial para facilitar a escolha. Que ferramentas usar, quais os caminhos possíveis, perceber oportunidades que se desenham à frente, encarar as dificuldades do mundo adulto e descobrir, verdadeiramente, as áreas de interesses e as próprias habilidades, são questões fundamentais neste processo. Não por acaso, metade dos universitários abandonam o curso escolhido, desperdiçando importante investimento de tempo e dinheiro. <b>E AÍ ENTRA A QUEM QUERO SER</b>.
+                        envolve <b>interesses, sonhos e olhar para o futuro</b>. Escolher a profissão vai além do curso técnico ou superior, e qualificar a busca é essencial para facilitar a escolha. <b>Que ferramentas usar, quais os caminhos possíveis, perceber oportunidades que se desenham à frente, encarar as dificuldades do mundo adulto e descobrir, verdadeiramente, as áreas de interesses e as próprias habilidades</b>, são questões fundamentais neste processo. Não por acaso, metade dos universitários abandonam o curso escolhido, desperdiçando importante investimento de tempo e dinheiro. <b>E AÍ ENTRA A QUEM QUERO SER</b>.
                     </p>
-                    <p class="p_destaque">ACREDITAMOS QUE A ESCOLHA PROFICIONAL</p>
-                    <p class="p_destaque">NÃO SIGNIFICA ABRIR MÃO DOS NOSSOS SONHOS.</p>
+                    <img src="img/Index/manifesto/02.png" alt="">
                     <p>
                         Pelo contrário! <b>Convidamos o jovem à ampliar seu campo de visão, desenvolver sua vocação e se conectar com o universo das profissões</b>. Trabalhamos com o que há de mais importante e atual em pesquisas sobre a juventude e a inserção no mercado de trabalho.
                     </p>
-                    <p class="p_destaque">AJUDAMOS A RESPONDER, DE MANEIRA NOVA E INSTIGANTE, A QUESTÃO QUE TODO MUNDO TEM:</p>
-                    <p class="p_destaque">QUEM QUERO SER?</p>
+                    <img src="img/Index/manifesto/03.png" alt="">
                 </section>
                 <!-- <p id="att">Quem Quero Ser</p> -->
             </section>
@@ -120,9 +123,16 @@
                 <p class="desc"><b>Nossa metodologia conta com 6 encontros</b>, proporcionando um caminho de descobertas divertido e prazeroso.</p>
             </div>
 
-            <div id="caminho" class="center_child">
-                <img src="img/Index/metodos/fluxograma%20(azul).png" alt="">
+            <div id="caminho">
+                <div id="caminho_controls" class="center_child"></div>
+                <div class="owl-carousel">
+                    <img src="img/Index/metodos/01.png" alt="">
+                    <img src="img/Index/metodos/02.png" alt="">
+                    <img src="img/Index/metodos/03.png" alt="">
+                    <img src="img/Index/metodos/04.png" alt="">
+                </div>
             </div>
+
 
             <svg class="onda b_r" style="fill:whitesmoke; background-color: #621e56" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
                     <path d="M0,25 C60,70 200,0 500,1 L10000,00 L0,0 Z"/>
@@ -232,21 +242,25 @@
                         <img class="artigo_thumb" src="img/Index/artigos/thumb_1.jpg" alt="">
                         <h1 class="artigo_titulo">Mostra das Profissões</h1>
                         <p class="artigo_desc">As inscrições para a Mostra das Profissões da UFMG seguem até dia 25 de agosto, que acontecerá dia 16/9, no Campus Pampulha. Os candidatos poderão participar das salas interativas e palestras de cada curso de graduação oferecido pela UFMG.</p>
+                        <a href="" class="artigo_mais center_X">Saiba mais</a>
                     </div>
                     <div class="artigo">
                         <img class="artigo_thumb" src="img/Index/artigos/thumb_2.jpg" alt="">
                         <h1 class="artigo_titulo">Meu Primeiro Negócio</h1>
                         <p class="artigo_desc">Jovens estudantes vão poder experimentar práticas em negócios, economia, gestão e operacionalização de empresas. Serão 12 semanas na companhia de monitores e voluntários, que vão ajudar a ensinar conceitos como livre iniciativa, mercado, produção e comercialização.</p>
+                        <a href="" class="artigo_mais center_X">Saiba mais</a>
                     </div>
                     <div class="artigo">
                         <img class="artigo_thumb" src="img/Index/artigos/thumb_3.jpg" alt="">
                         <h1 class="artigo_titulo">Mercado de Trabalho</h1>
                         <p class="artigo_desc">Não bastassem as mudanças cada vez mais constantes e abruptas no mercado de trabalho, quem estiver estreando deverá lidar com um ambiente de crise financeira e total instabilidade na situação econômica do país.</p>
+                        <a href="" class="artigo_mais center_X">Saiba mais</a>
                     </div>
                     <div class="artigo">
                         <img class="artigo_thumb" src="img/Index/artigos/thumb_4.jpg" alt="">
                         <h1 class="artigo_titulo">Planejamento de Estudo</h1>
                         <p class="artigo_desc">Não bastassem as mudanças cada vez mais constantes e abruptas no mercado de trabalho, quem estiver estreando deverá lidar com um ambiente de crise financeira e total instabilidade na situação econômica do país.</p>
+                        <a href="" class="artigo_mais center_X">Saiba mais</a>
                     </div>
                 </div>
 
@@ -289,7 +303,7 @@
                 </div>
 
                 <div id="c_right">
-                    <p>Ficou interessado? Quer saber mais? Mande uma mensagem que te responderemos o mais breve possível. Se preferir, pode nos ligar, estamos aqui para te ajudar.</p>
+                    <p>Ficou interessado e quer saber mais? Deixe sua mensagem ao lado que a gente entre em coontato. Se prefirir pode ligar ou nos fazer uma visita. Estamos à disposição ;)</p>
 
                     <div id="endereco">
                         <div class="redes">
@@ -306,10 +320,21 @@
             </svg>
              -->
         </section>
-        <!--     <footer id="Footer">
-       <p>Todos direitos reservados</p>
-        <p> Desenvolvido por <a href="">New Program</a></p>
-    </footer> -->
+
+        <section id="Parceiros">
+            <h1 class="titulo">PARCEIROS</h1>
+            <div id="parceirosContainer">
+                <img src="img/Index/parceiros/ufmg.png" alt="">
+                <img src="img/Index/parceiros/ufmg.png" alt="">
+                <img src="img/Index/parceiros/ufmg.png" alt="">
+                <img src="img/Index/parceiros/ufmg.png" alt="">
+                <img src="img/Index/parceiros/ufmg.png" alt="">
+            </div>
+        </section>
+        <footer id="Footer" class="center_child">
+            <p>© 2017 Quem Quero Ser</p>
+            <p> Desenvolvido por <a href="">New Program</a></p>
+        </footer>
     </section>
 
 </body>
@@ -332,6 +357,7 @@
         });
     }(jQuery));
     var $mcj = jQuery.noConflict(true);
+
 </script>
 
 </html>

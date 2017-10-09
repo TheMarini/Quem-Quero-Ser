@@ -355,11 +355,11 @@ button {
 /*------------FOOTER-----------------*/
 
 footer {
-    background-color: black;
+    background-color: gainsboro;
     color: black;
-    font-size: 2em;
+    font-size: 0.9em;
     display: flex;
     justify-content: space-between;
     box-sizing: content-box;
-    padding: 0 20px
+    padding: 12px 0
 }

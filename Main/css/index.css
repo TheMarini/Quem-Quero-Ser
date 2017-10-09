@@ -24,7 +24,7 @@
 
 #logo {
     z-index: 2;
-    width: 35vw;
+    width: 32vw;
     min-width: 300px;
     animation: fade ease-in 1.5s;
 }
@@ -33,11 +33,17 @@
     z-index: 2;
     text-transform: uppercase;
     color: white;
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: 900;
     margin: 50px 0;
-    letter-spacing: 2px
+    letter-spacing: 2px;
+    text-align: center;
 }
+
+/* #Banner > p > span{
+    color: white;text-shadow: 2px 2px dimgray;
+    text-decoration: underline
+} */
 
 #Banner > .btn {
     z-index: 2;
@@ -71,26 +77,30 @@
 
 #Manifesto > h1 {
     color: #2e2d2c;
-    font-size: 2.8em;
-    text-align: center
+    font-size: 1.8em;
+    text-align: center;
+    /* text-shadow: 1px 1px teal */
+
+    padding: 25px 0
 }
 
 #Manifesto > svg {
     height: 5px;
     width: 100%;
+
+    /* -webkit-filter: drop-shadow( 1px 1px teal));
+    filter: drop-shadow( 1px 1px teal); */
 }
 
 #Manifesto > svg > line {
     stroke: #2e2d2c;
-    stroke-width: 5
+    stroke-width: 5;
+
 }
 
 #Manifesto .content {
     width: 100%;
     overflow: hidden;
-    /*
-    box-sizing: content-box;
-    padding: 10px 50px */
 }
 
 #Manifesto .content > p {
@@ -99,46 +109,8 @@
     color: whitesmoke
 }
 
-#Manifesto .content > p b {}
-
-#Manifesto .content > .p_destaque {
-    font-weight: 900;
-    font-size: 2em;
-    letter-spacing: 10px;
-    text-align: center;
-    margin: 12px 0;
-    text-transform: uppercase;
-    color: #2e2d2c
-}
-
-#Manifesto .p_destaque:first-child {
-    font-size: 1.5em;
-    text-align: justify;
-}
-
-#Manifesto .p_destaque:nth-child(3),
-#Manifesto .p_destaque:nth-child(6),
-#Manifesto .p_destaque:nth-child(1) {
-    font-size: 1.2em;
-    text-align: justify
-}
-
-#Manifesto .p_destaque:nth-child(5) {
-    font-size: 2em;
-}
-
-#Manifesto .p_destaque:last-child {
-    font-size: 3em;
-}
-
-#Manifesto #content > p > img {
+#Manifesto .content > img {
     width: 100%;
-}
-
-#m_right > img:first-child {
-    width: 60%;
-    float: left;
-    padding-right: 22px
 }
 
 @media (max-width: 900px) {
@@ -176,23 +148,56 @@
 /*------------MÉTODOS-----------------*/
 
 #Metodos {
-    position: relative
+    position: relative;
+
 }
 
 #Metodos .aba {
-    color: whitesmoke
+    color: whitesmoke;
+
+    margin-top: 30px;
+    margin-left: 7vw;
 }
 
 #caminho {
-    padding-top: 60px;
+    padding-top: 130px;
     background-color: #621e56;
+    position: relative
 }
 
-#caminho > img {
-    width: 80vw;
-    margin-top: 20px;
+.owl-carousel{
+    cursor: all-scroll
 }
 
+#caminho_controls{
+    height: 100%;
+    width: 100%;
+    flex-flow: row;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    padding: 0 5vw;
+
+    color: #621e56;
+    font-size: 1.8em;
+    font-weight: bold;
+
+    position: absolute;
+}
+
+#caminho_controls>div {
+	cursor: pointer;
+    background-color: whitesmoke;
+    border-radius: 100%;
+
+    padding: 2px 12px;
+    box-shadow: 3px 3px dimgray;
+    z-index: 2
+}
+
+#caminho_controls>div:active{
+    box-shadow: none
+}
 
 /*------------MÓDULOS-----------------*/
 
@@ -200,7 +205,7 @@
     width: 100%;
     background-color: whitesmoke;
     box-sizing: border-box;
-    padding: 0 20%
+    padding: 0 18vw
 }
 
 #Modulos > h1 {
@@ -327,7 +332,7 @@
 
 /*------------RECOMENDADOS-----------------*/
 
-#Recomendados .titulo {}
+
 
 /*------------VIDEO-----------------*/
 
@@ -335,6 +340,7 @@
     font-weight: 100;
     box-sizing: content-box;
     padding: 0 10vw;
+    padding-bottom: 80px;
     background-color: whitesmoke;
 }
 
@@ -498,38 +504,53 @@
 }
 
 .artigo {
-    cursor: pointer;
     transition: 0.5s;
     max-width: 250px;
-    overflow: hidden;
     color: white;
     text-align: center;
 }
 
-
 .artigo img {
-    height: 200px;
+    height: 190px;
     width: 100%;
     object-fit: cover;
     background-color: black;
 }
 
 .artigo h1 {
-    font-size: 1.4em;
-    padding: 5px;
+    font-size: 1.1em;
     text-align: center;
     color: white;
-    margin: -3px 0 5px 0;
+    margin: 2px 0 15px 0
 }
 
 .artigo p {
     width: 100%;
     font-size: 0.9em;
     text-align: justify;
-    height: 200px;
+
+    height: 180px;
+}
+
+.artigo_mais {
+    margin-top: 5px;
+	color: #61b1c4;
+    box-sizing: border-box;
+    padding: 2px 18px;
+    background-color: white;
+    font-size: 0.9em;
+    text-align: center;
+
+    cursor: pointer;
+    transition: 0.8s
+}
+
+.artigo_mais:hover {
+	padding: 2px 35%
 }
 
 #Artigos > .btn{
+    margin-top: 60px;
     color: #2e2d2c;
 }
 #Artigos > .btn:hover {
@@ -559,9 +580,8 @@
 
 #Contato {
     width: 100%;
-    /*box-shadow: 0 3px 0 10px rgba(0, 0, 0, 0.5);*/
     color: whitesmoke;
-    position: relative
+    position: relative;
 }
 
 #Contato>h1 {
@@ -572,9 +592,11 @@
 #contatoContainer {
     display: flex;
     box-sizing: content-box;
-    padding: 0 10vw;
+    padding: 80px 10vw;
+    padding-bottom: 100px;
 
     background-color: #2e2d2c;
+
 }
 
 #contatoContainer > div {
@@ -593,7 +615,6 @@
 } */
 
 #form {
-    box-sizing: content-box;
     z-index: 10;
 }
 
@@ -642,8 +663,8 @@
     color: transparent;
     cursor: pointer;
     margin-left: 2px;
-    background-color: whitesmoke;
-    background-image: url(../img/_others/icons/send.svg);
+    background-color: dimgray;
+    /* background-image: url(../img/_others/icons/send.svg); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60%;
@@ -651,7 +672,7 @@
 }
 
 #btnEnviar:hover {
-    color: #2e2d2c;
+    color: whitesmoke;
 }
 
 #btnEnviar:active {
@@ -682,20 +703,18 @@
     display: none
 }
 
-
 /*-------------ENDEREÇO (right side)-------------*/
 
 #c_right {
-    font-size: 1.4em;
-    padding-left: 20px;
+    font-size: 1.1em;
+    margin-left: 50px;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
 }
 
-#c_right > p {
-    box-sizing: border-box;
-    text-align: justify
+#endereco {
+	font-size: 0.9em
 }
 
 .redes {
@@ -705,8 +724,7 @@
 .redes img {
     height: 5vh;
     min-height: 30px;
-    margin-left: 100px;
-    background-color: wheat;
+    background-color: white;
     border-radius: 100%
 }
 
@@ -738,6 +756,26 @@
     }
 }
 
+/*-------------PARCEIROS-------------*/
+
+#Parceiros {
+    padding: 30px 10vw;
+
+    display: flex;
+
+    color: #2e2d2c
+}
+
+#parceirosContainer {
+    margin-left: 20px;
+    display: table;
+    justify-content: space-around;
+    align-content: space-around
+}
+
+#parceirosContainer>img {
+	max-width: 180px;
+}
 
 
 /*------------ANIMATIONS-----------------*/
