@@ -35,7 +35,7 @@
     color: white;
     font-size: 1.8em;
     font-weight: 900;
-    margin: 50px 0;
+    margin: 10vh 0;
     letter-spacing: 2px;
     text-align: center;
 }
@@ -69,10 +69,14 @@
 
 #Manifesto {
     padding-top: 9vh;
+    /*  padding: 9vh 20vw 0px 20vw; */
     box-sizing: content-box;
     background: #e54347;
     position: relative;
-    transition: padding 0.5s
+    /* transition: padding 0.5s; */
+    font-size: 1.2em;
+    text-align: justify;
+    color: whitesmoke
 }
 
 #Manifesto > h1 {
@@ -80,7 +84,6 @@
     font-size: 1.8em;
     text-align: center;
     /* text-shadow: 1px 1px teal */
-
     padding: 25px 0
 }
 
@@ -98,16 +101,83 @@
 
 }
 
-#Manifesto .container {
-    width: 100%;
-    box-sizing: border-box;
+#Manifesto .container > p {
+    max-width: 810px
 }
 
-#Manifesto .container > img {
-    max-width: 100%;
+#Manifesto .container > p:not(.p_destaque) {
+    padding: 18px 0;
 }
 
+#Manifesto .container > .p_destaque {
+    font-weight: 900;
+    font-size: 1.2em;
+    letter-spacing: 0.7vw;
+    text-align: center;
+    text-transform: uppercase;
+}
 
+#Manifesto .p_destaque:nth-child(1) {
+    font-size: 1.2em;
+}
+
+#Manifesto .p_destaque:nth-child(3) {
+    font-size: 0.9em;
+}
+
+#Manifesto .p_destaque:nth-child(4) {
+    font-size: 2em;
+}
+
+#Manifesto .p_destaque:nth-child(6) {
+    font-size: 0.9em;
+}
+
+#Manifesto .p_destaque:nth-child(7) {
+    font-size: 1.2em;
+}
+
+#Manifesto .p_destaque:last-child {
+    font-size: 3em;
+}
+
+@media (max-width: 900px) {
+    #Manifesto {
+        padding: 9vh 5vw 0px 5vw;
+    }
+}
+
+@media (max-width: 500px) {
+    #Manifesto .container > .p_destaque {
+        text-align: justify;
+    }
+}
+
+/* @media (max-width: 900px) {
+    breakpoint
+    #Manifesto {
+        padding: 9vh 15vw 0px 15vw;
+    }
+
+    #Manifesto .p_destaque:nth-child(n) {
+        text-align: justify
+    }
+}
+
+@media (max-width: 600px) {
+    breakpoint
+    #Manifesto {
+        padding: 9vh 5vw 0px 5vw;
+    }
+    #Manifesto .p_destaque:nth-child(n) {
+        text-align: justify
+    }
+    #Manifesto .p_destaque:last-child {
+        text-align: left
+    }
+}
+
+ */
 
 /*------------NUVEM-----------------*/
 
@@ -141,11 +211,11 @@
     position: relative
 }
 
-.owl-carousel{
+.owl-carousel {
     cursor: all-scroll
 }
 
-#caminho_controls{
+#caminho_controls {
     height: 100%;
     width: 100%;
     flex-flow: row;
@@ -161,8 +231,8 @@
     position: absolute;
 }
 
-#caminho_controls>div {
-	cursor: pointer;
+#caminho_controls > div {
+    cursor: pointer;
     background-color: whitesmoke;
     border-radius: 100%;
 
@@ -171,23 +241,24 @@
     z-index: 2
 }
 
-#caminho_controls>div:active{
+#caminho_controls > div:active {
     box-shadow: none
 }
 
 /*------------MÓDULOS-----------------*/
 
 #Modulos {
-    width: 100%;
     background-color: whitesmoke;
-    box-sizing: border-box;
-    padding: 0 19vw;
+    /* padding: 0 19vw; */
     text-align: justify;
-
     font-size: 1.1em;
 }
 
-#Modulos > h1 {
+#Modulos > .wrapper {
+	max-width: 800px
+}
+
+#Modulos > .wrapper > h1 {
     color: #621e56;
 
     text-align: center;
@@ -200,11 +271,11 @@
 }
 
 .single_modulo > img {
-    width: 15vw;
+    width: 200px;
     padding-right: 14px
 }
 
-#Modulos > .container {
+#Modulos > .wrapper> .container {
     display: flex;
     text-align: center;
     margin-top: 15px;
@@ -216,7 +287,7 @@
 }
 
 .modulo > img {
-    width: 9vw
+    width: 120px
 }
 
 .modulo > h1 {
@@ -299,28 +370,29 @@
 
 /*------------RECOMENDADOS-----------------*/
 
-
+.wrapper {
+    max-width: 1100px;
+    padding: 0 2vw;
+    margin: auto
+}
 
 /*------------VIDEO-----------------*/
 
 #Videos {
     font-weight: 100;
-    box-sizing: content-box;
-    padding: 0 10vw;
     padding-bottom: 80px;
     background-color: whitesmoke;
 }
 
-#Videos h1 {
+#Videos > .wrapper h1 {
     color: #61b1c4;
 }
 
-#Videos > h1 {
+#Videos > .wrapper > h1 {
     padding: 20px 0 50px 0
 }
 
-
-#Videos > .container {
+#Videos > .wrapper > .container {
     margin: auto;
     display: flex;
     min-height: 60vh;
@@ -359,6 +431,10 @@
     margin-left: 10px
 }
 
+#video_infos {
+    margin-left: 10px
+}
+
 #video_titulo {
     font-size: 1.5em;
     text-transform: uppercase
@@ -367,7 +443,7 @@
 #video_descricao {
     font-size: 1.1em;
     color: dimgray;
-    text-align: justify
+    text-align: justify;
 }
 
 #outros_videos {
@@ -425,8 +501,8 @@
     height: 35px
 }
 
-@media (max-width: 900px) {
-    /*breakpoint*/
+/* @media (max-width: 900px) {
+    breakpoint
     #Videos {
         display: flex;
         flex-flow: column;
@@ -442,19 +518,14 @@
         height: 70vh;
         width: 100%;
     }
-}
-
+} */
 
 /*------------ARTIGOS-----------------*/
 
 #Artigos {
     background-color: #61b1c4;
-    display: flex;
-    flex-flow: column;
-    position: relative;
     padding-bottom: 150px;
     margin-bottom: -150px;
-
 }
 
 #Artigos > h1 {
@@ -462,12 +533,9 @@
     margin: -50px 0px 50px 10vw
 }
 
-#Artigos > .container {
+#Artigos > .wrapper > .container {
     display: flex;
     justify-content: space-between;
-
-    box-sizing: border-box;
-    padding: 0 10vw;
 }
 
 .artigo {
@@ -501,7 +569,7 @@
 
 .artigo_mais {
     margin-top: 5px;
-	color: #61b1c4;
+    color: #61b1c4;
     box-sizing: border-box;
     padding: 2px 18px;
     background-color: white;
@@ -513,21 +581,22 @@
 }
 
 .artigo_mais:hover {
-	padding: 2px 35%
+    padding: 2px 35%
 }
 
-#Artigos > .btn{
+#Artigos > .wrapper > .btn {
     margin-top: 60px;
     color: #2e2d2c;
 }
-#Artigos > .btn:hover {
+
+#Artigos > .wrapper > .btn:hover {
     background-color: #2e2d2c;
     color: white;
 }
 
-
+/*
 @media (max-width: 700px) {
-    /*breakpoint*/
+    breakpoint
     #Artigos > .container {
         flex-flow: column;
         width: 100%;
@@ -540,33 +609,31 @@
     #ver_todos > svg {
         width: 120px;
     }
-}
-
+} */
 
 /*------------CONTATO-----------------*/
 
 #Contato {
-    width: 100%;
     color: whitesmoke;
-    position: relative;
-}
 
-#Contato>h1 {
-    padding-left: 10vw;
     background-color: #2e2d2c;
 }
 
-#Contato > .container {
+#Contato > .wrapper {
+    background-color: #2e2d2c;
+}
+
+#Contato > .wrapper > .container {
     display: flex;
     box-sizing: content-box;
-    padding: 80px 10vw;
+    padding: 80px 0;
     padding-bottom: 100px;
 
     background-color: #2e2d2c;
 
 }
 
-#Contato > .container > div {
+#Contato > .wrapper > .container > div {
     width: 50%
 }
 
@@ -681,7 +748,7 @@
 }
 
 #endereco {
-	font-size: 0.9em
+    font-size: 0.9em
 }
 
 .redes {
@@ -695,6 +762,7 @@
     border-radius: 100%
 }
 
+/*
 @media (max-width: 900px) {
     #Contato > .container {
         flex-flow: column-reverse;
@@ -721,27 +789,25 @@
         width: 100%;
         text-align: center
     }
-}
+} */
 
 /*-------------PARCEIROS-------------*/
 
 #Parceiros {
-    padding: 30px 10vw;
-
-    display: flex;
-
-    color: #2e2d2c
+    padding: 30px 0;
+    color: #2e2d2c;
 }
 
-#Parceiros > .container {
+#Parceiros > .wrapper {
+	display: flex;
+}
+
+#Parceiros > .wrapper > .container {
     margin-left: 20px;
-    display: table;
-    justify-content: space-around;
-    align-content: space-around
 }
 
-#Parceiros > .container>img {
-	max-width: 180px;
+#Parceiros > .wrapper > .container > img {
+    max-width: 180px;
 }
 
 
