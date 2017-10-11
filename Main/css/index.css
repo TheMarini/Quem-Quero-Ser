@@ -68,7 +68,7 @@
 /*------------MANIFESTO-----------------*/
 
 #Manifesto {
-    padding: 9vh 20vw 0px 20vw;
+    padding-top: 9vh;
     box-sizing: content-box;
     background: #e54347;
     position: relative;
@@ -98,15 +98,16 @@
 
 }
 
-#Manifesto .content {
+#Manifesto .container {
     width: 100%;
-    overflow: hidden;
+    box-sizing: border-box;
 }
 
-#Manifesto .content > img {
-    width: 100%;
-    height: 90vh
+#Manifesto .container > img {
+    max-width: 100%;
 }
+
+
 
 /*------------NUVEM-----------------*/
 
