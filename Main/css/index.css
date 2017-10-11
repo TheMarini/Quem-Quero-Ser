@@ -103,32 +103,9 @@
     overflow: hidden;
 }
 
-#Manifesto .content > p {
-    font-size: 1.2em;
-    text-align: justify;
-    color: whitesmoke
-}
-
 #Manifesto .content > img {
     width: 100%;
-}
-
-@media (max-width: 900px) {
-    /*breakpoint*/
-    #Manifesto {
-        padding: 9vh 15vw 0px 15vw;
-    }
-}
-
-@media (max-width: 600px) {
-    /*breakpoint*/
-    #Manifesto {
-        padding: 9vh 5vw 0px 5vw;
-    }
-    #Manifesto .p_destaque:nth-child(n) {
-        text-align: left
-    }
-
+    height: 90vh
 }
 
 /*------------NUVEM-----------------*/
@@ -154,13 +131,11 @@
 
 #Metodos .aba {
     color: whitesmoke;
-
-    margin-top: 30px;
-    margin-left: 7vw;
+    background-color: #621e56;
+    padding-left: 7vw;
 }
 
 #caminho {
-    padding-top: 130px;
     background-color: #621e56;
     position: relative
 }
@@ -205,7 +180,10 @@
     width: 100%;
     background-color: whitesmoke;
     box-sizing: border-box;
-    padding: 0 18vw
+    padding: 0 19vw;
+    text-align: justify;
+
+    font-size: 1.1em;
 }
 
 #Modulos > h1 {
@@ -215,41 +193,37 @@
     padding: 10px 0
 }
 
-#Modulos p {
-    font-size: 1.1em;
-}
-
 .single_modulo {
     display: flex;
     align-items: center;
-    text-align: justify
 }
 
 .single_modulo > img {
-    width: 18vw
+    width: 15vw;
+    padding-right: 14px
 }
 
-.modulosContainer {
+#Modulos > .container {
     display: flex;
     text-align: center;
-    margin-top: 15px
+    margin-top: 15px;
 }
 
 .modulo {
     box-sizing: content-box;
-    padding: 10px;
+    padding: 15px;
 }
 
 .modulo > img {
-    width: 10vw
+    width: 9vw
 }
 
 .modulo > h1 {
-    font-size: 1.3em
+    font-size: 1.2em
 }
 
 .modulo > p {
-    margin-top: 20px
+    margin-top: 20px;
 }
 
 /*------------EQUIPE-----------------*/
@@ -259,21 +233,13 @@
     position: relative;
 
     background-color: #f3b31b;
-
-
-    display: flex;
-    flex-flow: column;
-    align-items: flex-end;
-    justify-content: center;
 }
 
 #Equipe .aba {
     color: #2e2d2c;
-    top: 180px;
-    left: 80px
 }
 
-#equipeContainer {
+#Equipe > .container > .container {
     background-color: #f3b31b;
     background-color: rebeccapurple;
 
@@ -283,7 +249,7 @@
     margin-right: 80px
 }
 
-#equipe_controls {
+#membros_controls {
     background-color: red;
     position: absolute;
     width: 100%;
@@ -294,7 +260,7 @@
     padding: 0 8vw
 }
 
-#equipe_controls > p {
+#membros_controls > p {
     cursor: pointer
 }
 
@@ -353,7 +319,7 @@
 }
 
 
-#videoContainer {
+#Videos > .container {
     margin: auto;
     display: flex;
     min-height: 60vh;
@@ -422,7 +388,7 @@
     text-transform: uppercase
 }
 
-#v_othersContainer {
+#outros_videos > .container {
     height: 15vh;
     display: flex;
 }
@@ -495,7 +461,7 @@
     margin: -50px 0px 50px 10vw
 }
 
-#artigosContainer {
+#Artigos > .container {
     display: flex;
     justify-content: space-between;
 
@@ -561,11 +527,11 @@
 
 @media (max-width: 700px) {
     /*breakpoint*/
-    #artigosContainer {
+    #Artigos > .container {
         flex-flow: column;
         width: 100%;
     }
-    #artigosContainer > div {
+    #Artigos > .container > div {
         width: 100%;
         margin: 10px 0;
         max-width: inherit;
@@ -589,7 +555,7 @@
     background-color: #2e2d2c;
 }
 
-#contatoContainer {
+#Contato > .container {
     display: flex;
     box-sizing: content-box;
     padding: 80px 10vw;
@@ -599,7 +565,7 @@
 
 }
 
-#contatoContainer > div {
+#Contato > .container > div {
     width: 50%
 }
 
@@ -729,11 +695,11 @@
 }
 
 @media (max-width: 900px) {
-    #contatoContainer {
+    #Contato > .container {
         flex-flow: column-reverse;
         padding: 10px 30px;
     }
-    #contatoContainer > div {
+    #Contato > .container > div {
         width: 100%
     }
     #c_right {
@@ -746,7 +712,7 @@
 }
 
 @media (max-width: 500px) {
-    #contatoContainer {
+    #Contato > .container {
         padding: 10px 8px;
     }
     #Contato h1 {
@@ -766,14 +732,14 @@
     color: #2e2d2c
 }
 
-#parceirosContainer {
+#Parceiros > .container {
     margin-left: 20px;
     display: table;
     justify-content: space-around;
     align-content: space-around
 }
 
-#parceirosContainer>img {
+#Parceiros > .container>img {
 	max-width: 180px;
 }
 

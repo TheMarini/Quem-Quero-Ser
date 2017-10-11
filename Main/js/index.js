@@ -92,20 +92,12 @@ $(document).ready(function () {
         }
     }
 
-    var $b_txt = false;
     //Banner Background Images
     function nextBackground() {
         $('#banner_bg').fadeTo('slow', 0, function () {
             $currentBanner++;
             $currentBanner = $currentBanner % $banners.length; //Ao chegar o nº total zera novamente (módulo de 21 é 0)
             $("#banner_bg").css('background-image', "url(img/Index/banner/" + $banners[$currentBanner] + ")");
-            if ($b_txt) {
-                $("#banner_txt>span").html("TRAÇAR SEU PROJETO DE CARREIRA");
-                $b_txt = false;
-            } else {
-                $("#banner_txt>span").html("ESCOLHER BEM A SUA PROFISSÃO");
-                $b_txt = true;
-            }
         }).fadeTo('slow', 1);
     }
     setInterval(nextBackground, 8000);
