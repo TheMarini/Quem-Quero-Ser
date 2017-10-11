@@ -80,7 +80,6 @@
     font-size: 1.8em;
     text-align: center;
     /* text-shadow: 1px 1px teal */
-
     padding: 25px 0
 }
 
@@ -99,14 +98,20 @@
 }
 
 #Manifesto .container {
-    width: 100%;
     box-sizing: border-box;
 }
 
 #Manifesto .container > img {
-    max-width: 100%;
+    max-width: 900px;
 }
 
+
+@media (max-width: 900px) {
+    /*breakpoint*/
+    #Manifesto .container > img {
+        width:100%;
+    }
+}
 
 
 /*------------NUVEM-----------------*/
@@ -141,11 +146,11 @@
     position: relative
 }
 
-.owl-carousel{
+.owl-carousel {
     cursor: all-scroll
 }
 
-#caminho_controls{
+#caminho_controls {
     height: 100%;
     width: 100%;
     flex-flow: row;
@@ -161,8 +166,8 @@
     position: absolute;
 }
 
-#caminho_controls>div {
-	cursor: pointer;
+#caminho_controls > div {
+    cursor: pointer;
     background-color: whitesmoke;
     border-radius: 100%;
 
@@ -171,7 +176,7 @@
     z-index: 2
 }
 
-#caminho_controls>div:active{
+#caminho_controls > div:active {
     box-shadow: none
 }
 
@@ -298,8 +303,6 @@
 }
 
 /*------------RECOMENDADOS-----------------*/
-
-
 
 /*------------VIDEO-----------------*/
 
@@ -501,7 +504,7 @@
 
 .artigo_mais {
     margin-top: 5px;
-	color: #61b1c4;
+    color: #61b1c4;
     box-sizing: border-box;
     padding: 2px 18px;
     background-color: white;
@@ -513,13 +516,14 @@
 }
 
 .artigo_mais:hover {
-	padding: 2px 35%
+    padding: 2px 35%
 }
 
-#Artigos > .btn{
+#Artigos > .btn {
     margin-top: 60px;
     color: #2e2d2c;
 }
+
 #Artigos > .btn:hover {
     background-color: #2e2d2c;
     color: white;
@@ -551,7 +555,7 @@
     position: relative;
 }
 
-#Contato>h1 {
+#Contato > h1 {
     padding-left: 10vw;
     background-color: #2e2d2c;
 }
@@ -681,7 +685,7 @@
 }
 
 #endereco {
-	font-size: 0.9em
+    font-size: 0.9em
 }
 
 .redes {
@@ -740,8 +744,8 @@
     align-content: space-around
 }
 
-#Parceiros > .container>img {
-	max-width: 180px;
+#Parceiros > .container > img {
+    max-width: 180px;
 }
 
 
