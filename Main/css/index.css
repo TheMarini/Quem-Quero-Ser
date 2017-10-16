@@ -45,13 +45,13 @@
     text-decoration: underline
 } */
 
-#Banner > .btn {
+#Banner > ._btn {
     z-index: 2;
     border-color: white;
     color: white;
 }
 
-#Banner > .btn:hover {
+#Banner > ._btn:hover {
     background-color: white;
     color: black
 }
@@ -98,7 +98,7 @@
     padding: 25px 0
 }
 
-#Manifesto .wrapper {
+#Manifesto ._wrapper {
     max-width: 810px;
 }
 
@@ -195,15 +195,11 @@
 /*------------NUVEM-----------------*/
 
 #Nuvem {
-    margin: -150px 0;
-    width: 100%;
-    min-height: 90vh;
-    padding: 80px 0 80px 0;
     background-color: whitesmoke;
 }
 
 #Nuvem img {
-    width: 80vw;
+    width: 90vw;
 }
 
 /*------------MÉTODOS-----------------*/
@@ -224,38 +220,11 @@
     position: relative
 }
 
-.owl-carousel {
-    cursor: all-scroll
-}
-
-#caminho_controls {
-    height: 100%;
-    width: 100%;
-    flex-flow: row;
-    justify-content: space-between;
+#caminho .owl-nav {
+    color: #621e56;
 
     box-sizing: border-box;
     padding: 0 5vw;
-
-    color: #621e56;
-    font-size: 1.8em;
-    font-weight: bold;
-
-    position: absolute;
-}
-
-#caminho_controls > div {
-    cursor: pointer;
-    background-color: whitesmoke;
-    border-radius: 100%;
-
-    padding: 2px 12px;
-    box-shadow: 3px 3px dimgray;
-    z-index: 2
-}
-
-#caminho_controls > div:active {
-    box-shadow: none
 }
 
 /*------------MÓDULOS-----------------*/
@@ -267,11 +236,11 @@
     font-size: 1.1em;
 }
 
-#Modulos > .wrapper {
+#Modulos > ._wrapper {
     max-width: 800px
 }
 
-#Modulos > .wrapper > h1 {
+#Modulos > ._wrapper > h1 {
     color: #621e56;
 
     text-align: center;
@@ -288,7 +257,7 @@
     padding-right: 14px
 }
 
-#Modulos > .wrapper > .container {
+#Modulos > ._wrapper > .container {
     display: flex;
     text-align: center;
     margin-top: 15px;
@@ -316,61 +285,54 @@
 #Equipe {
     color: whitesmoke;
     position: relative;
-
+    background-position: center;
     background-color: #f3b31b;
 }
 
 #Equipe .aba {
     color: #2e2d2c;
+    max-width: 450px
 }
 
-#Equipe > .container > .container {
-    background-color: #f3b31b;
-    background-color: rebeccapurple;
-
-    position: relative;
-    width: 40vw;
-
-    margin-right: 80px
+#Equipe ._desc {
+    margin-top: 20px;
 }
 
-#membros_controls {
-    background-color: red;
-    position: absolute;
-    width: 100%;
-
+#Equipe > ._wrapper {
     display: flex;
     justify-content: space-between;
+    align-content: space-between;
+}
+
+
+#Equipe > ._wrapper > div:last-child {
+    max-width: 450px;
+}
+
+#Equipe .owl-carousel {
+    width: 40vw;
+}
+
+#Equipe .owl-nav {
+    color: #f3b31b;
+
     box-sizing: border-box;
-    padding: 0 8vw
-}
+    padding: 0 7vw;
 
-#membros_controls > p {
-    cursor: pointer
+    height: 52%;
 }
-
 
 .membro {
     text-align: center;
+    max-width: 400px;
+    margin: 0 auto
 }
 
 .membro > img {
     height: 150px;
-    width: 150px;
+    max-width: 150px;
     border-radius: 100%;
     object-fit: cover
-}
-
-.membro > img::before {
-    content: "hello";
-    font-size: 1em;
-    color: white
-}
-
-.membro > img::after {
-    content: "hello";
-    font-size: 1em;
-    color: white
 }
 
 .membro > h1 {
@@ -381,25 +343,41 @@
     margin-top: 20px
 }
 
+@media (max-width: 1000px) {
+    #Equipe .owl-nav {
+        padding: 0 4vw;
+    }
+}
+
+@media (max-width: 500px) {
+    #Equipe .owl-nav {
+        padding: 0 2vw;
+    }
+
+    .membro > p {
+        text-align: justify
+    }
+}
+
 /*------------RECOMENDADOS-----------------*/
 
 /*------------VIDEO-----------------*/
 
 #Videos {
     font-weight: 100;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
     background-color: whitesmoke;
 }
 
-#Videos > .wrapper h1 {
+#Videos > ._wrapper h1 {
     color: #61b1c4;
 }
 
-#Videos > .wrapper > h1 {
+#Videos > ._wrapper > h1 {
     padding: 20px 0 50px 0
 }
 
-#Videos > .wrapper > .container {
+#Videos > ._wrapper > .container {
     margin: auto;
     display: flex;
     min-height: 60vh;
@@ -460,15 +438,14 @@
 }
 
 #outros_videos > p {
-    padding: 4px 2px;
+    padding: 4px 0px;
 
     text-align: center;
-    width: 18vw;
-    min-width: 220px;
+    width: 250px;
     background-color: #61b1c4;
     color: whitesmoke;
-    font-size: 1em;
-    margin-bottom: 4px;
+    font-size: 0.9em;
+    margin-bottom: 8px;
     text-transform: uppercase
 }
 
@@ -479,9 +456,8 @@
 
 .v_other {
     height: 100%;
-    width: 12.8vw;
-    min-width: 133px;
-    margin-right: 4px;
+    width: 176px;
+    margin-right: 8px;
     cursor: pointer;
     position: relative
 }
@@ -508,14 +484,13 @@
     height: 35px
 }
 
-/* @media (max-width: 900px) {
-    breakpoint
-    #Videos {
+@media (max-width: 900px) {
+    #Videos ._wrapper > .container {
         display: flex;
         flex-flow: column;
         width: 100%;
     }
-    #Videos > div {
+    #Videos ._wrapper > .container > div {
         width: 100%;
     }
     #v_left {
@@ -525,7 +500,17 @@
         height: 70vh;
         width: 100%;
     }
-} */
+
+    #v_right {
+        border-left: 4px solid gainsboro;
+        padding: 0;
+        margin: 10px 0
+    }
+
+    #video_infos {
+        margin-left: 10px
+    }
+}
 
 /*------------ARTIGOS-----------------*/
 
@@ -535,12 +520,12 @@
     margin-bottom: -150px;
 }
 
-#Artigos > h1 {
+#Artigos > ._wrapper > h1 {
     color: #2e2d2c;
-    margin: -50px 0px 50px 10vw
+    margin: -40px 0px 50px 0
 }
 
-#Artigos > .wrapper > .container {
+#Artigos .container {
     display: flex;
     justify-content: space-between;
 }
@@ -572,13 +557,14 @@
     text-align: justify;
 
     height: 180px;
+    overflow: hidden;
 }
 
 .artigo_mais {
     margin-top: 5px;
     color: #61b1c4;
     box-sizing: border-box;
-    padding: 2px 18px;
+    padding: 3px 18px;
     background-color: white;
     font-size: 0.9em;
     text-align: center;
@@ -588,31 +574,39 @@
 }
 
 .artigo_mais:hover {
-    padding: 2px 35%
+    color: white;
+    background-color: #2e2d2c;
 }
 
-#Artigos > .wrapper > .btn {
+#Artigos > ._wrapper > ._btn {
     margin-top: 60px;
     color: #2e2d2c;
 }
 
+#Artigos > ._wrapper > ._btn:hover {
     background-color: #2e2d2c;
     color: white;
 }
 
-
-@media (max-width: 700px) {
-    #Artigos > .wrapper > .container {
+@media (max-width: 1150px) {
+    #Artigos .container {
         flex-flow: column;
         width: 100%;
     }
-    #Artigos > .wrapper > .container > div {
-        width: 100%;
-        margin: 10px 0;
-        max-width: inherit;
+    .artigo {
+        max-width: 600px;
+        margin: 10px auto;
+    }
+    .artigo p {
+        height: auto;
+        padding-bottom: 12px
     }
     #ver_todos > svg {
         width: 120px;
+    }
+
+    #Artigos > ._wrapper > h1 {
+        margin: 0 0 15px 0
     }
 }
 
@@ -624,13 +618,9 @@
     background-color: #2e2d2c;
 }
 
-#Contato > .wrapper {
-    background-color: #2e2d2c;
-}
-
-#Contato > .wrapper > .container {
+#Contato .container {
     display: flex;
-    box-sizing: content-box;
+    box-sizing: border-box;
     padding: 80px 0;
     padding-bottom: 100px;
 
@@ -638,7 +628,7 @@
 
 }
 
-#Contato > .wrapper > .container > div {
+#Contato .container > div {
     width: 50%
 }
 
@@ -721,7 +711,7 @@
 #newsletter {
     display: flex;
     margin-top: 7px;
-    font-size: 1em;
+    font-size: 0.9em;
     align-content: center;
     align-items: center
 }
@@ -767,34 +757,26 @@
     border-radius: 100%
 }
 
-/*
+
 @media (max-width: 900px) {
-    #Contato > .container {
+    #Contato .container {
         flex-flow: column-reverse;
-        padding: 10px 30px;
+
+        padding: 20px 0;
     }
-    #Contato > .container > div {
+    #Contato .container > div {
         width: 100%
     }
     #c_right {
-        padding-left: 0;
+        margin-left: 0;
+
+        text-align: justify
     }
-    #Contato h1 {
-        margin-left: 30px;
+    #endereco {
+        margin: 20px 0
     }
-    #endereco {}
 }
 
-@media (max-width: 500px) {
-    #Contato > .container {
-        padding: 10px 8px;
-    }
-    #Contato h1 {
-        margin-left: 0;
-        width: 100%;
-        text-align: center
-    }
-} */
 
 /*-------------PARCEIROS-------------*/
 
@@ -803,18 +785,25 @@
     color: #2e2d2c;
 }
 
-#Parceiros > .wrapper {
+#Parceiros ._wrapper {
     display: flex;
 }
 
-#Parceiros > .wrapper > .container {
+#Parceiros .container {
     margin-left: 20px;
 }
 
-#Parceiros > .wrapper > .container > img {
+#Parceiros .container > img {
     max-width: 180px;
 }
 
+
+@media (max-width: 450px) {
+    #Parceiros ._wrapper {
+        flex-flow: column;
+    }
+
+}
 
 /*------------ANIMATIONS-----------------*/
 

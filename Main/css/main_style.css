@@ -20,6 +20,7 @@ body {
 body {
     font-family: 'Open Sans', sans-serif;
     /* font-family: 'Open Sans', sans-serif; */
+    background-color: whitesmoke
 }
 
 ::selection {
@@ -43,28 +44,29 @@ button {
 
 /*----------CLASSES------------*/
 
-.wrapper {
+._wrapper {
     max-width: 1100px;
     padding: 0 4vw;
     margin: auto
 }
 
-.stretch {
+._stretch {
     white-space: nowrap;
 }
-.justify {
-	text-align: justify
+
+._justify {
+    text-align: justify
 }
 
-.hide {
+._hide {
     display: none;
 }
 
-.fade {
+._fade {
     opacity: 0;
 }
 
-.center_child {
+._center-child {
     display: flex;
     flex-flow: column;
     /* Distribuição */
@@ -73,21 +75,21 @@ button {
     justify-content: center/* Alinhar vertical (eixo Y) */
 }
 
-.center_X {
+._center-X {
     margin: 0 auto
 }
 
-.nav-start {
+._nav-start {
     position: absolute;
     justify-content: center;
 }
 
-.nav-start > #menu {
+._nav-start > #_menu {
     margin-top: -10vh;
     box-shadow: 0 0px 15px -10px rgba(0, 0, 0, 0.5);
 }
 
-.nav-fixed {
+._nav-fixed {
     z-index: 100;
     position: fixed;
     top: 0;
@@ -95,7 +97,7 @@ button {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.titulo {
+._titulo {
     text-transform: uppercase;
     font-size: 2em;
     text-align: left;
@@ -103,14 +105,14 @@ button {
     letter-spacing: 4px;
 }
 
-.desc {
+._desc {
     text-align: justify;
     margin-top: 15px;
     font-size: 1.3em;
     max-width: 500px;
 }
 
-.btn {
+._btn {
     text-align: center;
 
     background-color: transparent;
@@ -127,13 +129,50 @@ button {
     font-weight: bold;
 }
 
-.btn:hover {
+._btn:hover {
     transform: scale(1.04, 1.04);
+}
+
+/*------------CARROSSEL-----------------*/
+
+.owl-stage-outer {
+    cursor: all-scroll;
+}
+
+/*
+.owl-stage-outer{
+    position: absolute
+} */
+
+.owl-nav {
+    height: 100%;
+    width: 100%;
+    flex-flow: row;
+    justify-content: space-between;
+
+    font-size: 1.8em;
+    font-weight: bold;
+
+    position: absolute !important;
+}
+
+.owl-nav > div {
+    cursor: pointer;
+    background-color: whitesmoke;
+    border-radius: 100%;
+
+    padding: 2px 12px;
+    box-shadow: 3px 3px dimgray;
+    z-index: 2
+}
+
+.owl-nav > div:active {
+    box-shadow: none
 }
 
 /*------------ONDAS (SVG)-----------------*/
 
-.onda {
+._onda {
     height: 150px;
     width: 100%;
     margin-bottom: -5px;
@@ -143,21 +182,21 @@ button {
     filter: drop-shadow( 0px 0px 5px rgba(0, 0, 0, 0.2)); */
 }
 
-.t_r {
+._t-r {
     transform: rotateY(180deg)
 }
 
-.b_l {
+._b-l {
     transform: rotateX(180deg)
 }
 
-.b_r {
+._b-r {
     transform: rotate(180deg)
 }
 
 /*------------BLACK COVER-----------------*/
 
-.black-cover {
+._black-cover {
     position: fixed;
     height: 100%;
     width: 100%;
@@ -168,7 +207,7 @@ button {
     align-items: center;
 }
 
-#alert {
+._alert {
     min-height: 20vh;
     width: 40vw;
     background-color: #f3b31b;
@@ -180,14 +219,14 @@ button {
     align-content: space-between;
 }
 
-#alert_top {
+._alert-top {
     position: absolute;
     display: flex;
     justify-content: flex-end;
     width: 100%
 }
 
-#alert_close {
+._alert-close {
     border: 2px solid dimgray;
     cursor: pointer;
     margin: -10px -10px 0 0;
@@ -200,18 +239,18 @@ button {
     border-radius: 100%;
 }
 
-#alert_infos {
+._alert-infos {
     box-sizing: border-box;
     padding: 10px;
 }
 
-#alert_infos > h1 {
+._alert-infos > h1 {
     font-size: 1.8em;
     margin-bottom: 5px;
     font-weight: 600
 }
 
-#alert_infos > p {
+._alert-infos > p {
     font-size: 1.6em;
     font-weight: 100
 }
@@ -260,7 +299,7 @@ button {
 
 /*----------NAV------------*/
 
-#Nav {
+#_Nav {
     width: 100%;
     height: 50px;
     display: flex;
@@ -273,7 +312,7 @@ button {
     font-size: 0.9em;
 }
 
-#Nav #home {
+#_Nav #_home {
     width: 70px;
     transition: opacity 0.7s;
     padding: 4px 0 4px 4px;
@@ -282,14 +321,14 @@ button {
     top: 0
 }
 
-#Nav > div {
+#_Nav > div {
     height: 5vh;
     min-height: 30px;
     margin-right: 10px;
     z-index: 1;
 }
 
-#Nav ul {
+#_Nav ul {
     height: 100%;
 
     display: flex;
@@ -299,7 +338,7 @@ button {
     text-transform: uppercase
 }
 
-#Nav li {
+#_Nav li {
     height: 100%;
     min-width: 180px;
     transition: opacity 0.5s linear, background 1s;
@@ -309,7 +348,7 @@ button {
     text-align: center
 }
 
-#mobile-menu {
+#_mobile-menu {
     position: fixed;
     top: 0;
     z-index: 100;
@@ -323,34 +362,49 @@ button {
     transition: transform 1s
 }
 
-@media (max-width: 900px) {
-    #Nav {
+
+@media (max-width: 1080px) {
+    #_Nav > div {
+        display: none
+    }
+    #_home {
+        display: none
+    }
+
+    ._nav-fixed {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 910px) {
+    #_Nav {
         height: 100vh;
         flex-flow: column;
         position: fixed;
         margin-left: -180px;
         width: auto;
     }
-    #Nav ul {
+    #_Nav ul {
         flex-flow: column;
         background-color: transparent
     }
-    #Nav li {
+    #_Nav li {
         height: 20vh;
         border-top: none;
         transition: none;
         border-left: solid 4px;
         padding: 0;
-        transition: background 0.7s
+        transition: background 0.7s;
     }
-    #Nav li:hover {
-        background-color: rgba(0, 0, 0, 0.1)
+    #_Nav li:hover {
+        background-color: white
     }
 
-    #Nav #home {
+    #_Nav #_home {
         display: none
     }
-    #mobile-menu {
+    #_mobile-menu {
         display: flex
     }
 }
@@ -363,6 +417,6 @@ footer {
     font-size: 0.9em;
     display: flex;
     justify-content: space-between;
-    box-sizing: content-box;
+    box-sizing: border-box;
     padding: 12px 0
 }

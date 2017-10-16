@@ -21,8 +21,17 @@ $(document).ready(function () {
         center: true,
         nav: true,
         navText: "<>",
-        navContainer: "#caminho_controls",
-        navElement: "div"
+        navElement: "div",
+        dots: false
+    });
+
+    $('.owl-nav').each(function () {
+        $(this).addClass("_center-child");
+    });
+
+    /* R E V I S Ã O */
+    $('.owl-stage-outer').each(function () {
+        $(this).parent().append(this);
     });
 
     /* VARIABLES */
@@ -38,15 +47,14 @@ $(document).ready(function () {
     //Nav na posição certa
     function navPos() {
         if ($scrollTop > $mainTop) {
-            $("#Nav").removeClass("nav-start");
-            $("#Nav").addClass("nav-fixed");
+            $("#_Nav").removeClass("_nav-start");
+            $("#_Nav").addClass("_nav-fixed");
 
         } else {
-            $("#Nav").removeClass("nav-fixed");
-            $("#Nav").addClass("nav-start");
+            $("#_Nav").removeClass("_nav-fixed");
+            $("#_Nav").addClass("_nav-start");
 
-            $("#home").addClass("hide");
-            $("#redes").addClass("hide");
+            $("#_home").addClass("_hide");
         }
     };
 
@@ -54,7 +62,7 @@ $(document).ready(function () {
     function navIndex(mobile = false) {
         if (!mobile) {
             //Volta item para padrão se o mesmo não for o atual
-            $("#menu li").each(function (index) {
+            $("#_menu li").each(function (index) {
                 if (index != $secaoAtual) {
                     $(this).css('background-color', $colors[0]);
                     $(this).css('color', $colors[index + 1]);
@@ -63,13 +71,13 @@ $(document).ready(function () {
 
             //Coloca item atual em destaque
             if ($secaoAtual != null) {
-                $('#menu').find("li").eq($secaoAtual).css('background-color', $colors[$secaoAtual + 1]);
-                $('#menu').find("li").eq($secaoAtual).css('color', $colors[0]);
-                $('#menu').find("li").eq($secaoAtual).css('border-color', $colors[$secaoAtual + 1]);
+                $('#_menu').find("li").eq($secaoAtual).css('background-color', $colors[$secaoAtual + 1]);
+                $('#_menu').find("li").eq($secaoAtual).css('color', $colors[0]);
+                $('#_menu').find("li").eq($secaoAtual).css('border-color', $colors[$secaoAtual + 1]);
             }
         } else {
             //Todos em focus
-            $("#menu li").each(function (index) {
+            $("#_menu li").each(function (index) {
                 $(this).css('border-color', $colors[index + 1]);
                 $(this).css('color', $colors[index + 1]);
             });
@@ -120,11 +128,11 @@ $(document).ready(function () {
 
     //Configurações de acordo com o dispositivo
     if ($(window).width() < 900) { //Mobile
-        $("#Nav").addClass("nav-fixed");
+        $("#_Nav").addClass("_nav-fixed");
         navIndex(true); //Mobile Nav colors config
 
-        $("#menu li").on('click', function () { // Recuar menu automaticamente no click
-            $("#mobile-menu").click();
+        $("#_menu li").on('click', function () { // Recuar menu automaticamente no click
+            $("#_mobile-menu").click();
         });
     } else { //Desktop
         navIndex(); //Desktop Nav colors config
@@ -138,32 +146,32 @@ $(document).ready(function () {
         });
 
         if ($(window).outerWidth() < 900) { //Mobile
-            $("#Nav").removeClass("nav-start");
-            $("#Nav").addClass("nav-fixed");
+            $("#_Nav").removeClass("_nav-start");
+            $("#_Nav").addClass("_nav-fixed");
 
             navIndex(true); //Mobile Nav colors config
             $menu_mobile = false; //Voltar menu-mobile padrão
-            $("#mobile-menu").click();
+            $("#_mobile-menu").click();
         } else { //Desktop
             navIndex(); //Desktop Nav colors config
-            $("#mobile-menu").css('transform', 'none'); //Voltar menu-mobile padrão
-            $("#Nav").css('margin-left', '0'); //Voltar nav para desktop
+            $("#_mobile-menu").css('transform', 'none'); //Voltar menu-mobile padrão
+            $("#_Nav").css('margin-left', '0'); //Voltar nav para desktop
 
-            $("#Nav").css('transition', 'background 1s'); //Transition só no bg-hover, sem transition margin de volta ao desktop
+            $("#_Nav").css('transition', 'background 1s'); //Transition só no bg-hover, sem transition margin de volta ao desktop
 
             navPos(); //Voltar nav como estava
         }
     });
 
-    $("#mobile-menu").on('click', function () { //Mobile menu click-transitions + show menu
+    $("#_mobile-menu").on('click', function () { //Mobile menu click-transitions + show menu
         if ($menu_mobile) {
-            $("#Nav").css('transition', 'margin 0.7s');
+            $("#_Nav").css('transition', 'margin 0.7s');
             $(this).css('transform', 'rotate(-90deg)')
-            $("#Nav").css('margin-left', '0');
+            $("#_Nav").css('margin-left', '0');
             $menu_mobile = false
         } else {
             $(this).css('transform', 'none');
-            $("#Nav").css('margin-left', '-180px');
+            $("#_Nav").css('margin-left', '-180px');
             $menu_mobile = true
         }
     });
@@ -177,7 +185,7 @@ $(document).ready(function () {
                 $secaoAtual = 0;
                 navIndex();
 
-                $('#Nav').css('background', $colors[$secaoAtual + 1]); //Nav (combinar com a 1ª section)
+                $('#_Nav').css('background', $colors[$secaoAtual + 1]); //Nav (combinar com a 1ª section)
 
                 $('#Manifesto content').css('animation', 'fade 2s');
 
@@ -185,15 +193,14 @@ $(document).ready(function () {
                 $('#m_right').css('animation', 'm_right 2s');
 
                 if ($scrollTop > $mainTop) {
-                    $('#Nav').css('background-color', $colors[0]); //Nav (padrão)
+                    $('#_Nav').css('background-color', $colors[0]); //Nav (padrão)
 
                     //Nav Fixed
-                    $('#Nav').removeClass('nav-start');
-                    $('#Nav').addClass('nav-fixed');
+                    $('#_Nav').removeClass('_nav-start');
+                    $('#_Nav').addClass('_nav-fixed');
 
                     //Home & Redes Sociais
-                    $('#Nav #home').removeClass('hide');
-                    $('#Nav #redes').removeClass('hide');
+                    $('#_Nav #_home').removeClass('_hide');
 
                     if ($scrollTop >= $metodosTop - 100) {
                         if ($scrollTop >= $equipeTop - 100) {
@@ -216,25 +223,24 @@ $(document).ready(function () {
                         }
                     }
                 } else {
-                    $('#Nav').removeClass('nav-fixed');
-                    $('#Nav').addClass('nav-start');
+                    $('#_Nav').removeClass('_nav-fixed');
+                    $('#_Nav').addClass('_nav-start');
 
-                    $('#Nav #home').addClass('hide');
-                    $('#Nav #redes').addClass('hide');
+                    $('#_Nav #_home').addClass('_hide');
                 }
 
             } else {
                 $secaoAtual = null;
 
-                $('#Nav').css('background-color', $colors[0]);
+                $('#_Nav').css('background-color', $colors[0]);
 
-                $('#menu').find("li").eq(0).css('background-color', $colors[0]);
-                $('#menu').find("li").eq(0).css('color', $colors[1]);
+                $('#_menu').find("li").eq(0).css('background-color', $colors[0]);
+                $('#_menu').find("li").eq(0).css('color', $colors[1]);
             }
         }
     });
 
-    $('#menu li').on('mouseenter', function () {
+    $('#_menu li').on('mouseenter', function () {
         if ($(window).width() > 900) {
             var $itemIndex = $("li").index(this);
 
@@ -247,22 +253,22 @@ $(document).ready(function () {
                 //Window all top não tem destaque
                 if ($secaoAtual != null) {
                     //Remover destaque item -> atual
-                    $("#menu li").eq($secaoAtual).css('background-color', $colors[0]);
-                    $("#menu li").eq($secaoAtual).css('color', $colors[$secaoAtual + 1]);
+                    $("#_menu li").eq($secaoAtual).css('background-color', $colors[0]);
+                    $("#_menu li").eq($secaoAtual).css('color', $colors[$secaoAtual + 1]);
                 }
 
                 //Nav change bg-color somente qndo não estiver fixo
-                if ($('#Nav').hasClass('nav-start')) {
-                    $('#Nav').css('background-color', $colors[$itemIndex + 1]);
+                if ($('#_Nav').hasClass('_nav-start')) {
+                    $('#_Nav').css('background-color', $colors[$itemIndex + 1]);
                 }
             }
 
-            $('#menu li').on('mouseleave', function () {
+            $('#_menu li').on('mouseleave', function () {
                 //Nav change bg-color somente qndo não estiver fixo && Window all top não tem destaque
-                if ($('#Nav').hasClass('nav-start') && $secaoAtual != null) {
-                    $('#Nav').css('background-color', $colors[$secaoAtual + 1])
+                if ($('#_Nav').hasClass('_nav-start') && $secaoAtual != null) {
+                    $('#_Nav').css('background-color', $colors[$secaoAtual + 1])
                 } else {
-                    $('#Nav').css('background-color', $colors[0]);
+                    $('#_Nav').css('background-color', $colors[0]);
                 }
 
                 navIndex();
@@ -291,14 +297,14 @@ $.fn.strech_text = function () {
     var elmt = $(this),
         cont_width = elmt.width();
 
-    if ($(this).find('.stretch').length > 0) {
-        var txt = $(this).find('.stretch').html();
+    if ($(this).find('._stretch').length > 0) {
+        var txt = $(this).find('._stretch').html();
         $(this).html(txt);
     } else {
         var txt = elmt.html();
     }
 
-    var one_line = $('<span class="stretch">' + txt + '</span>'),
+    var one_line = $('<span class="_stretch">' + txt + '</span>'),
         nb_char = elmt.text().length,
         spacing = cont_width / nb_char,
         txt_width;
@@ -315,6 +321,6 @@ $.fn.strech_text = function () {
         });
     } else {
         one_line.contents().unwrap();
-        elmt.addClass('justify');
+        elmt.addClass('_justify');
     }
 };
