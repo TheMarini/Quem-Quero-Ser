@@ -7,15 +7,14 @@ var $menu_mobile = true; //menu_mobile first click
 var reA = /[^a-zA-Z]/g; // |search|global match -> NOT alphabetic
 var reN = /[^0-9]/g; // |search|global match -> NOT digit
 
-var $img_folder;
-
-if ($(location).attr('host') == "") {
-    $img_folder = $(location).attr('href').replace("index.html", "img/Index/banner/");
-} else {
-    $img_folder = "http://" + $(location).attr('host') + "/Main/img/Index/banner/";
-};
+var $img_folder = $(location).attr('host') == "" ? $(location).attr('href').replace("index.html", "img/Index/banner/") : "http://" + $(location).attr('host') + "/Main/img/Index/banner/";
 
 $(document).ready(function () {
+    /* FIRST CALLS */
+    $('.p_destaque').each(function () {
+        $(this).strech_text();
+    });
+
     $('.owl-carousel').owlCarousel({
         loop: true,
         items: 1,
@@ -134,6 +133,10 @@ $(document).ready(function () {
 
     //Responsividade on resize
     $(window).resize(function () {
+        $('.p_destaque').each(function () {
+            $(this).strech_text();
+        });
+
         if ($(window).outerWidth() < 900) { //Mobile
             $("#Nav").removeClass("nav-start");
             $("#Nav").addClass("nav-fixed");
@@ -282,3 +285,36 @@ $(document).ready(function () {
         }
     });
 });
+
+/* STRECH TEXT */
+$.fn.strech_text = function () {
+    var elmt = $(this),
+        cont_width = elmt.width();
+
+    if ($(this).find('.stretch').length > 0) {
+        var txt = $(this).find('.stretch').html();
+        $(this).html(txt);
+    } else {
+        var txt = elmt.html();
+    }
+
+    var one_line = $('<span class="stretch">' + txt + '</span>'),
+        nb_char = elmt.text().length,
+        spacing = cont_width / nb_char,
+        txt_width;
+
+    elmt.html(one_line);
+    txt_width = one_line.width();
+
+    if (txt_width < cont_width) {
+        var char_width = txt_width / nb_char,
+            ltr_spacing = spacing - char_width + (spacing - char_width) / nb_char;
+
+        one_line.css({
+            'letter-spacing': ltr_spacing
+        });
+    } else {
+        one_line.contents().unwrap();
+        elmt.addClass('justify');
+    }
+};
