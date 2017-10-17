@@ -20,6 +20,7 @@ $(document).ready(function () {
         items: 1,
         center: true,
         nav: true,
+        responsiveClass: true,
         navText: "<>",
         navElement: "div",
         dots: false
@@ -60,27 +61,30 @@ $(document).ready(function () {
 
     //Menu configs
     function navIndex(mobile = false) {
-        if (!mobile) {
-            //Volta item para padrão se o mesmo não for o atual
-            $("#_menu li").each(function (index) {
-                if (index != $secaoAtual) {
-                    $(this).css('background-color', $colors[0]);
-                    $(this).css('color', $colors[index + 1]);
-                }
-            });
+        switch (mobile) {
+            case false:
+                //Volta item para padrão se o mesmo não for o atual
+                $("#_menu li").each(function (index) {
+                    if (index != $secaoAtual) {
+                        $(this).css('background-color', $colors[0]);
+                        $(this).css('color', $colors[index + 1]);
+                    }
+                });
 
-            //Coloca item atual em destaque
-            if ($secaoAtual != null) {
-                $('#_menu').find("li").eq($secaoAtual).css('background-color', $colors[$secaoAtual + 1]);
-                $('#_menu').find("li").eq($secaoAtual).css('color', $colors[0]);
-                $('#_menu').find("li").eq($secaoAtual).css('border-color', $colors[$secaoAtual + 1]);
-            }
-        } else {
-            //Todos em focus
-            $("#_menu li").each(function (index) {
-                $(this).css('border-color', $colors[index + 1]);
-                $(this).css('color', $colors[index + 1]);
-            });
+                //Coloca item atual em destaque
+                if ($secaoAtual != null) {
+                    $('#_menu').find("li").eq($secaoAtual).css('background-color', $colors[$secaoAtual + 1]);
+                    $('#_menu').find("li").eq($secaoAtual).css('color', $colors[0]);
+                    $('#_menu').find("li").eq($secaoAtual).css('border-color', $colors[$secaoAtual + 1]);
+                }
+                break;
+            case true:
+                //Todos em focus
+                $("#_menu li").each(function (index) {
+                    $(this).css('border-color', $colors[index + 1]);
+                    $(this).css('color', $colors[index + 1]);
+                });
+                break;
         }
     };
 

@@ -8,7 +8,8 @@
     position: relative;
 }
 
-#Banner > div {
+#banner_bg,
+#banner_fade {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -22,15 +23,17 @@
     z-index: 1
 }
 
-#logo {
+#Banner ._wrapper {
     z-index: 2;
-    width: 32vw;
-    min-width: 300px;
+    text-align: center
+}
+
+#logo {
+    width: 450px;
     animation: fade ease-in 1.5s;
 }
 
-#Banner > p {
-    z-index: 2;
+#Banner p {
     text-transform: uppercase;
     color: white;
     font-size: 1.8em;
@@ -40,20 +43,35 @@
     text-align: center;
 }
 
-/* #Banner > p > span{
-    color: white;text-shadow: 2px 2px dimgray;
-    text-decoration: underline
-} */
-
-#Banner > ._btn {
-    z-index: 2;
+#Banner ._btn {
+    margin: auto;
     border-color: white;
     color: white;
 }
 
-#Banner > ._btn:hover {
+#Banner ._btn:hover {
     background-color: white;
     color: black
+}
+
+@media (max-width: 525px) {
+    #Banner p {
+        font-size: 1.4em;
+    }
+
+    #logo {
+        width: 350px;
+    }
+}
+
+@media (max-width: 425px) {
+    #Banner p {
+        font-size: 1em;
+    }
+
+    #logo {
+        width: 250px;
+    }
 }
 
 /*----------MAIN------------*/
@@ -64,23 +82,9 @@
     box-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
 }
 
-/*  #Manifesto  svg {
-    height: 5px;
-    width: 100%;
-
-    -webkit-filter: drop-shadow( 1px 1px teal));
-    filter: drop-shadow( 1px 1px teal);
- }
-
- #Manifesto svg line {
-    stroke: #2e2d2c;
-    stroke-width: 5;
-
- } */
-
 /*------------MANIFESTO-----------------*/
 
-#Manifesto {
+#Sobre {
     padding-top: 9vh;
     /*  padding: 9vh 20vw 0px 20vw; */
     box-sizing: content-box;
@@ -90,7 +94,7 @@
     transition: all 0.5s;
 }
 
-#Manifesto h1 {
+#Sobre h1 {
     color: #2e2d2c;
     font-size: 1.8em;
     text-align: center;
@@ -98,18 +102,18 @@
     padding: 25px 0
 }
 
-#Manifesto ._wrapper {
+#Sobre ._wrapper {
     max-width: 810px;
 }
 
-#Manifesto .container p:not(.p_destaque) {
+#Sobre .container p:not(.p_destaque) {
     padding: 18px 0;
 
     font-size: 1.2em;
     text-align: justify;
 }
 
-#Manifesto .container p:last-child,
+#Sobre .container p:last-child,
 .p_destaque {
     font-weight: 900;
     text-align: center;
@@ -133,14 +137,14 @@
     font-size: 2em;
 }
 
-#Manifesto .container p:last-child {
+#Sobre .container p:last-child {
     font-size: 3em;
     margin-top: 20px
 }
 
 @media (max-width: 850px) {
 
-    #Manifesto .container > p:not(.p_destaque) {
+    #Sobre .container > p:not(.p_destaque) {
         font-size: 1em;
     }
     .p_destaque:nth-child(1),
@@ -160,13 +164,13 @@
         font-size: 1.5em;
     }
 
-    #Manifesto .container > p:last-child {
+    #Sobre .container > p:last-child {
         font-size: 2.5em;
     }
 }
 
 @media (max-width: 645px) {
-    #Manifesto .container > p:not(.p_destaque) {
+    #Sobre .container > p:not(.p_destaque) {
         font-size: 0.9em;
     }
 
@@ -187,7 +191,7 @@
         font-size: 1.1em;
     }
 
-    #Manifesto .container > p:last-child {
+    #Sobre .container > p:last-child {
         font-size: 2em;
     }
 }
@@ -202,27 +206,23 @@
     width: 90vw;
 }
 
-/*------------MÉTODOS-----------------*/
+/*------------METODOS-----------------*/
 
-#Metodos {
-    position: relative;
+/*------------CAMINHOS-----------------*/
 
+#Caminhos {
+    background-color: #621e56;
 }
 
-#Metodos .aba {
+#Caminhos .aba {
     color: whitesmoke;
-    background-color: #621e56;
-    padding-left: 7vw;
 }
 
-#caminho {
+#Caminhos .owl-carousel {
     background-color: #621e56;
-    position: relative
 }
 
-#caminho .owl-nav {
-    color: #621e56;
-
+#Caminhos .owl-nav {
     box-sizing: border-box;
     padding: 0 5vw;
 }
@@ -236,15 +236,15 @@
     font-size: 1.1em;
 }
 
-#Modulos > ._wrapper {
+#Modulos ._wrapper {
     max-width: 800px
 }
 
-#Modulos > ._wrapper > h1 {
+#Modulos ._wrapper > h1 {
     color: #621e56;
 
     text-align: center;
-    padding: 10px 0
+    padding: 10px 0;
 }
 
 .single_modulo {
@@ -254,10 +254,10 @@
 
 .single_modulo > img {
     width: 200px;
-    padding-right: 14px
+    padding-right: 14px;
 }
 
-#Modulos > ._wrapper > .container {
+.multiple_modulos {
     display: flex;
     text-align: center;
     margin-top: 15px;
@@ -278,6 +278,14 @@
 
 .modulo > p {
     margin-top: 20px;
+}
+
+@media (max-width: 645px) {
+    /* Modulos */
+    .single_modulo,
+    .multiple_modulos {
+        flex-flow: column;
+    }
 }
 
 /*------------EQUIPE-----------------*/
@@ -304,11 +312,6 @@
     align-content: space-between;
 }
 
-
-#Equipe > ._wrapper > div:last-child {
-    max-width: 450px;
-}
-
 #Equipe .owl-carousel {
     width: 40vw;
 }
@@ -317,15 +320,15 @@
     color: #f3b31b;
 
     box-sizing: border-box;
-    padding: 0 7vw;
+    padding: 0 5vw;
 
     height: 52%;
 }
 
 .membro {
+    max-width: 450px;
     text-align: center;
-    max-width: 400px;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 .membro > img {
@@ -349,16 +352,6 @@
     }
 }
 
-@media (max-width: 500px) {
-    #Equipe .owl-nav {
-        padding: 0 2vw;
-    }
-
-    .membro > p {
-        text-align: justify
-    }
-}
-
 /*------------RECOMENDADOS-----------------*/
 
 /*------------VIDEO-----------------*/
@@ -374,7 +367,7 @@
 }
 
 #Videos > ._wrapper > h1 {
-    padding: 20px 0 50px 0
+    padding: 20px 0 50px 0;
 }
 
 #Videos > ._wrapper > .container {
@@ -484,34 +477,6 @@
     height: 35px
 }
 
-@media (max-width: 900px) {
-    #Videos ._wrapper > .container {
-        display: flex;
-        flex-flow: column;
-        width: 100%;
-    }
-    #Videos ._wrapper > .container > div {
-        width: 100%;
-    }
-    #v_left {
-        height: 70vh;
-    }
-    #v_left_controls {
-        height: 70vh;
-        width: 100%;
-    }
-
-    #v_right {
-        border-left: 4px solid gainsboro;
-        padding: 0;
-        margin: 10px 0
-    }
-
-    #video_infos {
-        margin-left: 10px
-    }
-}
-
 /*------------ARTIGOS-----------------*/
 
 #Artigos {
@@ -520,14 +485,21 @@
     margin-bottom: -150px;
 }
 
-#Artigos > ._wrapper > h1 {
+#Artigos ._titulo {
     color: #2e2d2c;
     margin: -40px 0px 50px 0
 }
 
 #Artigos .container {
     display: flex;
+    justify-content: space-around;
+
+}
+
+#Artigos .container > div {
+    display: flex;
     justify-content: space-between;
+    width: 48%
 }
 
 .artigo {
@@ -556,7 +528,7 @@
     font-size: 0.9em;
     text-align: justify;
 
-    height: 180px;
+    min-height: 180px;
     overflow: hidden;
 }
 
@@ -588,27 +560,42 @@
     color: white;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1160px) {
     #Artigos .container {
         flex-flow: column;
+    }
+    #Artigos .container > div {
         width: 100%;
+        justify-content: center;
+    }
+    .artigo:first-child {
+        margin-right: 10px
     }
     .artigo {
-        max-width: 600px;
-        margin: 10px auto;
+        max-width: 450px;
+        margin: 10px 0;
     }
     .artigo p {
-        height: auto;
-        padding-bottom: 12px
-    }
-    #ver_todos > svg {
-        width: 120px;
+        min-height: auto;
+        padding-bottom: 15px
     }
 
-    #Artigos > ._wrapper > h1 {
+    #Artigos ._titulo {
         margin: 0 0 15px 0
     }
 }
+
+@media (max-width: 600px) {
+    #Artigos .container > div {
+        flex-flow: column;
+        align-items: center;
+    }
+    .artigo {
+        max-width: 100%;
+        margin: 18px 0
+    }
+}
+
 
 /*------------CONTATO-----------------*/
 
@@ -665,14 +652,15 @@
 }
 
 #txtEmail,
-#txtAssunto {
+#txtAssunto,
+#enviar {
     margin-top: 2px;
     max-width: 1600px;
 }
 
 #enviar {
+    width: 100%;
     margin-top: 2px;
-    min-width: 100%;
     display: inline-flex;
     height: 110px;
     overflow: hidden;
@@ -804,6 +792,80 @@
     }
 
 }
+
+/*------------MEDIAS-----------------*/
+
+@media (max-width: 900px) {
+    /* Equipe */
+    #Equipe > ._wrapper {
+        flex-flow: column
+    }
+    #Equipe .aba {
+        max-width: inherit
+    }
+
+    #Equipe .owl-carousel {
+        width: auto;
+        margin-top: 40px;
+    }
+    #Equipe .owl-nav {}
+    .membro > p {
+        text-align: justify
+    }
+
+    /* Videos */
+    #Videos ._wrapper > .container {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+    }
+    #Videos ._wrapper > .container > div {
+        width: 100%;
+    }
+    #v_left {
+        height: 70vh;
+    }
+    #v_left_controls {
+        height: 70vh;
+        width: 100%;
+    }
+
+    #v_right {
+        border-left: 4px solid gainsboro;
+        padding: 0;
+        margin: 10px 0
+    }
+
+    #video_infos {
+        margin-left: 10px
+    }
+}
+
+
+@media (max-width: 645px) {
+    /* General */
+    ._titulo {
+        font-size: 1.4em
+    }
+    ._desc {
+        font-size: 1.1em
+    }
+    p {
+        font-size: 0.9em
+    }
+
+    input,
+    textarea {
+        font-size: 1em
+    }
+
+
+    /* Videos */
+    #Videos > ._wrapper > h1 {
+        padding: 0 0 25px 0;
+    }
+}
+
 
 /*------------ANIMATIONS-----------------*/
 
