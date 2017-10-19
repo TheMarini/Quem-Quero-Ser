@@ -142,11 +142,10 @@ button {
     cursor: all-scroll;
 }
 
-/*
-.owl-stage-outer{
-    position: absolute
-} */
-
+/* #Caminhos .owl-item img{
+    min-width: 800px
+}
+ */
 .owl-nav {
     height: 100%;
     width: 100%;
@@ -174,11 +173,10 @@ button {
 }
 
 /*------------ONDAS (SVG)-----------------*/
-
 ._onda {
-    height: 150px;
+    max-height: 150px;
     width: 100%;
-    margin-bottom: -5px;
+    /* margin-bottom: -7px; */
     background-color: transparent;
 
     /*  -webkit-filter: drop-shadow( -5px -5px 5px rgba(0, 0, 0, 0.5));
@@ -186,15 +184,16 @@ button {
 }
 
 ._t-r {
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
+    margin-top: -2px;
 }
 
 ._b-l {
-    transform: rotateX(180deg)
+    transform: rotateX(180deg);
 }
 
 ._b-r {
-    transform: rotate(180deg)
+    transform: rotate(180deg);
 }
 
 /*------------BLACK COVER-----------------*/
@@ -411,6 +410,45 @@ button {
         display: flex
     }
 }
+
+/*------------BACK HOME-----------------*/
+#_back-home {
+    z-index: 9999999;
+    bottom: 10px;
+    left: 10px;
+    position: fixed;
+    flex-flow: row;
+    height: 40px;
+
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+
+    color: #2e2d2c;
+
+    transition: all 0.7s;
+}
+
+#_back-home img {
+    height: 100%;
+    width: auto
+}
+
+#_back-home p {
+    padding: 0 10px;
+    transition: padding 0.7s;
+}
+
+#_back-home:hover{
+    background-color: #2e2d2c;
+    color: whitesmoke
+}
+
+#_back-home:hover p {
+    padding-left: 14px
+}
+
 
 /*------------FOOTER-----------------*/
 
