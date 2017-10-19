@@ -10,6 +10,7 @@ var reN = /[^0-9]/g; // |search|global match -> NOT digit
 var $img_folder = $(location).attr('host') == "" ? $(location).attr('href').replace("index.html", "img/Index/banner/") : "http://" + $(location).attr('host') + "/Main/img/Index/banner/";
 
 $(document).ready(function () {
+    //new branch
     /* FIRST CALLS */
     $('.p_destaque').each(function () {
         $(this).strech_text();
