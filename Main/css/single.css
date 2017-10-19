@@ -28,7 +28,7 @@ body {
 }
 
 #Banner > div h1 {
-    font-size: 4em
+    font-size: 3.5em
 }
 
 #Banner > div h2 {
@@ -43,7 +43,7 @@ body {
 }
 
 #text {
-    font-size: 1.3em;
+    font-size: 1.2em;
     text-align: justify
 }
 
@@ -51,7 +51,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
-    font-size: 1.2em
+    font-size: 1em
 }
 
 #author,
@@ -86,7 +86,7 @@ body {
 @media (max-width: 645px) {
     /* General */
     p:not(#bhp) {
-        font-size: 0.8em
+        font-size: 0.9em
     }
 
     #Banner > div h1 {

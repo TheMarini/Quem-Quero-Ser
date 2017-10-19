@@ -20,7 +20,6 @@ $(document).ready(function () {
         items: 1,
         center: true,
         nav: true,
-        responsiveClass: true,
         navText: "<>",
         navElement: "div",
         dots: false
