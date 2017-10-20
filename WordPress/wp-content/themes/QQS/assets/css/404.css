@@ -1,0 +1,43 @@
+body {
+    text-align: center;
+}
+
+._wrapper {
+    height: 100vh;
+    justify-content: space-between;
+}
+
+img{
+    height: 20vh;
+    min-height: 100px;
+    margin-top: 20px;
+}
+
+h1{
+    margin: 20px 0;
+    color: dimgray
+}
+
+a {
+    background: cadetblue;
+    font-size: 1.2em;
+    color:whitesmoke;
+    padding: 10px;
+    margin-bottom: 20px;
+    
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: 0.4s
+  
+}
+a:active{
+    box-shadow: none
+}
+
+@media (max-width: 645px) {
+    h1{
+        font-size: 1.3em
+    }
+    a {
+        font-size: 0.9em
+    }
+}
