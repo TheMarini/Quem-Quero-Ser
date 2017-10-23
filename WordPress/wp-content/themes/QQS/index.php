@@ -19,7 +19,7 @@
                 <h1>A vida está corrida, não é?</h1>
                 <p>Mas gente ajuda você ficar informado. <br> Escreva seu e-mail e... aproveite o dia!</p>
             </div>
-            <?php get_template_part('NewsLetter'); ?>
+            <?php get_template_part('newsletter'); ?>
         </div>
     </div>
 

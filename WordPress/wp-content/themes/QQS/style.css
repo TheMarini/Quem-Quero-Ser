@@ -41,7 +41,7 @@ input {
     text-align: center;
 }
 
-button {
+button, input[type="submit"] {
     cursor: pointer
 }
 
@@ -264,6 +264,7 @@ button {
 #mc-embedded-subscribe-form {
     display: flex;
     height: 7vh;
+    min-height: 50px
 }
 
 .mc-field-group {
@@ -285,7 +286,6 @@ button {
     color: whitesmoke;
     font-size: 1.2em;
     text-align: justify;
-    ;
     font-weight: 100
 }
 
@@ -436,7 +436,11 @@ button {
 
 #_back-home img {
     height: 100%;
-    width: auto
+    width: auto;
+    border-radius: 10px 0 0 10px;
+
+    transition: background 0.7s;
+    background-color: white;
 }
 
 #_back-home p {
@@ -449,10 +453,10 @@ button {
     color: whitesmoke
 }
 
-#_back-home:hover p {
+/* #_back-home:hover p {
     padding-left: 14px
 }
-
+ */
 
 /*------------FOOTER-----------------*/
 

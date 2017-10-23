@@ -1,0 +1,34 @@
+main>div{
+     height: 100vh;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding: 40vh 0;
+
+    text-align: center
+}
+
+h1{
+    color: dimgray;
+}
+
+span{
+    color: #e54347
+}
+
+#mc_embed_signup{
+    width: 600px;
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+
+@media (max-width: 645px) {
+    h1{
+        font-size: 1.3em
+    }
+}

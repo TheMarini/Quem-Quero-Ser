@@ -1,6 +1,6 @@
 <?php
 /*
-    template name: Equipe
+    Template Name: Equipe
 */
 ?>
 

@@ -1,34 +1,43 @@
 body {
     background-color: whitesmoke;
-    position: relative
-}
-
-#Main {
-    box-sizing: border-box;
-    padding: 40px 0
+    position: relative;
 }
 
 #Banner {
     position: relative;
-    background-color: black
+    background-color: black;
+
+}
+
+.no-thumb {
+    height: 300px;
+    color: white;
+    background-color: #e54347 !important;
+}
+
+._blur-cover {
+    background-color: rgba(0,0,0,0.03)
 }
 
 #Banner > div {
-    position: absolute;
-    color: whitesmoke;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.4);
     height: 100%;
     width: 100%;
-    transition: opacity 0.8s
+    position: absolute;
 }
 
-#Banner > div:hover {
-    opacity: 0
+#Banner:not(.no-thumb) > div {
+    color: whitesmoke;
+    transition: opacity 0.8s;
 }
 
 #Banner > div h1 {
-    font-size: 3.5em
+    font-size: 3.5em;
+    color: #2e2d2c;
+    background-color: whitesmoke;
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
 }
 
 #Banner > div h2 {
@@ -37,9 +46,17 @@ body {
 
 #Banner img {
     object-fit: cover;
-    max-width: 100%;
+    width: 100%;
     max-height: 80vh;
     min-height: 300px
+}
+
+#Main {
+    box-sizing: border-box;
+    padding: 40px 0;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
 }
 
 #text {
@@ -78,11 +95,13 @@ body {
     height: 45px;
     margin: 0 4px
 }
+
 .redes img:first-child {
-	margin-left: 0
+    margin-left: 0
 }
 
 /*------------MEDIAS-----------------*/
+
 @media (max-width: 645px) {
     /* General */
     p:not(#bhp) {
@@ -90,7 +109,7 @@ body {
     }
 
     #Banner > div h1 {
-        font-size: 3.2em
+        font-size: 2.2em
     }
 
     #Banner > div h2 {
@@ -99,6 +118,7 @@ body {
 }
 
 /*------------ANIMATIONS-----------------*/
+
 @keyframes fade {
     0% {
         opacity: 0;
