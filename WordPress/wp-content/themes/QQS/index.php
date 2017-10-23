@@ -34,14 +34,14 @@
     </header>
 
     <div id="_mobile-menu" class="_center-child">
-        <img src="img/_others/icons/menu.svg" alt="">
+        <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/menu.svg" alt="">
     </div>
 
     <nav id="_Nav">
         <a href="#Banner"><img id="_home" src="<?php bloginfo('template_url'); ?>/assets/img/_all/logos/vermelho.png" alt="Quem Quero Ser" /></a>
         <ul id="_menu">
             <a href="#Sobre">
-                <li id="_sobre" class="_center-child">No que acreditamos</li>
+                <li id="_sobre" class="_center-child">Em que acreditamos</li>
             </a>
             <a href="#Metodos">
                 <li id="_metodos" class="_center-child">Como fazemos</li>
