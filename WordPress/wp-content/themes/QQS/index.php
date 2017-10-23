@@ -239,36 +239,29 @@
                 <div class="_wrapper">
                     <h1 class="_titulo">INDICAMOS PRA VOCÊ LER</h1>
                     <div class="container">
+                        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                        <?php $k++ ?>
+                        <?php if ( $k == 1 ) : ?>
                         <div class="left">
-                            <div class="artigo">
-                                <img class="artigo_thumb" src="<?php bloginfo('template_url'); ?>/assets/img/Index/artigos/thumb_1.jpg" alt="">
-                                <h1 class="artigo_titulo">Mostra das Profissões</h1>
-                                <p class="artigo_desc">As inscrições para a Mostra das Profissões da UFMG seguem até dia 25 de agosto, que acontecerá dia 16/9, no Campus Pampulha. Os candidatos poderão participar das salas interativas e palestras de cada curso de graduação oferecido pela UFMG.</p>
-                                <a href="single.html" class="artigo_mais _center_X">Saiba mais</a>
-                            </div>
-                            <div class="artigo">
-                                <img class="artigo_thumb" src="<?php bloginfo('template_url'); ?>/assets/img/Index/artigos/thumb_2.jpg" alt="">
-                                <h1 class="artigo_titulo">Meu Primeiro Negócio</h1>
-                                <p class="artigo_desc">Jovens estudantes vão poder experimentar práticas em negócios, economia, gestão e operacionalização de empresas. Serão 12 semanas na companhia de monitores e voluntários, que vão ajudar a ensinar conceitos como livre iniciativa, mercado, produção e comercialização. </p>
-                                <a href="single.html" class="artigo_mais _center_X">Saiba mais</a>
-                            </div>
-                        </div>
+                        <?php else: ?>
+                        <?php if ( $k == 3 ) : ?>
                         <div class="right">
+                        <?php endif; ?>
+                        <?php endif; ?>
                             <div class="artigo">
-                                <img class="artigo_thumb" src="<?php bloginfo('template_url'); ?>/assets/img/Index/artigos/thumb_3.jpg" alt="">
-                                <h1 class="artigo_titulo">Mercado de Trabalho</h1>
-                                <p class="artigo_desc">Não bastassem as mudanças cada vez mais constantes e abruptas no mercado de trabalho, quem estiver estreando deverá lidar com um ambiente de crise financeira e total instabilidade na situação econômica do país.</p>
-                                <a href="single.html" class="artigo_mais _center_X">Saiba mais</a>
+                                <img class="artigo_thumb" src="<?php the_post_thumbnail_url(); ?>" alt="">
+                                <h1 class="artigo_titulo">
+                                    <?php the_title(); ?>
+                                </h1>
+                                <div class="artigo_desc">
+                                    <?php the_excerpt(); ?>
+                                </div>
+                                <a href="<?php the_permalink(); ?>" class="artigo_mais _center_X">Saiba mais</a>
                             </div>
-                            <div class="artigo">
-                                <img class="artigo_thumb" src="<?php bloginfo('template_url'); ?>/assets/img/Index/artigos/thumb_4.jpg" alt="">
-                                <h1 class="artigo_titulo">Planejamento de Estudo</h1>
-                                <p class="artigo_desc">Não bastassem as mudanças cada vez mais constantes e abruptas no mercado de trabalho, quem estiver estreando deverá lidar com um ambiente de crise financeira e total instabilidade na situação econômica do país.</p>
-                                <a href="single.html" class="artigo_mais _center_X">Saiba mais</a>
-                            </div>
-                        </div>
+                        <?php echo ($k == 2 || $k == 4) ? "</div>" : ""; ?>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
                     </div>
-
                     <a href="artigos" class="_btn _center-child _center-X">ver todos</a>
                 </div>
             </section>

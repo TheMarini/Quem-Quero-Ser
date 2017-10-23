@@ -431,21 +431,21 @@
     text-align: center;
 }
 
-.artigo img {
+.artigo_thumb {
     height: 190px;
     width: 100%;
     object-fit: cover;
     background-color: black;
 }
 
-.artigo h1 {
+.artigo_titulo {
     font-size: 1.1em;
     text-align: center;
     color: white;
     margin: 2px 0 15px 0
 }
 
-.artigo p {
+.artigo_desc {
     width: 100%;
     font-size: 0.9em;
     text-align: justify;
