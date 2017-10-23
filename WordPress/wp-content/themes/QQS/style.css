@@ -469,21 +469,20 @@ footer {
     box-sizing: border-box;
     padding: 12px 0
 }
-
 /*------------MEDIAS-----------------*/
 @media (max-width: 645px) {
     /* General */
     ._titulo {
-        font-size: 1.4em
+        font-size: 1.4em !important;
     }
     ._desc {
-        font-size: 1.1em
+        font-size: 1.1em !important;
     }
     p {
-        font-size: 0.9em
+        font-size: 0.9em !important;
     }
     input,
     textarea {
-        font-size: 1em
+        font-size: 1em;
     }
 }

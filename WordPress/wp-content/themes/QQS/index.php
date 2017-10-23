@@ -113,12 +113,47 @@
                     </div>
                 </div>
                 <div class="owl-carousel">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/01.png" alt="">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/02.png" alt="">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/03.png" alt="">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/04.png" alt="">
+                   <div class="step s_1"></div>
+                   <div class="step s_2"></div>
+                   <div class="step s_3"></div>
+                   <div class="step s_4"></div>
                 </div>
-
+                <div class="container">
+                    <div class="_wrapper">
+                        <div class="passo">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/canvas.svg" alt="">
+                            <div class="passo_infos">
+                                <h1>1º ENCONTRO</h1>
+                                <h2>CARREIRA ESTELAR (ESCOLHA, DESAFIO)</h2>
+                                <p>No ponto de partida dos nossos encontros você é convidado a refletir sobre os desafios da vida profissional. O momento é de amplas possibilidades, mas acredite, escolher é possível.</p>
+                            </div>
+                        </div>
+                        <div class="passo">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/canvas.svg" alt="">
+                            <div class="passo_infos">
+                                <h1>2º E 3º ENCONTRO</h1>
+                                <h2>CARREIRA ESTELAR (ESCOLHA, DESAFIO)</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo porro explicabo velit harum fugit corporis et totam maxime ex molestiae possimus sequi fuga sapiente, beatae cumque id officia deleniti illo!</p>
+                            </div>
+                        </div>
+                        <div class="passo">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/canvas.svg" alt="">
+                            <div class="passo_infos">
+                                <h1>4º E 5º ENCONTRO</h1>
+                                <h2>TERRAS DAS PROFISSÕES E MATCHING (INFORMAÇÕES, ENEM, SISU, IES, DECISÃO)</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo porro explicabo velit harum fugit corporis et totam maxime ex molestiae possimus sequi fuga sapiente, beatae cumque id officia deleniti illo!</p>
+                            </div>
+                        </div>
+                        <div class="passo">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/canvas.svg" alt="">
+                            <div class="passo_infos">
+                                <h1>6º ENCONTRO</h1>
+                                <h2>QUEM QUERO SER </h2>
+                                <p>Chegou o momento de concretizar sua escolha e projetar-se para o futuro em busca da realização do seu projeto de vida.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <svg class="_onda _b-r" style="fill:whitesmoke; background-color: #621e56" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
@@ -243,27 +278,27 @@
                         <?php $k++ ?>
                         <?php if ( $k == 1 ) : ?>
                         <div class="left">
-                        <?php else: ?>
-                        <?php if ( $k == 3 ) : ?>
-                        <div class="right">
-                        <?php endif; ?>
-                        <?php endif; ?>
-                            <div class="artigo">
-                                <img class="artigo_thumb" src="<?php the_post_thumbnail_url(); ?>" alt="">
-                                <h1 class="artigo_titulo">
-                                    <?php the_title(); ?>
-                                </h1>
-                                <div class="artigo_desc">
-                                    <?php the_excerpt(); ?>
+                            <?php else: ?>
+                            <?php if ( $k == 3 ) : ?>
+                            <div class="right">
+                                <?php endif; ?>
+                                <?php endif; ?>
+                                <div class="artigo">
+                                    <img class="artigo_thumb" src="<?php the_post_thumbnail_url(); ?>" alt="">
+                                    <h1 class="artigo_titulo">
+                                        <?php the_title(); ?>
+                                    </h1>
+                                    <div class="artigo_desc">
+                                        <?php the_excerpt(); ?>
+                                    </div>
+                                    <a href="<?php the_permalink(); ?>" class="artigo_mais _center_X">Saiba mais</a>
                                 </div>
-                                <a href="<?php the_permalink(); ?>" class="artigo_mais _center_X">Saiba mais</a>
+                                <?php echo ($k == 2 || $k == 4) ? "</div>" : ""; ?>
+                                <?php endwhile; ?>
+                                <?php endif; ?>
                             </div>
-                        <?php echo ($k == 2 || $k == 4) ? "</div>" : ""; ?>
-                        <?php endwhile; ?>
-                        <?php endif; ?>
-                    </div>
-                    <a href="artigos" class="_btn _center-child _center-X">ver todos</a>
-                </div>
+                            <a href="artigos" class="_btn _center-child _center-X">ver todos</a>
+                        </div>
             </section>
         </section>
 

@@ -145,19 +145,123 @@
 
 #Caminhos {
     background-color: #621e56;
+    color: whitesmoke;
 }
 
-#Caminhos .aba {
-    color: whitesmoke;
+#Caminhos ._titulo {
+    color: white
 }
 
 #Caminhos .owl-carousel {
     background-color: #621e56;
+    color: #621e56;
 }
 
 #Caminhos .owl-nav {
     box-sizing: border-box;
     padding: 0 5vw;
+}
+
+#Caminhos .owl-item {
+    height: 400px;
+    width: auto;
+}
+
+.step {
+    background-position: center;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+}
+
+.s_1 {
+    background-image: url("../img/Index/metodos/01.png");
+}
+
+.s_2 {
+    background-image: url("../img/Index/metodos/02.png");
+}
+
+.s_3 {
+    background-image: url("../img/Index/metodos/03.png");
+}
+
+.s_4 {
+    background-image: url("../img/Index/metodos/04.png");
+}
+
+#Caminhos > .container {
+    margin-top: 40px;
+    display: none;
+}
+
+.passo {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.passo img {
+    width: 100px;
+    margin-right: 10px
+}
+
+.passo h1 {
+    font-size: 1em;
+    color: white
+}
+
+.passo h2 {
+    font-size: 1.2em;
+    margin: 6px 0
+}
+
+.passo p {
+    text-align: justify
+}
+
+.passo:nth-child(1) h2,
+.passo:nth-child(4) h2 {
+    color: #61b1c4
+}
+
+.passo:nth-child(2) h2 {
+    color: #e54347
+}
+
+.passo:nth-child(3) h2 {
+    color: #f3b31b
+}
+
+@media (max-width: 800px) {
+    #Caminhos .owl-item {
+        height: 350px;
+        width: auto;
+    }
+
+}
+
+@media (max-width: 600px) {
+    #Caminhos .owl-carousel {
+        display: none
+    }
+    #Caminhos > .container {
+        display: block
+    }
+}
+
+@media (max-width: 420px) {
+    #Caminhos > .container {
+        margin-top: 20px
+    }
+    .passo {
+        flex-flow: column;
+    }
+    .passo_infos h1,
+    .passo_infos h2 {
+        text-align: center
+    }
 }
 
 /*------------MÓDULOS-----------------*/
@@ -806,6 +910,11 @@
     .single_modulo,
     .multiple_modulos {
         flex-flow: column;
+
+
+    }
+    .single_modulo > img {
+        padding-right: 0;
     }
 
     /* Videos */
