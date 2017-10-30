@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+<!-- Youtube -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
 <!-- Owl Carousel -->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/owl.carousel.min.css">
 <script src="<?php bloginfo('template_url'); ?>/assets/js/owl.carousel.min.js"></script>
@@ -10,6 +13,8 @@
 </head>
 
 <body>
+    <div style="background-color: red">
+    </div>
     <div class="_black-cover">
         <div class="_alert">
             <div class="_alert-top">
@@ -113,10 +118,10 @@
                     </div>
                 </div>
                 <div class="owl-carousel">
-                   <div class="step s_1"></div>
-                   <div class="step s_2"></div>
-                   <div class="step s_3"></div>
-                   <div class="step s_4"></div>
+                    <div class="step s_1"></div>
+                    <div class="step s_2"></div>
+                    <div class="step s_3"></div>
+                    <div class="step s_4"></div>
                 </div>
                 <div class="container">
                     <div class="_wrapper">
@@ -217,7 +222,6 @@
             </div>
         </section>
 
-
         <section id="Recomendados">
             <svg class="_onda _b-r" style="fill:whitesmoke; background-color: #f3b31b" viewBox="0 0 50 50" preserveAspectRatio="xMinYMin meet">
                 <path d="M0,25 C60,70 200,0 500,1 L10000,00 L0,0 Z"/>
@@ -227,40 +231,47 @@
                 <div class="_wrapper">
                     <h1 class="_titulo">INDICAMOS PRA VOCÊ ASSISTIR</h1>
                     <div class="container">
-                        <div id="v_left">
+                        <?php
+                            include('video_gallery.php'); //VIDEO_GALLERY FUNCTIONS
+
+                            $r = getVideo(); //allocated for multiple use
+                            $video = videoInfos($r->sl_url);
+                        ?>
+                        <div id="v_left" _vt="<?php echo $video[0]; ?>" >
                             <div id="v_left_controls" class="_center-child">
                                 <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/speaker.svg" alt="">
                             </div>
-                            <iframe src="https://player.vimeo.com/video/217723625?autoplay=1&loop=1&title=0&byline=0&portrait=0&background=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                            <!-- <video src="https://youtu.be/KB-GVV68U5s" autoplay muted loop></video> -->
+
+                            <?php if ($video[0] != 0): ?>
+
+                            <iframe id="<?php echo ($video[0] == 1) ? "YT_player" : ""; ?>" src="<?php echo embedThis($video[0],$video[1]); ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                            <?php else: ?>
+
+                            <video src="<?php echo $video[1]; ?>" autoplay muted loop controls></video>
+
+                            <?php endif; ?>
                         </div>
                         <div id="v_right">
                             <div id="video_infos">
-                                <div id="video_titulo">
-                                    <h1>Nunca me sonharam</h1>
-                                </div>
-                                <div id="video_descricao">
-                                    <p>Nunca Me Sonharam nos convida ao diálogo sobre a realidade do ensino médio nas escolas públicas do Brasil. Na voz de estudantes, gestores, professores e especialistas, o filme questiona: como nós, enquanto sociedade, estamos cuidando e valorizando a qualidade da educação oferecida aos jovens na fase mais sensível e transformadora de suas vidas?</p>
-                                </div>
+                                <h1><?php echo $r->name; ?></h1>
+                                <p><?php echo $r->description; ?></p>
                             </div>
                         </div>
                     </div>
                     <div id="outros_videos">
                         <p>você também pode gostar de:</p>
-
                         <div class="container">
-                            <div class="v_other">
-                                <div class="v_other_play _center-child"><img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/play.svg" alt=""></div>
-                                <img src="https://i.ytimg.com/vi/G0wGs3useV8/mqdefault.jpg" alt="">
+                            <?php $r = getVideos(getVideo()->id); //allocated for multiple use on 'foreach' ?>
+                            <?php foreach ( $r as $item ): ?>
+                            <?php $video = videoInfos($item->sl_url); ?>
+                            <div class="v_other" vid="<?php echo $item->id; ?>">
+                                <div class="v_other_play _center-child">
+                                    <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/play.svg">
+                                </div>
+                                <img src="<?php if ($item->thumb_url != "") { echo $item->thumb_url; } else{ echo thumbThis($video[0], $video[1]); } ?>" alt="<?php echo $item->name; ?>">
                             </div>
-                            <div class="v_other">
-                                <div class="v_other_play _center-child"><img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/play.svg" alt=""></div>
-                                <img src="https://i.ytimg.com/vi/G0wGs3useV8/mqdefault.jpg" alt="">
-                            </div>
-                            <div class="v_other">
-                                <div class="v_other_play _center-child"><img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/play.svg" alt=""></div>
-                                <img src="https://i.ytimg.com/vi/G0wGs3useV8/mqdefault.jpg" alt="">
-                            </div>
+                            <?php endforeach; ?>
                             <!-- 5 no total -->
                         </div>
                     </div>
@@ -278,27 +289,23 @@
                         <?php $k++ ?>
                         <?php if ( $k == 1 ) : ?>
                         <div class="left">
-                            <?php else: ?>
-                            <?php if ( $k == 3 ) : ?>
-                            <div class="right">
-                                <?php endif; ?>
-                                <?php endif; ?>
-                                <div class="artigo">
-                                    <img class="artigo_thumb" src="<?php the_post_thumbnail_url(); ?>" alt="">
-                                    <h1 class="artigo_titulo">
-                                        <?php the_title(); ?>
-                                    </h1>
-                                    <div class="artigo_desc">
-                                        <?php the_excerpt(); ?>
-                                    </div>
-                                    <a href="<?php the_permalink(); ?>" class="artigo_mais _center_X">Saiba mais</a>
-                                </div>
-                                <?php echo ($k == 2 || $k == 4) ? "</div>" : ""; ?>
-                                <?php endwhile; ?>
-                                <?php endif; ?>
+                        <?php else: ?>
+                        <?php if ( $k == 3 ) : ?>
+                        <div class="right">
+                        <?php endif; ?>
+                        <?php endif; ?>
+                            <div class="artigo">
+                                <img class="artigo_thumb" src="<?php the_post_thumbnail_url(); ?>" alt="">
+                                <h1 class="artigo_titulo"><?php the_title(); ?></h1>
+                                <div class="artigo_desc"><?php the_excerpt(); ?></div>
+                                <a href="<?php the_permalink(); ?>" class="artigo_mais _center_X">Saiba mais</a>
                             </div>
-                            <a href="artigos" class="_btn _center-child _center-X">ver todos</a>
-                        </div>
+                        <?php echo ($k == 2 || $k == 4) ? "</div>" : ""; ?>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
+                    </div>
+                    <a href="artigos" class="_btn _center-child _center-X">ver todos</a>
+                </div>
             </section>
         </section>
 
@@ -361,3 +368,7 @@
             </div>
         </section>
         <?php get_footer(); ?>
+    </main>
+</body>
+
+</html>

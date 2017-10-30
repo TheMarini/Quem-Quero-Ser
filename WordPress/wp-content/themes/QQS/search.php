@@ -1,3 +1,6 @@
+<?php get_template_part('archive'); ?>
+
+
 <!-- <?php
     if ( isset( $_REQUEST[ 'search' ] ) ) {
           // run search query

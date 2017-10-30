@@ -7,7 +7,7 @@
     <main>
         <?php get_template_part('Back-Home'); ?>
         <div class="_wrapper">
-            <form id="Search" class="_center-child" role="search" method="get" action="http://localhost/artigos/" _lpchecked="1">
+            <form id="Search" class="_center-child" role="search" method="get" action="<?php echo home_url(); ?>" _lpchecked="1">
                 <input type="text" placeholder="Pesquisar um artigo" name="s" id="s">
                 <input type="submit" value="">
             </form>

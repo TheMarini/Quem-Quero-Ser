@@ -413,13 +413,14 @@
     height: 100%;
     position: absolute;
     cursor: pointer;
+    background-color: rgba(0,0,0,0.1);
+    z-index: 1
 }
 
-#v_left iframe {
+#v_left iframe, #v_left video {
     height: 100%;
-    width: 100%;
-    cursor: pointer;
-    object-fit: cover;
+    width: 99.9%;
+    z-index: 0;
 }
 
 #v_right {
@@ -439,12 +440,12 @@
     margin-left: 10px
 }
 
-#video_titulo {
-    font-size: 1.5em;
+#video_infos h1 {
+    font-size: 1.7em;
     text-transform: uppercase
 }
 
-#video_descricao {
+#video_infos p {
     font-size: 1.1em;
     color: dimgray;
     text-align: justify;

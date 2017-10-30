@@ -7,8 +7,23 @@ var $menu_mobile = true; //menu_mobile first click
 var reA = /[^a-zA-Z]/g; // |search|global match -> NOT alphabetic
 var reN = /[^0-9]/g; // |search|global match -> NOT digit
 
+var $YT_Player;
+
+function onYouTubeIframeAPIReady() {
+    $YT_Player = new YT.Player('YT_player', {
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
+
+function onPlayerReady(event) {
+    event.target.mute();
+}
+
 $(document).ready(function () {
     var $img_folder = $templateDir + "/assets/img/Index/banner/"; //Banner Images folder
+    var $video_type = $("#v_left").attr("_vt"); //direct source | Youtube | Vimeo
 
     /* FIRST CALLS */
     $('.p_destaque').each(function () {
@@ -112,13 +127,13 @@ $(document).ready(function () {
     }
     setInterval(nextBackground, 8000);
 
-    
+
     /* EVENTS & CODING */
     //Preparar imagens
     $.ajax({
         async: true,
         url: $img_folder,
-        success: function (data) {            
+        success: function (data) {
             console.log(data);
             $(data).find("ul>li>a").attr("title", function (i, val) {
                 if (val.match(/.(jpe?g|png|gif)$/g)) {
@@ -283,8 +298,67 @@ $(document).ready(function () {
 
     /* VÍDEO CONTROLS */
     $('#v_left_controls').on('click', function () {
-        $(this).css('display', 'none')
-        $('#v_left iframe').attr('src', "https://player.vimeo.com/video/217723625?autoplay=1&loop=1&title=0&byline=0&portrait=0&background=0");
+        $(this).css('display', 'none');
+
+        switch ($video_type) {
+            case '0':
+                $('#v_left video').prop('muted', false);
+                break;
+
+            case '1':
+                $YT_Player.unMute();
+                break;
+
+            case '2':
+                $('#v_left iframe').attr('src', ($('#v_left iframe').attr('src').replace('background=1', 'autoplay=1&loop=1&title=0&byline=0&portrait=0')));
+                break;
+        }
+        /*
+        if ($('#v_left iframe').length) {
+            var iframe = $('#v_left iframe');
+            switch (iframe.attr('id')) {
+                case 'YT_player':
+                    $YT_Player.unMute();
+                    break;
+
+                case 'V_player':
+                    iframe.attr('src', (iframe.attr('src').replace('background=1', 'autoplay=1&loop=1&title=0&byline=0&portrait=0')));
+                    break;
+            };
+        } else {
+            var video = $('#v_left video');
+            video.prop('muted', false);
+        }
+*/
+        //$('#v_left iframe').attr('src', "https://www.youtube.com/embed/y35DsSh6Tyk?autoplay=1&loop=1&modestbranding=1&color=white");
+        //$('#v_left iframe').attr('src', "https://player.vimeo.com/video/217723625?autoplay=1&loop=1&title=0&byline=0&portrait=0&background=0");
+    });
+
+    /* RECOMENDAÇÕES */
+    $('.v_other').on('click', function () {
+        $.ajax({
+            url: $templateDir + '/test.php',
+            type: "POST",
+            dataType: 'json',
+            data: ({
+                id: $(this).attr('vid')
+            }),
+            success: function (data) {
+                console.log(data);
+            },
+            error: (error) => {
+                console.log(JSON.stringify(error));
+            }
+        });
+        //alert($videosList);
+        /*
+        if ($('#v_left iframe').length) {
+            $('#v_left iframe').attr('src', $(this).attr('vid'));
+        }
+        else{
+             $('#v_left video').attr('src', $(this).attr('vid'));
+        }
+        */
     });
 
     /* PREVENT SUBMIT ON ENTER PRESS */
