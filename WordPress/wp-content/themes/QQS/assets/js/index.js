@@ -23,7 +23,6 @@ function onPlayerReady(event) {
 
 $(document).ready(function () {
     var $img_folder = $templateDir + "/assets/img/Index/banner/"; //Banner Images folder
-    var $video_type = $("#v_left").attr("_vt"); //direct source | Youtube | Vimeo
 
     /* FIRST CALLS */
     $('.p_destaque').each(function () {
@@ -300,7 +299,7 @@ $(document).ready(function () {
     $('#v_left_controls').on('click', function () {
         $(this).css('display', 'none');
 
-        switch ($video_type) {
+        switch ($("#v_left").attr('_vt')) {
             case '0':
                 $('#v_left video').prop('muted', false);
                 break;
@@ -341,24 +340,34 @@ $(document).ready(function () {
             type: "POST",
             dataType: 'json',
             data: ({
-                id: $(this).attr('vid')
+                id: $(this).attr('vid'),
+                muted: ($('#v_left_controls').css('display') != 'none') ? true : false
             }),
             success: function (data) {
                 console.log(data);
+                switch ($("#v_left").attr('_vt')) {
+                    case '0':
+                        $('#v_left video').replaceWith(data[1]);
+                        break;
+
+                    case '1':
+                    case '2':
+                        $('#v_left iframe').replaceWith(data[1]);
+                        //if($('#v_left_controls').css('display') != 'none'){onYouTubeIframeAPIReady();}
+                        break;
+                }
+                $("#v_left").attr('_vt', data[0]);
+                $('#video_infos>h1').text(data[2]);
+                $('#video_infos>p').text(data[3]);
+
+                if (data[0] == 1 && $('#v_left_controls').css('display') != 'none') {
+                    onYouTubeIframeAPIReady();
+                }
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
             }
         });
-        //alert($videosList);
-        /*
-        if ($('#v_left iframe').length) {
-            $('#v_left iframe').attr('src', $(this).attr('vid'));
-        }
-        else{
-             $('#v_left video').attr('src', $(this).attr('vid'));
-        }
-        */
     });
 
     /* PREVENT SUBMIT ON ENTER PRESS */

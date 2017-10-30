@@ -234,7 +234,8 @@
                         <?php
                             include('video_gallery.php'); //VIDEO_GALLERY FUNCTIONS
 
-                            $r = getVideo(); //allocated for multiple use
+                            //allocated for multiple use
+                            $r = getVideo();
                             $video = videoInfos($r->sl_url);
                         ?>
                         <div id="v_left" _vt="<?php echo $video[0]; ?>" >
@@ -242,15 +243,8 @@
                                 <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/speaker.svg" alt="">
                             </div>
 
-                            <?php if ($video[0] != 0): ?>
+                            <?php echo htmlThis($video[0], $video[1]); ?>
 
-                            <iframe id="<?php echo ($video[0] == 1) ? "YT_player" : ""; ?>" src="<?php echo embedThis($video[0],$video[1]); ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-                            <?php else: ?>
-
-                            <video src="<?php echo $video[1]; ?>" autoplay muted loop controls></video>
-
-                            <?php endif; ?>
                         </div>
                         <div id="v_right">
                             <div id="video_infos">

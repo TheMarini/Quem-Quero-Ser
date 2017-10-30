@@ -22,36 +22,8 @@
         }
     }
 
-    //THUMBNAIL
-    function thumbThis($from, $id){
-        switch ($from) {
-            case 1: return 'https://img.youtube.com/vi/' . $id . '/0.jpg';
-                break;
-
-            case 2: return null;  //usar JSON
-                break;
-
-            default: return null;  //Ih filhão, se fudeu
-                break;
-        }
-    }
-
-    //URL options
-    function embedThis($from, $id){
-        switch ($from) {
-            case 1: return 'http://www.youtube.com/embed/' . $id . '?autoplay=1&enablejsapi=1&loop=1&color=white&rel=0&showinfo=0';
-                break;
-
-            case 2: return 'https://player.vimeo.com/video/' . $id  . '?background=1';
-                break;
-
-            default: return $id;
-                break;
-        }
-    }
-
     //WICH TYPE OF URL IS
-    function videoInfos($videoURL) {
+    function videoInfos($videoURL) { //return -> [ video_type | ID only ]
         if((strpos($videoURL, 'youtube.com') !== false)) { //link url
             return array(1, explode('/watch?v=', $videoURL)[1]);
         }
@@ -70,10 +42,46 @@
         }
     }
 
+    //HTML
+    function htmlThis($from, $id, $muted = true){
+        switch ($from) {
+            case 0: return '<video src="' . $id . '" autoplay' . (($muted == 'true') ? ' muted ' : ' ') . 'loop controls></video>';
+                break;
 
-    function test($id = "padrao"){
-        return $id;
+            case 1:
+            case 2: return '<iframe id="' . (($from == 1) ? "YT_player" : "") . '" src="' . embedThis($from, $id, $muted) . '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+                break;
+        }
     }
+
+    //URL options
+    function embedThis($from, $id, $muted = true){
+        switch ($from) {
+            case 0: return $id;
+                break;
+
+            case 1: return 'http://www.youtube.com/embed/' . $id . '?autoplay=1&enablejsapi=1&loop=1&color=white&rel=0&showinfo=0';
+                break;
+
+            case 2: return 'https://player.vimeo.com/video/' . $id  . (($muted == 'true') ? '?background=1' : '?autoplay=1&loop=1&title=0&byline=0&portrait=0');
+                break;
+        }
+    }
+
+
+    //THUMBNAIL
+    function thumbThis($from, $id){
+        switch ($from) {
+            case 0:
+            case 2:
+                return bloginfo('template_url') . '/assets/img/_all/bluebox.png';  //Ih filhão, se fudeu
+                break;
+
+            case 1: return 'https://img.youtube.com/vi/' . $id . '/0.jpg';
+                break;
+        }
+    }
+
 /*
     //echo '<div style="background-color:red">' . $src . '</div>';
 
