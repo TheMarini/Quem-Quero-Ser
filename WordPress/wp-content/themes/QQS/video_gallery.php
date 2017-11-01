@@ -1,6 +1,7 @@
 <?php
-    /* ----- FUNCTIONS ----- */
-    //SINGLE VIDEO (featured)
+    /* ----- ! FUNCTIONS ! ----- */
+
+    //SINGLE VIDEO
     function getVideo($id = null){
         global $wpdb; //call wp_database
         if($id === null){ //get the first video in database
@@ -11,7 +12,7 @@
         }
     }
 
-    //MULTIPLE VIDEOS (recommendations)
+    //MULTIPLE VIDEOS
     function getVideos($id = null){
         global $wpdb; //call wp_database
         if($id === null){ //all videos in database
@@ -22,7 +23,7 @@
         }
     }
 
-    //WICH TYPE OF URL IS
+    //WICH TYPE OF VIDEO IS
     function videoInfos($videoURL) { //return -> [ video_type | ID only ]
         if((strpos($videoURL, 'youtube.com') !== false)) { //link url
             return array(1, explode('/watch?v=', $videoURL)[1]);
@@ -42,18 +43,6 @@
         }
     }
 
-    //HTML
-    function htmlThis($from, $id, $muted = true){
-        switch ($from) {
-            case 0: return '<video src="' . $id . '" autoplay' . (($muted == 'true') ? ' muted ' : ' ') . 'loop controls></video>';
-                break;
-
-            case 1:
-            case 2: return '<iframe id="' . (($from == 1) ? "YT_player" : "") . '" src="' . embedThis($from, $id, $muted) . '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-                break;
-        }
-    }
-
     //URL options
     function embedThis($from, $id, $muted = true){
         switch ($from) {
@@ -68,7 +57,6 @@
         }
     }
 
-
     //THUMBNAIL
     function thumbThis($from, $id){
         switch ($from) {
@@ -79,6 +67,40 @@
 
             case 1: return 'https://img.youtube.com/vi/' . $id . '/0.jpg';
                 break;
+        }
+    }
+
+    //HTML
+    class htmlThis
+    {
+        //FEATURED VIDEO
+        public static function featured($from, $id, $muted = true){
+            switch ($from) {
+                case 0: return '<video src="' . $id . '" autoplay' . (($muted == 'true') ? ' muted ' : ' ') . 'loop controls></video>';
+                    break;
+
+                case 1:
+                case 2: return '<iframe id="' . (($from == 1) ? "YT_player" : "") . '" src="' . embedThis($from, $id, $muted) . '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+                    break;
+            }
+        }
+
+        //RECOMMENDATIONS VIDEOS
+        public static function recommendations($id = null) {
+            //allocated for multiple use on 'foreach'
+            $r = ($id != null) ? getVideos(getVideo($id)->id) : getVideos(getVideo()->id);
+            foreach ( $r as $item ) {
+                $video = videoInfos($item->sl_url);
+                echo '<div class="v_other" vid="' . $item->id . '">';
+                echo '  <div class="v_other_play _center-child">';
+                echo '      <img src="';
+                echo        bloginfo('template_url') . '/assets/img/_all/icons/play.svg" >';
+                echo '  </div>';
+                echo '  <img src="';
+                echo    ($item->thumb_url != "") ? $item->thumb_url : thumbThis($video[0], $video[1]);
+                echo    '" alt="' . $item->name . '">';
+                echo '</div>';
+            }
         }
     }
 

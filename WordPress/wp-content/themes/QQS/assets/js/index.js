@@ -344,7 +344,6 @@ $(document).ready(function () {
                 muted: ($('#v_left_controls').css('display') != 'none') ? true : false
             }),
             success: function (data) {
-                console.log(data);
                 switch ($("#v_left").attr('_vt')) {
                     case '0':
                         $('#v_left video').replaceWith(data[1]);
@@ -353,7 +352,6 @@ $(document).ready(function () {
                     case '1':
                     case '2':
                         $('#v_left iframe').replaceWith(data[1]);
-                        //if($('#v_left_controls').css('display') != 'none'){onYouTubeIframeAPIReady();}
                         break;
                 }
                 $("#v_left").attr('_vt', data[0]);

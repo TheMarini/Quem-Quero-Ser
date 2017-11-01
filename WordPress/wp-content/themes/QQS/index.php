@@ -243,8 +243,7 @@
                                 <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/speaker.svg" alt="">
                             </div>
 
-                            <?php echo htmlThis($video[0], $video[1]); ?>
-
+                            <?php echo htmlThis::featured($video[0], $video[1]); ?>
                         </div>
                         <div id="v_right">
                             <div id="video_infos">
@@ -256,16 +255,7 @@
                     <div id="outros_videos">
                         <p>você também pode gostar de:</p>
                         <div class="container">
-                            <?php $r = getVideos(getVideo()->id); //allocated for multiple use on 'foreach' ?>
-                            <?php foreach ( $r as $item ): ?>
-                            <?php $video = videoInfos($item->sl_url); ?>
-                            <div class="v_other" vid="<?php echo $item->id; ?>">
-                                <div class="v_other_play _center-child">
-                                    <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/play.svg">
-                                </div>
-                                <img src="<?php if ($item->thumb_url != "") { echo $item->thumb_url; } else{ echo thumbThis($video[0], $video[1]); } ?>" alt="<?php echo $item->name; ?>">
-                            </div>
-                            <?php endforeach; ?>
+                            <?php htmlThis::recommendations(); ?>
                             <!-- 5 no total -->
                         </div>
                     </div>
