@@ -62,7 +62,7 @@
         switch ($from) {
             case 0:
             case 2:
-                return bloginfo('template_url') . '/assets/img/_all/bluebox.png';  //Ih filhão, se fudeu
+                return get_bloginfo('template_url') . '/assets/img/_all/bluebox.png';  //Ih filhão, se fudeu
                 break;
 
             case 1: return 'https://img.youtube.com/vi/' . $id . '/0.jpg';
@@ -86,52 +86,45 @@
         }
 
         //RECOMMENDATIONS VIDEOS
-        public static function recommendations($id = null) {
+        public static function recommendations() {
             //allocated for multiple use on 'foreach'
-            $r = ($id != null) ? getVideos(getVideo($id)->id) : getVideos(getVideo()->id);
+            $results = getVideos(getVideo()->id);
+            foreach ( $results as $row ) {
+                $html .= htmlThis::v_other($row);
+            }
+            return $html;
+        }
+
+        //V_Other
+        public static function v_other($row) {
+            $video = videoInfos($row->sl_url);
+            $html .= '<div class="v_other" _vid="' . $row->id . '">';
+            $html .= '  <div class="v_other_play _center-child">';
+            $html .= '      <img src="' . get_bloginfo('template_url') . '/assets/img/_all/icons/play.svg" >';
+            $html .= '  </div>';
+            $html .= '  <img src="' . (($row->thumb_url != "") ? $row->thumb_url : thumbThis($video[0], $video[1])) . '" alt="' . $row->name . '">';
+            $html .= '</div>';
+            return $html;
+        }
+    }
+
+    /*
+
+
+                //allocated for multiple use on 'foreach'
+            $r = ($id === null) ? getVideos(getVideo()->id) : getVideos($id);
             foreach ( $r as $item ) {
                 $video = videoInfos($item->sl_url);
-                echo '<div class="v_other" vid="' . $item->id . '">';
-                echo '  <div class="v_other_play _center-child">';
-                echo '      <img src="';
-                echo        bloginfo('template_url') . '/assets/img/_all/icons/play.svg" >';
-                echo '  </div>';
-                echo '  <img src="';
-                echo    ($item->thumb_url != "") ? $item->thumb_url : thumbThis($video[0], $video[1]);
-                echo    '" alt="' . $item->name . '">';
-                echo '</div>';
+                $html .= '<div class="v_other" _vid="' . $item->id . '">';
+                $html .= '  <div class="v_other_play _center-child">';
+                $html .= '      <img src="' . get_bloginfo('template_url') . '/assets/img/_all/icons/play.svg" >';
+                $html .= '  </div>';
+                $html .= '  <img src="' . (($item->thumb_url != "") ? $item->thumb_url : thumbThis($video[0], $video[1])) . '" alt="' . $item->name . '">';
+                $html .= '</div>';
             }
-        }
-    }
+            return $html;
 
-/*
     //echo '<div style="background-color:red">' . $src . '</div>';
-
-/*
-    foreach($others as $item){
-
-    }
-    echo '<script> var $videosList =' . json_encode($others) . '</script>';*/
-
-
-/*
-    if((strpos($main->sl_url, 'youtube.com') !== false)) { //link url
-        $src = array(1, embedThis(1, explode('/watch?v=', $main->sl_url)[1]));
-    }
-    else {
-        if((strpos($main->sl_url, 'youtu.be') !== false)) { //link share
-            $src = array(1, embedThis(1, explode('youtu.be/', $main->sl_url)[1]));
-        }
-        else {
-            if((strpos($main->sl_url, 'vimeo.com') !== false)) { //link both
-                $src = array(2, embedThis(2, explode('vimeo.com/', $main->sl_url)[1]));
-            }
-            else{
-                $src = array(0, $main->sl_url); //direct source
-            }
-        }
-    }
-
 
     /*
     <iframe id="YT_player" src="https://www.youtube.com/embed/y35DsSh6Tyk?autoplay=1&controls=0&enablejsapi=1&loop=1&modestbranding=1&color=white" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

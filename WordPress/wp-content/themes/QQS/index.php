@@ -238,12 +238,13 @@
                             $r = getVideo();
                             $video = videoInfos($r->sl_url);
                         ?>
-                        <div id="v_left" _vt="<?php echo $video[0]; ?>" >
+                        <div id="v_left" _vt="<?php echo $video[0]; ?>" _vid="<?php echo $r->id; ?>">
                             <div id="v_left_controls" class="_center-child">
                                 <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/speaker.svg" alt="">
                             </div>
 
                             <?php echo htmlThis::featured($video[0], $video[1]); ?>
+
                         </div>
                         <div id="v_right">
                             <div id="video_infos">
@@ -254,10 +255,10 @@
                     </div>
                     <div id="outros_videos">
                         <p>você também pode gostar de:</p>
-                        <div class="container">
-                            <?php htmlThis::recommendations(); ?>
+                            <div class="container">
+                                <?php echo htmlThis::recommendations(); ?>
+                            </div>
                             <!-- 5 no total -->
-                        </div>
                     </div>
                 </div>
             </section>

@@ -21,4 +21,4 @@
     <link rel="shortcut icon" type="image/ico" href="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/icon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
 
-    <script> var $templateDir = "<?php echo bloginfo('template_url'); ?>";</script>
+    <script> var $templateDir = "<?php bloginfo('template_url'); ?>";</script>

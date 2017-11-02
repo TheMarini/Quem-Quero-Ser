@@ -5,7 +5,10 @@
     $r = getVideo($_POST['id']); //select result
     $v_infos = videoInfos($r->sl_url); //[direct source | Youtube | Vimeo] + ID
 
-    $video = [$v_infos[0], htmlThis::featured($v_infos[0], $v_infos[1], $_POST['muted']), $r->name, $r->description]
+    $featured = [$v_infos[0], htmlThis::featured($v_infos[0], $v_infos[1], $_POST['muted']), $r->name, $r->description];
+    $v_other = htmlThis::v_other(getVideo($_POST['featured']));
 
-    echo json_encode($video);
+    $data = array("featured" => $featured, "v_other" => $v_other);
+    echo json_encode($data);
+    exit();
 ?>

@@ -11,6 +11,7 @@ var $YT_Player;
 
 function onYouTubeIframeAPIReady() {
     $YT_Player = new YT.Player('YT_player', {
+        origin: 'localhost',
         events: {
             'onReady': onPlayerReady
         }
@@ -312,55 +313,43 @@ $(document).ready(function () {
                 $('#v_left iframe').attr('src', ($('#v_left iframe').attr('src').replace('background=1', 'autoplay=1&loop=1&title=0&byline=0&portrait=0')));
                 break;
         }
-        /*
-        if ($('#v_left iframe').length) {
-            var iframe = $('#v_left iframe');
-            switch (iframe.attr('id')) {
-                case 'YT_player':
-                    $YT_Player.unMute();
-                    break;
-
-                case 'V_player':
-                    iframe.attr('src', (iframe.attr('src').replace('background=1', 'autoplay=1&loop=1&title=0&byline=0&portrait=0')));
-                    break;
-            };
-        } else {
-            var video = $('#v_left video');
-            video.prop('muted', false);
-        }
-*/
         //$('#v_left iframe').attr('src', "https://www.youtube.com/embed/y35DsSh6Tyk?autoplay=1&loop=1&modestbranding=1&color=white");
         //$('#v_left iframe').attr('src', "https://player.vimeo.com/video/217723625?autoplay=1&loop=1&title=0&byline=0&portrait=0&background=0");
     });
 
     /* RECOMENDAÇÕES */
-    $('.v_other').on('click', function () {
+    $('#outros_videos > .container').on('click', '.v_other', function () {
+        $this = $(this);
         $.ajax({
             url: $templateDir + '/test.php',
             type: "POST",
             dataType: 'json',
             data: ({
-                id: $(this).attr('vid'),
-                muted: ($('#v_left_controls').css('display') != 'none') ? true : false
+                id: $(this).attr('_vid'),
+                muted: ($('#v_left_controls').css('display') != 'none') ? true : false,
+                featured: $("#v_left").attr('_vid')
             }),
             success: function (data) {
                 switch ($("#v_left").attr('_vt')) {
                     case '0':
-                        $('#v_left video').replaceWith(data[1]);
+                        $('#v_left video').replaceWith(data.featured[1]);
                         break;
 
                     case '1':
                     case '2':
-                        $('#v_left iframe').replaceWith(data[1]);
+                        $('#v_left iframe').replaceWith(data.featured[1]);
                         break;
                 }
-                $("#v_left").attr('_vt', data[0]);
-                $('#video_infos>h1').text(data[2]);
-                $('#video_infos>p').text(data[3]);
+                $("#v_left").attr('_vid', $this.attr('_vid'));
+                $("#v_left").attr('_vt', data.featured[0]);
+                $('#video_infos>h1').text(data.featured[2]);
+                $('#video_infos>p').text(data.featured[3]);
 
-                if (data[0] == 1 && $('#v_left_controls').css('display') != 'none') {
+                if (data.featured[0] == 1 && $('#v_left_controls').css('display') != 'none') {
                     onYouTubeIframeAPIReady();
                 }
+                $this.replaceWith(null);
+                $("#outros_videos > .container").append(data.v_other);
             },
             error: (error) => {
                 console.log(JSON.stringify(error));
