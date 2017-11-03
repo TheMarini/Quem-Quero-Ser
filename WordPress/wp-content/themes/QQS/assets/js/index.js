@@ -1,3 +1,4 @@
+/* --- SUPER GLOBAL VARIABLES --- */
 var $colors = ['whitesmoke', '#e54347', '#621e56', '#f3b31b', '#61b1c4', '#2e2d2c'];
 var $banners = [];
 var $currentBanner = 0;
@@ -7,8 +8,9 @@ var $menu_mobile = true; //menu_mobile first click
 var reA = /[^a-zA-Z]/g; // |search|global match -> NOT alphabetic
 var reN = /[^0-9]/g; // |search|global match -> NOT digit
 
-var $YT_Player;
 
+/* --- DOCUMENT INDEPENDENT FUNCTIONS --- */
+var $YT_Player;
 function onYouTubeIframeAPIReady() {
     $YT_Player = new YT.Player('YT_player', {
         origin: 'localhost',
@@ -17,19 +19,36 @@ function onYouTubeIframeAPIReady() {
         }
     });
 }
-
 function onPlayerReady(event) {
     event.target.mute();
 }
 
+var $mainTop;
+var $metodosTop;
+var $equipeTop;
+var $recomendadosTop;
+var $contatoTop;
+
+function refreshOffsets() {
+    $mainTop = $('#Main').offset().top;
+    $metodosTop = $('#Metodos').offset().top;
+    $equipeTop = $('#Equipe').offset().top;
+    $recomendadosTop = $('#Recomendados').offset().top;
+    $contatoTop = $('#Contato').offset().top;
+}
+
 $(document).ready(function () {
-    var $img_folder = $templateDir + "/assets/img/Index/banner/"; //Banner Images folder
+    var $banner_folder = $templateDir + "/assets/img/Index/banner/"; //Banner Images folder
+    var $scrollTop = $(window).scrollTop();
+    refreshOffsets();
 
     /* FIRST CALLS */
+    //Stretch the featured texts on 'Manifesto'
     $('.p_destaque').each(function () {
-        $(this).strech_text();
+        $(this).stretch_text();
     });
 
+    //Carousels configuration
     $('.owl-carousel').owlCarousel({
         loop: true,
         items: 1,
@@ -40,30 +59,19 @@ $(document).ready(function () {
         dots: false
     });
 
+    //Center '<' or '>' content
     $('.owl-nav').each(function () {
         $(this).addClass("_center-child");
     });
 
-    /* R E V I S Ã O */
-    $('.owl-stage-outer').each(function () {
-        $(this).parent().append(this);
-    });
-
-    /* VARIABLES */
-    //Distâncias do topo
-    var $scrollTop = $(window).scrollTop();
-    var $mainTop = $('#Main').offset().top;
-    var $metodosTop = $('#Metodos').offset().top;
-    var $equipeTop = $('#Equipe').offset().top;
-    var $recomendadosTop = $('#Recomendados').offset().top;
-    var $contatoTop = $('#Contato').offset().top;
-
     /* FUNCTIONS */
-    //Nav na posição certa
+    //Correct position of nav
     function navPos() {
         if ($scrollTop > $mainTop) {
             $("#_Nav").removeClass("_nav-start");
             $("#_Nav").addClass("_nav-fixed");
+
+            $("#_home").removeClass("_hide");
 
         } else {
             $("#_Nav").removeClass("_nav-fixed");
@@ -75,30 +83,26 @@ $(document).ready(function () {
 
     //Menu configs
     function navIndex(mobile = false) {
-        switch (mobile) {
-            case false:
-                //Volta item para padrão se o mesmo não for o atual
-                $("#_menu li").each(function (index) {
-                    if (index != $secaoAtual) {
-                        $(this).css('background-color', $colors[0]);
-                        $(this).css('color', $colors[index + 1]);
-                    }
-                });
-
-                //Coloca item atual em destaque
-                if ($secaoAtual != null) {
-                    $('#_menu').find("li").eq($secaoAtual).css('background-color', $colors[$secaoAtual + 1]);
-                    $('#_menu').find("li").eq($secaoAtual).css('color', $colors[0]);
-                    $('#_menu').find("li").eq($secaoAtual).css('border-color', $colors[$secaoAtual + 1]);
-                }
-                break;
-            case true:
-                //Todos em focus
-                $("#_menu li").each(function (index) {
+        if (!mobile) {
+            $("#_menu li").each(function (index) {
+                //Set back each 'li' to default if it isn't the current item
+                if (index != $secaoAtual) {
+                    $(this).css('background-color', $colors[0]); //whitesmoke
+                    $(this).css('color', $colors[index + 1]); //index starts at 0 and colors[0] == whitesmoke
+                } else {
+                    //If it is, set as highlighted
+                    $(this).css('background-color', $colors[index + 1]);
+                    $(this).css('color', $colors[0]);
                     $(this).css('border-color', $colors[index + 1]);
-                    $(this).css('color', $colors[index + 1]);
-                });
-                break;
+                }
+            });
+
+        } else {
+            //Set all to default
+            $("#_menu li").each(function (index) {
+                $(this).css('border-color', $colors[index + 1]);
+                $(this).css('color', $colors[index + 1]);
+            });
         }
     };
 
@@ -122,7 +126,7 @@ $(document).ready(function () {
         $('#banner_bg').fadeTo('slow', 0, function () {
             $currentBanner++;
             $currentBanner = $currentBanner % $banners.length; //Ao chegar o nº total zera novamente (módulo de 21 é 0)
-            $("#banner_bg").css('background-image', "url(" + $img_folder + $banners[$currentBanner] + ")");
+            $("#banner_bg").css('background-image', "url(" + $banner_folder + $banners[$currentBanner] + ")");
         }).fadeTo('slow', 1);
     }
     setInterval(nextBackground, 8000);
@@ -130,62 +134,67 @@ $(document).ready(function () {
 
     /* EVENTS & CODING */
     //Preparar imagens
-    $.ajax({
-        async: true,
-        url: $img_folder,
-        success: function (data) {
-            console.log(data);
-            $(data).find("ul>li>a").attr("title", function (i, val) {
-                if (val.match(/.(jpe?g|png|gif)$/g)) {
-                    $banners.push(val);
-                }
-            });
-        }
-    });
-    $banners.sort(sortAlphaNum);
-
-    $("#banner_bg").css('background-image', "url(" + $img_folder + $banners[$currentBanner] + ")"); //Começar com a 1ª img
+    //    $.ajax({
+    //        async: true,
+    //        url: $banner_folder,
+    //        success: function (data) {
+    //            console.log(data);
+    //            $(data).find("ul>li>a").attr("title", function (i, val) {
+    //                if (val.match(/.(jpe?g|png|gif)$/g)) {
+    //                    $banners.push(val);
+    //                }
+    //            });
+    //        }
+    //    });
+    //    $banners.sort(sortAlphaNum);
+    //
+    //    $("#banner_bg").css('background-image', "url(" + $banner_folder + $banners[$currentBanner] + ")"); //Começar com a 1ª img
 
     //Configurações de acordo com o dispositivo
-    if ($(window).width() < 900) { //Mobile
+    if ($(window).width() >= 920) { //Desktop
+        navPos(); //Posição da Nav em relação a posição da tela observada
+        navIndex(); //Desktop Nav colors config
+
+    } else { //Mobile
         $("#_Nav").addClass("_nav-fixed");
         navIndex(true); //Mobile Nav colors config
 
-        $("#_menu li").on('click', function () { // Recuar menu automaticamente no click
+        $("#_menu").on('click', 'li', function () { // Recuar menu automaticamente no click
             $("#_mobile-menu").click();
         });
-    } else { //Desktop
-        navIndex(); //Desktop Nav colors config
-        navPos(); //Posição da Nav em relação a posição da tela observada
     }
 
     //Responsividade on resize
     $(window).resize(function () {
+        refreshOffsets();
+
         $('.p_destaque').each(function () {
-            $(this).strech_text();
+            $(this).stretch_text();
         });
 
-        if ($(window).outerWidth() < 900) { //Mobile
+        if ($(window).width() >= 904) { //Desktop
+            navIndex(); //Desktop Nav colors config
+            $("#_mobile-menu").css('transform', 'none'); //Voltar menu-mobile padrão
+            $("#_Nav").css('margin-left', '0'); //Voltar nav para desktop
+
+            $("#_Nav").css('transition', 'background 1s'); //Transition só no bg-hover, sem transition margin na transição entre mobile/desktop
+
+            navPos(); //Voltar nav como estava
+
+        } else { //Desktop
+
             $("#_Nav").removeClass("_nav-start");
             $("#_Nav").addClass("_nav-fixed");
 
             navIndex(true); //Mobile Nav colors config
             $menu_mobile = false; //Voltar menu-mobile padrão
             $("#_mobile-menu").click();
-        } else { //Desktop
-            navIndex(); //Desktop Nav colors config
-            $("#_mobile-menu").css('transform', 'none'); //Voltar menu-mobile padrão
-            $("#_Nav").css('margin-left', '0'); //Voltar nav para desktop
-
-            $("#_Nav").css('transition', 'background 1s'); //Transition só no bg-hover, sem transition margin de volta ao desktop
-
-            navPos(); //Voltar nav como estava
         }
     });
 
     $("#_mobile-menu").on('click', function () { //Mobile menu click-transitions + show menu
         if ($menu_mobile) {
-            $("#_Nav").css('transition', 'margin 0.7s');
+            $("#_Nav").css('transition', 'margin 0.7s'); //Margin transition only after 'mobile-menu' is clicked
             $(this).css('transform', 'rotate(-90deg)')
             $("#_Nav").css('margin-left', '0');
             $menu_mobile = false
@@ -197,7 +206,7 @@ $(document).ready(function () {
     });
 
     $(window).scroll(function () {
-        if ($(window).innerWidth() > 900) { //Fora da quebra mobile
+        if ($(window).width() >= 910) { //Fora da quebra mobile
 
             $scrollTop = $(this).scrollTop(); //Distância atual do scroll até o topo da tela
 
@@ -206,11 +215,6 @@ $(document).ready(function () {
                 navIndex();
 
                 $('#_Nav').css('background', $colors[$secaoAtual + 1]); //Nav (combinar com a 1ª section)
-
-                $('#Manifesto content').css('animation', 'fade 2s');
-
-                $('#m_left').css('animation', 'm_left  2s');
-                $('#m_right').css('animation', 'm_right 2s');
 
                 if ($scrollTop > $mainTop) {
                     $('#_Nav').css('background-color', $colors[0]); //Nav (padrão)
@@ -222,10 +226,10 @@ $(document).ready(function () {
                     //Home & Redes Sociais
                     $('#_Nav #_home').removeClass('_hide');
 
-                    if ($scrollTop >= $metodosTop - 100) {
-                        if ($scrollTop >= $equipeTop - 100) {
-                            if ($scrollTop >= $recomendadosTop - 100) {
-                                if ($scrollTop + $(this).height() > $(document).height() - 200) {
+                    if ($scrollTop >= $metodosTop - 130) {
+                        if ($scrollTop >= $equipeTop - 130) {
+                            if ($scrollTop >= $recomendadosTop - 130) {
+                                if ($scrollTop >= $contatoTop - 130) {
                                     $secaoAtual = 4;
                                     navIndex();
                                 } else {
@@ -251,17 +255,15 @@ $(document).ready(function () {
 
             } else {
                 $secaoAtual = null;
+                navIndex();
 
                 $('#_Nav').css('background-color', $colors[0]);
-
-                $('#_menu').find("li").eq(0).css('background-color', $colors[0]);
-                $('#_menu').find("li").eq(0).css('color', $colors[1]);
             }
         }
     });
 
     $('#_menu li').on('mouseenter', function () {
-        if ($(window).width() > 900) {
+        if ($(window).width() >= 910) {
             var $itemIndex = $("li").index(this);
 
             if ($itemIndex != $secaoAtual) {
@@ -321,7 +323,7 @@ $(document).ready(function () {
     $('#outros_videos > .container').on('click', '.v_other', function () {
         $this = $(this);
         $.ajax({
-            url: $templateDir + '/test.php',
+            url: $templateDir + '/update_gallery.php',
             type: "POST",
             dataType: 'json',
             data: ({
@@ -368,7 +370,7 @@ $(document).ready(function () {
 });
 
 /* STRECH TEXT */
-$.fn.strech_text = function () {
+$.fn.stretch_text = function () {
     var elmt = $(this),
         cont_width = elmt.width();
 

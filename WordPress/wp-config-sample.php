@@ -21,13 +21,13 @@
 // ** Configurações do MySQL - Você pode pegar estas informações
 // com o serviço de hospedagem ** //
 /** O nome do banco de dados do WordPress */
-define('DB_NAME', 'qqs');
+define('DB_NAME', 'nome_do_banco_de_dados_aqui');
 
 /** Usuário do banco de dados MySQL */
-define('DB_USER', 'root');
+define('DB_USER', 'nome_de_usuario_aqui');
 
 /** Senha do banco de dados MySQL */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'senha_aqui');
 
 /** Nome do host do MySQL */
 define('DB_HOST', 'localhost');
@@ -68,7 +68,7 @@ define('NONCE_SALT',       'coloque a sua frase única aqui');
  * Você pode ter várias instalações em um único banco de dados se você der
  * um prefixo único para cada um. Somente números, letras e sublinhados!
  */
-$table_prefix  = 'wp_xYopZtwU192_';
+$table_prefix  = 'wp_';
 
 /**
  * Para desenvolvedores: Modo de debug do WordPress.
