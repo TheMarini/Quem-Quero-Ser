@@ -11,6 +11,7 @@
 <script src="<?php bloginfo('template_url'); ?>/assets/js/index.js"></script>
 
 </head>
+
 <body>
     <div class="_black-cover">
         <div class="_alert">
@@ -77,7 +78,6 @@
                     <p class="p_destaque">DOS NOSSOS SONHOS.</p>
 
                     <p>
-
                         Pelo contrário! Eles podem existir juntos. O importante é dar conta dos determinantes de uma boa escolha e a partir deles construir projetos de vida pessoal e profissional.
 
                     </p>
@@ -284,21 +284,30 @@
                                 <?php endif; ?>
                                 <?php endif; ?>
                                 <div class="artigo">
-                                    <img class="artigo_thumb" src="<?php the_post_thumbnail_url(); ?>" alt="">
-                                    <h1 class="artigo_titulo">
-                                        <?php the_title(); ?>
-                                    </h1>
-                                    <div class="artigo_desc">
-                                        <?php the_excerpt(); ?>
-                                    </div>
-                                    <a href="<?php the_permalink(); ?>" class="artigo_mais _center_X">Saiba mais</a>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <div class="artigo_thumb">
+                                            <div class="show _center-child">
+                                                <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/article.svg" alt="">
+                                            </div>
+                                            <?php if (has_post_thumbnail()): ?>
+                                            <img class="artigo_thumb" src="<?php the_post_thumbnail_url(); ?>" alt="">
+                                            <?php endif ?>
+                                        </div>
+                                    </a>
+                                <h1 class="artigo_titulo">
+                                    <?php the_title(); ?>
+                                </h1>
+                                <div class="artigo_desc">
+                                    <?php the_excerpt(); ?>
                                 </div>
-                                <?php echo ($k == 2 || $k == 4) ? "</div>" : ""; ?>
-                                <?php endwhile; ?>
-                                <?php endif; ?>
+                                <a href="<?php the_permalink(); ?>" class="artigo_mais _center_X">Saiba mais</a>
                             </div>
-                            <a href="artigos" class="_btn _center-child _center-X">ver todos</a>
+                            <?php echo ($k == 2 || $k == 4) ? "</div>" : ""; ?>
+                            <?php endwhile; ?>
+                            <?php endif; ?>
                         </div>
+                        <a href="artigos" class="_btn _center-child _center-X">ver todos</a>
+                    </div>
             </section>
         </section>
 
@@ -311,9 +320,6 @@
                 <h1 class="_titulo">Fale com a gente</h1>
                 <div class="container">
                     <div id="c_left">
-                        <!--  <div id="email_icon">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/email.svg" alt="">
-                    </div> -->
                         <form id="form">
                             <input id="txtNome" class="txt" placeholder="nome" required></input>
                             <input id="txtEmail" class="txt" placeholder="email" type="email" required></input>

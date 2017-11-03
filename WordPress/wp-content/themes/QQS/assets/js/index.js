@@ -135,7 +135,6 @@ $(document).ready(function () {
     $.ajax({
         url: $banner_folder,
         success: function (data) {
-            console.log(data);
             $(data).find('li>a').attr('href', function (i, val){
                 if (val.match(/.(jpe?g|png|gif)$/g)) {
                     $banners.push(val);
@@ -350,9 +349,6 @@ $(document).ready(function () {
                 }
                 $this.replaceWith(null);
                 $("#outros_videos > .container").append(data.v_other);
-            },
-            error: (error) => {
-                console.log(JSON.stringify(error));
             }
         });
     });

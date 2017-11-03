@@ -441,6 +441,39 @@ button, input[type="submit"] {
 }
  */
 
+/*------------ARTIGOS-----------------*/
+.artigo_thumb {
+    background-color: black;
+    position: relative;
+    cursor: pointer
+}
+
+.artigo_thumb > img,
+.show {
+    height: 100%;
+    width: 100%;
+}
+
+.artigo_thumb > img {
+    object-fit: cover;
+}
+
+.show {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.7s;
+    z-index: 2
+}
+
+.show:hover {
+    opacity: 1
+}
+
+.show img {
+    width: 60px;
+}
+
 /*------------FOOTER-----------------*/
 
 footer {

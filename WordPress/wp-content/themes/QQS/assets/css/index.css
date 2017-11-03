@@ -231,7 +231,7 @@
         height: 350px;
         width: auto;
     }
-    .step > img{
+    .step > img {
         display: none !important
     }
 }
@@ -253,8 +253,8 @@
         flex-flow: column;
     }
     .passo_infos {
-	margin-top: 20px
-}
+        margin-top: 20px
+    }
 
     .passo_infos h1,
     .passo_infos h2 {
@@ -412,11 +412,12 @@
     height: 100%;
     position: absolute;
     cursor: pointer;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     z-index: 1
 }
 
-#v_left iframe, #v_left video {
+#v_left iframe,
+#v_left video {
     height: 100%;
     width: 99.9%;
     z-index: 0;
@@ -480,7 +481,10 @@
     cursor: pointer;
     position: relative;
 }
-.v_other:last-child{ margin-right: 0}
+
+.v_other:last-child {
+    margin-right: 0
+}
 
 
 .v_other > img {
@@ -540,15 +544,23 @@
 .artigo_thumb {
     height: 190px;
     width: 100%;
-    object-fit: cover;
-    background-color: black;
+    /* border-radius: 10px; */
 }
 
+.artigo_thumb > img {
+    object-fit: cover;
+   /*  border-radius: 10px; */
+}
+/*
+.show {
+    border-radius: 10px;
+}
+ */
 .artigo_titulo {
     font-size: 1.1em;
     text-align: center;
     color: white;
-    margin: 2px 0 15px 0
+    margin: 5px 0 15px 0
 }
 
 .artigo_desc {
@@ -556,7 +568,7 @@
     font-size: 0.9em;
     text-align: justify;
 
-    min-height: 180px;
+    height: 180px;
     overflow: hidden;
 }
 
@@ -570,7 +582,8 @@
     text-align: center;
 
     cursor: pointer;
-    transition: 0.8s
+    transition: 0.8s;
+   /*  border-radius: 10px */
 }
 
 .artigo_mais:hover {
@@ -677,11 +690,14 @@
     background-color: #535353;
     transition: 0.5s;
 }
-#btnEnviar img{
-	height: 50px
+
+#btnEnviar img {
+    height: 50px
 }
 
-#btnEnviar:active, #btnEnviar:focus, #btnEnviar:hover {
+#btnEnviar:active,
+#btnEnviar:focus,
+#btnEnviar:hover {
     background-color: #61b1c4;
 }
 
@@ -733,10 +749,12 @@
     min-height: 30px;
     transition: 0.5s
 }
-.redes img:hover{
+
+.redes img:hover {
     background-color: #3B5998;
     border-radius: 100px
 }
+
 /*-------------PARCEIROS-------------*/
 
 #Parceiros {
@@ -786,6 +804,9 @@
 
     #Artigos ._titulo {
         margin: 0 0 15px 0
+    }
+    .artigo_desc {
+        height: 150px
     }
 }
 
@@ -938,7 +959,10 @@
     }
     .artigo {
         max-width: 100%;
-        margin: 18px 0
+        margin: 18px 0;
+    }
+    .artigo_desc {
+        height: auto
     }
 }
 
