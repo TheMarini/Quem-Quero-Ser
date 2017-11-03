@@ -668,25 +668,21 @@
 #btnEnviar {
     height: 100%;
     width: 20%;
-    font-size: 1.3em;
-    font-weight: 900;
-    color: transparent;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
     cursor: pointer;
     margin-left: 2px;
-    background-color: dimgray;
-    /* background-image: url(../img/_others/icons/send.svg); */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 60%;
-    transition: 0.5s
+    background-color: #535353;
+    transition: 0.5s;
+}
+#btnEnviar img{
+	height: 50px
 }
 
-#btnEnviar:hover {
-    color: whitesmoke;
-}
-
-#btnEnviar:active {
-    background-color: #61b1c4
+#btnEnviar:active, #btnEnviar:focus, #btnEnviar:hover {
+    background-color: #61b1c4;
 }
 
 #newsletter {
@@ -699,7 +695,8 @@
 
 #newsletter input {
     height: 14px;
-    width: 14px
+    width: 14px;
+    cursor: pointer
 }
 
 #newsletter p {
@@ -732,12 +729,14 @@
 }
 
 .redes img {
-    height: 5vh;
+    height: 38px;
     min-height: 30px;
-    background-color: white;
-    border-radius: 100%
+    transition: 0.5s
 }
-
+.redes img:hover{
+    background-color: #3B5998;
+    border-radius: 100px
+}
 /*-------------PARCEIROS-------------*/
 
 #Parceiros {

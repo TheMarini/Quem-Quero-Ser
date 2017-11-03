@@ -1,7 +1,7 @@
 /* --- SUPER GLOBAL VARIABLES --- */
 var $colors = ['whitesmoke', '#e54347', '#621e56', '#f3b31b', '#61b1c4', '#2e2d2c'];
 var $banners = [];
-var $currentBanner = 0;
+var $currentBanner = -1;
 var $secaoAtual = null;
 var $menu_mobile = true; //menu_mobile first click
 
@@ -129,26 +129,24 @@ $(document).ready(function () {
             $("#banner_bg").css('background-image', "url(" + $banner_folder + $banners[$currentBanner] + ")");
         }).fadeTo('slow', 1);
     }
-    setInterval(nextBackground, 8000);
-
 
     /* EVENTS & CODING */
     //Preparar imagens
-    //    $.ajax({
-    //        async: true,
-    //        url: $banner_folder,
-    //        success: function (data) {
-    //            console.log(data);
-    //            $(data).find("ul>li>a").attr("title", function (i, val) {
-    //                if (val.match(/.(jpe?g|png|gif)$/g)) {
-    //                    $banners.push(val);
-    //                }
-    //            });
-    //        }
-    //    });
-    //    $banners.sort(sortAlphaNum);
-    //
-    //    $("#banner_bg").css('background-image', "url(" + $banner_folder + $banners[$currentBanner] + ")"); //Começar com a 1ª img
+    $.ajax({
+        url: $banner_folder,
+        success: function (data) {
+            console.log(data);
+            $(data).find('li>a').attr('href', function (i, val){
+                if (val.match(/.(jpe?g|png|gif)$/g)) {
+                    $banners.push(val);
+                }
+            });
+         }
+    });
+    $banners.sort(sortAlphaNum);
+    nextBackground();
+    setInterval(nextBackground, 8000);
+
 
     //Configurações de acordo com o dispositivo
     if ($(window).width() >= 920) { //Desktop

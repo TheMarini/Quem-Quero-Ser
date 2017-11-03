@@ -121,7 +121,7 @@
                 <div class="container">
                     <div class="_wrapper">
                         <div class="passo">
-                            <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/luneta.png" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/luneta.svg" alt="">
                             <div class="passo_infos">
                                 <h1>1º ENCONTRO</h1>
                                 <h2>CARREIRA ESTELAR (ESCOLHA, DESAFIO)</h2>
@@ -129,7 +129,7 @@
                             </div>
                         </div>
                         <div class="passo">
-                            <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/bussola.png" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/bussola.svg" alt="">
                             <div class="passo_infos">
                                 <h1>2º E 3º ENCONTRO</h1>
                                 <h2>ORÁCULO DE DELFOS E IDENTIFICAÇÃO PROFISSIONAL (Autoconhecimento, interesse, vocação, valores)</h2>
@@ -137,7 +137,7 @@
                             </div>
                         </div>
                         <div class="passo">
-                            <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/timao.png" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/timao.svg" alt="">
                             <div class="passo_infos">
                                 <h1>4º E 5º ENCONTRO</h1>
                                 <h2>TERRAS DAS PROFISSÕES E MATCHING (INFORMAÇÕES, ENEM, SISU, IES, DECISÃO)</h2>
@@ -145,7 +145,7 @@
                             </div>
                         </div>
                         <div class="passo">
-                            <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/ancora.png" alt="">
+                            <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/ancora.svg" alt="">
                             <div class="passo_infos">
                                 <h1>6º ENCONTRO</h1>
                                 <h2>QUEM QUERO SER</h2>
@@ -322,7 +322,11 @@
                             <br />
                             <div id="enviar">
                                 <textarea id="txtMensagem" class="txt" required></textarea>
-                                <button id="btnEnviar" onclick="btnEnviar_Click" type="submit">Enviar</button>
+                                <button id="btnEnviar" onclick="btnEnviar_Click" type="submit">
+                                    <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/send.svg" alt="">
+                                    Enviar
+
+                                </button>
                             </div>
                             <div id="newsletter">
                                 <input type="checkbox" checked>
@@ -334,7 +338,7 @@
                     </div>
 
                     <div id="c_right">
-                        <p>Ficou interessado e quer saber mais? Deixe sua mensagem ao lado que a gente entra em contato. Se prefirir pode ligar ou nos fazer uma visita. Estamos à disposição ;)</p>
+                        <p>Ficou interessado e quer saber mais? Deixe sua mensagem que a gente entra em contato. Se prefirir pode ligar ou nos fazer uma visita. Estamos à disposição ;)</p>
 
                         <div id="endereco">
                             <div class="redes">
