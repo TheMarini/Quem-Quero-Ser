@@ -109,21 +109,6 @@
     }
 
     /*
-
-
-                //allocated for multiple use on 'foreach'
-            $r = ($id === null) ? getVideos(getVideo()->id) : getVideos($id);
-            foreach ( $r as $item ) {
-                $video = videoInfos($item->sl_url);
-                $html .= '<div class="v_other" _vid="' . $item->id . '">';
-                $html .= '  <div class="v_other_play _center-child">';
-                $html .= '      <img src="' . get_bloginfo('template_url') . '/assets/img/_all/icons/play.svg" >';
-                $html .= '  </div>';
-                $html .= '  <img src="' . (($item->thumb_url != "") ? $item->thumb_url : thumbThis($video[0], $video[1])) . '" alt="' . $item->name . '">';
-                $html .= '</div>';
-            }
-            return $html;
-
     //echo '<div style="background-color:red">' . $src . '</div>';
 
     /*

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php get_template_part('Back-Home'); ?>
+<?php include('back-home.php'); ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/single.css">
 </head>
 

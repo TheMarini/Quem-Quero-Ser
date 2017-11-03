@@ -6,5 +6,5 @@
 
 <?php 
 header("Location: " . home_url() . "#Equipe"); 
-exit;
+exit();
 ?>
