@@ -11,10 +11,7 @@
 <script src="<?php bloginfo('template_url'); ?>/assets/js/index.js"></script>
 
 </head>
-
 <body>
-    <div style="background-color: red">
-    </div>
     <div class="_black-cover">
         <div class="_alert">
             <div class="_alert-top">
