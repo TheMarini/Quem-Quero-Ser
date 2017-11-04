@@ -5,7 +5,9 @@
 
 <body>
     <main>
-        <?php include('back-home.php'); ?>
+        <div class="_back">
+            <?php include('back-home.php'); ?>
+        </div>
         <div class="_wrapper">
             <form id="Search" class="_center-child" role="search" method="get" action="<?php echo home_url(); ?>" _lpchecked="1">
                 <input type="text" placeholder="Pesquisar um artigo" name="s" id="s">

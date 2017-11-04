@@ -68,6 +68,10 @@ body {
     text-align: justify
 }
 
+#text a {
+    color: #61b1c4
+}
+
 #stats {
     display: flex;
     justify-content: space-between;
@@ -99,7 +103,7 @@ body {
 
 @media (max-width: 645px) {
     /* General */
-    p:not(#bhp) {
+    p {
         font-size: 0.9em
     }
 
@@ -110,16 +114,5 @@ body {
 
     #Banner > div h2 {
         font-size: 1.2em
-    }
-}
-
-/*------------ANIMATIONS-----------------*/
-
-@keyframes fade {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
     }
 }

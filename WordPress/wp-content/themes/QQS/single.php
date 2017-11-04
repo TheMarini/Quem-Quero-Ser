@@ -1,10 +1,13 @@
 <?php get_header(); ?>
-<?php include('back-home.php'); ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/single.css">
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59fd1a20924b1fe2"></script>
 </head>
 
 <body>
+    <div class="_back">
+        <?php include('back-artigos.php'); ?>
+        <?php include('back-home.php'); ?>
+    </div>
     <header id="Banner" class="_center-child <?php if (!has_post_thumbnail()){ echo 'no-thumb'; } ?>">
         <div class="_blur-cover"></div> <!-- TODO: funcionalidade -->
         <div class="_center-child">
