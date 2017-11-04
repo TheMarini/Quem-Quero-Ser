@@ -1,11 +1,12 @@
 <?php get_header(); ?>
 <?php include('back-home.php'); ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/single.css">
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59fd1a20924b1fe2"></script>
 </head>
 
 <body>
     <header id="Banner" class="_center-child <?php if (!has_post_thumbnail()){ echo 'no-thumb'; } ?>">
-        <div class="_blur-cover"></div>
+        <div class="_blur-cover"></div> <!-- TODO: funcionalidade -->
         <div class="_center-child">
             <div class="_wrapper">
                 <h1><?php the_title(); ?></h1>
@@ -16,7 +17,6 @@
         <img src="<?php the_post_thumbnail_url(); ?>" alt="">
         <?php endif ?>
     </header>
-
     <main id="Main">
         <div class="_wrapper">
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -31,12 +31,9 @@
 
             <section id="Share" class="_center-child">
                 <p>Compartilhar:</p>
-                <div class="redes">
-                    <a href=""><img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/fb.svg" alt=""></a>
-                    <a href=""><img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/fb.svg" alt=""></a>
-                    <a href=""><img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/fb.svg" alt=""></a>
-                </div>
+                <div class="addthis_inline_share_toolbox"></div>
             </section>
+            <div class="addthis_relatedposts_inline"></div>
         </div>
     </main>
 

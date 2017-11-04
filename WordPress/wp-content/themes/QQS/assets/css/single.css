@@ -88,20 +88,11 @@ body {
     font-size: 1.2em;
     color: gray;
     margin-top: 40px;
+    padding: 20px 0;
+    text-align: center;
 }
-
-.redes {
-    flex-flow: row;
-    margin-top: 5px
-}
-
-.redes img {
-    height: 45px;
-    margin: 0 4px
-}
-
-.redes img:first-child {
-    margin-left: 0
+#Share p{
+	margin-bottom: 10px
 }
 
 /*------------MEDIAS-----------------*/
