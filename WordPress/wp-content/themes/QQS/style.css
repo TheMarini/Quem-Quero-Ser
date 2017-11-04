@@ -413,7 +413,7 @@ input[type="submit"] {
 
 ._back-item {
     display: flex;
-    height: 40px;
+    height: 45px;
 
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -448,7 +448,7 @@ input[type="submit"] {
 }
 
 ._back-item > p {
-    font-size: inherit !important;
+    font-size: 1.1em !important;
     height: 100%;
     width: 100%;
 
@@ -476,7 +476,7 @@ input[type="submit"] {
 
 #_back-artigos img {
     box-sizing: border-box;
-    padding: 7px 5px
+    padding: 7px 7px
 }
 
 
