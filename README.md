@@ -7,3 +7,11 @@ Acreditamos que a escolha profissional não significa abrir mão dos nossos sonh
 Assim, de uma maneira nova e instigante ajudamos o jovem a se comprometer com sua decisão e a compreender: QUEM QUERO SER?
 
 http://quemqueroser.com.br/beta/
+
+## Screenshots
+
+### Desktop (full page)
+![Quem Quero Ser - Screenshot](https://raw.githubusercontent.com/TheMarini/Quem-Quero-Ser/master/Screenshots/all%20(old%20logo).png)
+
+### Mobile (banner)
+![Quem Quero Ser - Screenshot](https://raw.githubusercontent.com/TheMarini/Quem-Quero-Ser/master/Screenshots/banner-1%20(mobile).png)
