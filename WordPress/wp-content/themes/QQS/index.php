@@ -9,7 +9,6 @@
 <!-- QQS -->
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/index.css">
 <script src="<?php bloginfo('template_url'); ?>/assets/js/index.js"></script>
-
 </head>
 
 <body>
@@ -25,7 +24,6 @@
             <?php get_template_part('newsletter'); ?>
         </div>
     </div>
-
     <header id="Banner" class="_center-child">
         <div id="banner_bg"></div>
         <div id="banner_fade"></div>
@@ -85,7 +83,7 @@
                     <p class="p_destaque">ajudamos o jovem a se comprometer</p>
                     <p class="p_destaque">com sua decisão e a compreender</p>
 
-                    <p>QUEM QUERO SER?</p>
+                    <p>QUEM QUERO SER.</p>
                 </article>
             </div>
         </section>
@@ -198,23 +196,24 @@
                 </div>
 
                 <div class="owl-carousel">
+                   <!-- TODO: client add -->
                     <div class="membro _center-child">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/equipe/Joana%20Queiroz.jpg" alt="">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/equipe/simone.png" alt="">
                         <h1>Simone Scur</h1>
                         <p>Psicóloga, Coaching e especialista em gestão estratégica de Recursos Humanos, com mais de 20 anos de experiência em Identificação de talentos, desenvolvimento de equipes e formação de lideranças. Adora conhecer novas culturas por viagens e arte. Fotógrafa entusiasta e defensora das causas animais.</p>
                     </div>
                     <div class="membro _center-child">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/equipe/Joana%20Queiroz.jpg" alt="">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/equipe/gilmar.png" alt="">
                         <h1>Gilmar Moura</h1>
                         <p>Psicólogo e Professor. Atua nas áreas da Educação, Gestão de Pessoas e Empreendedorismo. Todo seu trabalho é orientado para a juventude. Adora ler, cinema, psicanálise. Fã de poesia, curte frequentar cafés com os amigos, um bom papo e viajar.</p>
                     </div>
                     <div class="membro _center-child">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/equipe/Joana%20Queiroz.jpg" alt="">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/equipe/fernanda.png" alt="">
                         <h1>Fernanda Reis</h1>
                         <p>Psicóloga por vocação, desenvolvedora de pessoas por identificação e cozinheira por dom. Entusiasta das comunicações e techlover. Voluntária nos desafios que a vida colocar em seu caminho.</p>
                     </div>
                     <div class="membro _center-child">
-                        <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/equipe/Joana%20Queiroz.jpg" alt="">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/equipe/arthur.png" alt="">
                         <h1>Arthur Portela</h1>
                         <p>Fã de desenhos animados desde pequeno, a paixão foi crescendo e virou curiosidade para aprender a desenhar, buscando desenvolver a técnica sempre! Técnico em web design e graduando em design gráfico pela UFMG.</p>
                     </div>
@@ -257,6 +256,7 @@
                                 </div>
                             </div>
                     </div>
+                    <!-- FUTURE: responsive this -->
                     <div id="outros_videos">
                         <p>você também pode gostar de:</p>
                         <div class="container">
@@ -361,6 +361,7 @@
         <section id="Parceiros">
             <div class="_wrapper">
                 <h1 class="_titulo">PARCEIROS</h1>
+                <!-- TODO: client add -->
                 <div class="container">
                     <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/parceiros/sim.png" alt="SIM">
                     <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/parceiros/abop.png" alt="ABOP">

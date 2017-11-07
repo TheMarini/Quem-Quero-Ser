@@ -340,6 +340,7 @@
     align-content: space-between;
 }
 
+
 #Equipe .owl-carousel {
     width: 40vw;
 }
@@ -354,7 +355,7 @@
 }
 
 .membro {
-    max-width: 450px;
+    max-width: 400px;
     text-align: center;
     margin: 0 auto;
 }
@@ -398,7 +399,7 @@
     margin: auto;
     display: flex;
     /* min-height: 60vh; */
-    min-height: 500px
+    min-height: 307px
 }
 
 #v_left {
@@ -419,7 +420,7 @@
 #v_left iframe,
 #v_left video {
     height: 100%;
-    width: 99.9%;
+    width: 100%;
     z-index: 0;
 }
 
@@ -470,26 +471,31 @@
 }
 
 #outros_videos > .container {
-    height: 120px;
-    display: inline-flex;
+    display: flex;
+    flex-flow: wrap;
 }
 
 .v_other {
-    height: 100%;
-    max-width: 176px;
-    margin-right: 8px;
+    height: 120px;
+    width: 176px;
+    margin: 0 8px 8px 0;
     cursor: pointer;
     position: relative;
+    transition: 0.6s
 }
 
 .v_other:last-child {
     margin-right: 0
 }
 
+.v_other > img,
+.v_other_play {
+    transition: border-radius 0.6s
+}
 
 .v_other > img {
     height: 100%;
-    width: 100%
+    width: 100%;
 }
 
 .v_other_play {
@@ -498,15 +504,48 @@
     width: 100%;
     min-width: 90px;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: opacity 0.5s
+    transition: opacity 0.6s
+}
+
+.v_other_play > img {
+    height: 35px
 }
 
 .v_other_play:hover {
     opacity: 0
 }
 
-.v_other_play > img {
-    height: 35px
+.v_other:hover,
+.v_other:hover > img,
+.v_other:hover > .v_other_play {
+    border-radius: 10px 10px 0 0
+}
+
+.v_other:hover {
+    position: relative;
+    margin-top: -10px;
+    box-shadow: 0px 40px 20px -2px rgba(0, 0, 0, 0.4)
+}
+
+.v_other::after {
+    content: attr(name);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    border-radius: 0 0 5px 5px;
+    color: whitesmoke;
+    background-color: #2e2d2c;
+    z-index: 10;
+    transition: 0.6s;
+    opacity: 0;
+    text-align: center
+}
+
+.v_other:hover::after {
+    opacity: 1
 }
 
 /*------------ARTIGOS-----------------*/
@@ -549,13 +588,15 @@
 
 .artigo_thumb > img {
     object-fit: cover;
-   /*  border-radius: 10px; */
+    /*  border-radius: 10px; */
 }
+
 /*
 .show {
     border-radius: 10px;
 }
  */
+
 .artigo_titulo {
     font-size: 1.1em;
     text-align: center;
@@ -583,7 +624,7 @@
 
     cursor: pointer;
     transition: 0.8s;
-   /*  border-radius: 10px */
+    /*  border-radius: 10px */
 }
 
 .artigo_mais:hover {
@@ -846,10 +887,6 @@
     #v_left {
         height: 70vh;
     }
-    #v_left_controls {
-        height: 70vh;
-        width: 100%;
-    }
     #v_right {
         border-left: 4px solid gainsboro;
         padding: 0;
@@ -948,6 +985,7 @@
     #Videos > ._wrapper > h1 {
         padding: 0 0 25px 0;
     }
+
 }
 
 
@@ -975,6 +1013,15 @@
     #logo {
         width: 350px;
     }
+
+    #v_left {
+	    height: auto
+    }
+    #v_left iframe,
+    #v_left video {
+        height: auto;
+    }
+
 }
 
 @media (max-width: 450px) {
@@ -983,6 +1030,10 @@
         flex-flow: column;
     }
 
+    #Parceiros .container {
+        flex-flow: column;
+        align-items: flex-start
+    }
 }
 
 @media (max-width: 425px) {

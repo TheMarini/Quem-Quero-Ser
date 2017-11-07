@@ -13,7 +13,6 @@ var reN = /[^0-9]/g; // |search|global match -> NOT digit
 var $YT_Player;
 function onYouTubeIframeAPIReady() {
     $YT_Player = new YT.Player('YT_player', {
-        origin: 'localhost',
         events: {
             'onReady': onPlayerReady
         }
@@ -130,9 +129,11 @@ $(document).ready(function () {
         }).fadeTo('slow', 1);
     }
 
+    //TODO: catch files with PHP
     /* EVENTS & CODING */
     //Preparar imagens
     $.ajax({
+        async: false,
         url: $banner_folder,
         success: function (data) {
             $(data).find('li>a').attr('href', function (i, val){
@@ -144,7 +145,7 @@ $(document).ready(function () {
     });
     $banners.sort(sortAlphaNum);
     nextBackground();
-    setInterval(nextBackground, 8000);
+    setInterval(nextBackground, 9000);
 
 
     //Configurações de acordo com o dispositivo
@@ -363,7 +364,7 @@ $(document).ready(function () {
     });
 });
 
-/* STRECH TEXT */
+/* STRETCH TEXT */
 $.fn.stretch_text = function () {
     var elmt = $(this),
         cont_width = elmt.width();

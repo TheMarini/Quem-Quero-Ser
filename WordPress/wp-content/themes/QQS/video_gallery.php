@@ -98,7 +98,7 @@
         //V_Other
         public static function v_other($row) {
             $video = videoInfos($row->sl_url);
-            $html .= '<div class="v_other" _vid="' . $row->id . '">';
+            $html .= '<div class="v_other" _vid="' . $row->id . '" name="' . $row->name . '">';
             $html .= '  <div class="v_other_play _center-child">';
             $html .= '      <img src="' . get_bloginfo('template_url') . '/assets/img/_all/icons/play.svg" >';
             $html .= '  </div>';
