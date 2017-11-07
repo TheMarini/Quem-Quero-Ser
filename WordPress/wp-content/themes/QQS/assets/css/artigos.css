@@ -1,3 +1,13 @@
+/*------------HEADER-----------------*/
+header{
+    margin: 10px auto;
+}
+
+header img{
+    max-height: 220px;
+    max-width: 70vw;
+}
+
 /*------------SEARCH-----------------*/
 
 form {
