@@ -36,7 +36,6 @@
                 <p>Compartilhar:</p>
                 <div class="addthis_inline_share_toolbox"></div>
             </section>
-            <div class="addthis_relatedposts_inline"></div>
         </div>
     </main>
 
