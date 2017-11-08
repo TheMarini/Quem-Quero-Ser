@@ -12,6 +12,10 @@
 </head>
 
 <body>
+   <?php
+        $path = __DIR__ . '/assets/img/Index/banner/';
+        $files = array_diff(scandir($path), array('.', '..'));
+    ?>
     <div class="_black-cover">
         <div class="_alert">
             <div class="_alert-top">

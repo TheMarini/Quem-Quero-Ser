@@ -133,9 +133,11 @@ $(document).ready(function () {
     /* EVENTS & CODING */
     //Preparar imagens
     $.ajax({
-        async: false,
         url: $banner_folder,
+        type: "POST",
+        dataType: 'json',
         success: function (data) {
+            console.log(data);
             $(data).find('li>a').attr('href', function (i, val){
                 if (val.match(/.(jpe?g|png|gif)$/g)) {
                     $banners.push(val);
