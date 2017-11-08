@@ -19,7 +19,7 @@
             </div>
             <div class="_alert-infos">
                 <h1>A vida está corrida, não é?</h1>
-                <p>Mas gente ajuda você ficar informado. <br> Escreva seu e-mail e... aproveite o dia!</p>
+                <p>Receba informativos do Quem Quero Ser no seu e-mail. <br> Escreva ele abaixo e... aproveite o dia!</p>
             </div>
             <?php get_template_part('newsletter'); ?>
         </div>
@@ -172,12 +172,12 @@
                         <div class="modulo">
                             <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/universitarios.svg" alt="">
                             <h1>Universitários</h1>
-                            <p>Programa voltada para Universitários em busca de orientação sobre Carreira e o Mercado de Trabalho.</p>
+                            <p>Programa voltado para Universitários em busca de orientação sobre Carreira e o Mercado de Trabalho.</p>
                         </div>
                         <div class="modulo">
                             <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/metodos/profs.svg" alt="">
                             <h1>Professores</h1>
-                            <p>Programa orientado para professores que darão suporte aos jovens do Ensino Médio na escolha profissional.</p>
+                            <p>Programa orientado para Professores que darão suporte aos jovens do Ensino Médio na escolha profissional.</p>
                         </div>
                     </div>
                 </div>
@@ -306,7 +306,7 @@
                             <?php endwhile; ?>
                             <?php endif; ?>
                         </div>
-                        <a href="artigos" class="_btn _center-child _center-X">ver todos</a>
+                        <a href="artigos" target="_blank" class="_btn _center-child _center-X">ver todos</a>
                     </div>
             </section>
         </section>
@@ -344,11 +344,11 @@
                     </div>
 
                     <div id="c_right">
-                        <p>Ficou interessado e quer saber mais? Deixe sua mensagem que a gente entra em contato. Se prefirir pode ligar ou nos fazer uma visita. Estamos à disposição ;)</p>
+                        <p>Ficou interessado e quer saber mais? Deixe sua mensagem que a gente entra em contato. Se preferir pode ligar ou nos fazer uma visita. Estamos à disposição ;)</p>
 
                         <div id="endereco">
                             <div class="redes">
-                                <a href="https://fb.com" target="_blank"><img id="fb" src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/fb.png" alt="facebook" /></a>
+                                <a href="https://fb.com/quemquerosercarreira" target="_blank"><img id="fb" src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/fb.png" alt="facebook" /></a>
                             </div>
                             <p>(31) 2516-6281 <br> contato@quemqueroser.com.br <br> Av. Prudente de Morais - 135 - sala 203<br> Santo Antônio - BH 30350-093
                             </p>
@@ -363,7 +363,9 @@
                 <h1 class="_titulo">PARCEIROS</h1>
                 <!-- TODO: client add -->
                 <div class="container">
-                    <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/parceiros/sim.png" alt="SIM">
+                    <a href="http://www.simrecursoshumanos.com.br/" target="_blank">
+                        <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/parceiros/sim.png" alt="SIM">
+                    </a>
                     <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/parceiros/abop.png" alt="ABOP">
                     <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/parceiros/ufmg.png" alt="UFMG">
                     <img src="<?php bloginfo('template_url'); ?>/assets/img/Index/parceiros/art-connect.png" alt="Art Connect">

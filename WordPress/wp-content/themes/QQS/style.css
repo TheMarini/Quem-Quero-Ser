@@ -225,7 +225,6 @@ input[type="submit"] {
 ._alert {
     margin: 15px;
     min-height: 20vh;
-    width: 540px;
     background-color: #f3b31b;
     color: #2e2d2c;
     position: relative;
@@ -474,7 +473,7 @@ input[type="submit"] {
 }
 
 #_back-home:hover > p::after {
-    content: "incial";
+    content: "inicial";
 }
 
 #_back-artigos img {

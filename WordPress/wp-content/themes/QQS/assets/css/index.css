@@ -814,7 +814,7 @@
     justify-content: space-between
 }
 
-#Parceiros .container > img {
+#Parceiros .container img {
     height: 70px;
     max-width: 180px;
     margin: 5px;
