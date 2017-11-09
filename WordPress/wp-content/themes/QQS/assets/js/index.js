@@ -121,13 +121,13 @@ $(document).ready(function () {
     }
 
     //Banner Background Images
-    function nextBackground() {
-        $('#banner_bg').fadeTo('slow', 0, function () {
-            $currentBanner++;
-            $currentBanner = $currentBanner % $banners.length; //Ao chegar o nº total zera novamente (módulo de 21 é 0)
-            $("#banner_bg").css('background-image', "url(" + $banner_folder + $banners[$currentBanner] + ")");
-        }).fadeTo('slow', 1);
-    }
+//    function nextBackground() {
+//        $('#banner_bg').fadeTo('slow', 0, function () {
+//            $currentBanner++;
+//            $currentBanner = $currentBanner % $banners.length; //Ao chegar o nº total zera novamente (módulo de 21 é 0)
+//            $("#banner_bg").css('background-image', "url(" + $banner_folder + $banners[$currentBanner] + ")");
+//        }).fadeTo('slow', 1);
+//    }
 
     //TODO: catch files with PHP
     /* EVENTS & CODING */
@@ -146,8 +146,8 @@ $(document).ready(function () {
          }
     });
     $banners.sort(sortAlphaNum);
-    nextBackground();
-    setInterval(nextBackground, 9000);
+//    nextBackground();
+//    setInterval(nextBackground, 9000);
 
 
     //Configurações de acordo com o dispositivo
