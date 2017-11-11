@@ -1,8 +1,8 @@
 <?php
-    add_theme_support('post-thumbnails'); //Thumbnail do tema
+    add_theme_support('post-thumbnails'); //Theme thumbnail
 
-    function wpdocs_custom_excerpt_length( $length ) {
-        return 40;
+    //Custom excerpt
+    function get_excerpt($excerpt, $length, $more_char = '...'){
+        return mb_strimwidth($excerpt, 0, $length, $more_char);
     }
-    add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 ?>
