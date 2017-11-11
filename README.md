@@ -6,7 +6,7 @@ Acreditamos que a escolha profissional não significa abrir mão dos nossos sonh
 
 Assim, de uma maneira nova e instigante ajudamos o jovem a se comprometer com sua decisão e a compreender: QUEM QUERO SER?
 
-http://quemqueroser.com.br/beta/
+http://quemqueroser.com.br
 
 ## Screenshots
 
