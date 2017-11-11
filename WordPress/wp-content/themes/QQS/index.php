@@ -303,7 +303,7 @@
                                     <?php the_title(); ?>
                                 </h1>
                                 <div class="artigo_desc">
-                                    <?php the_excerpt(); ?>
+                                    <?php echo get_excerpt(get_the_excerpt(), 310); ?>
                                 </div>
                                 <a href="<?php the_permalink(); ?>" class="artigo_mais _center_X">Saiba mais</a>
                             </div>
