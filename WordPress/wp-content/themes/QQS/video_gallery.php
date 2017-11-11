@@ -5,10 +5,10 @@
     function getVideo($id = null){
         global $wpdb; //call wp_database
         if($id === null){ //get the first video in database
-            return $wpdb->get_row( "SELECT id, name, description, sl_url FROM `wp_xyopztwu192_huge_it_videogallery_videos` ORDER BY videogallery_id, ordering ASC LIMIT 1", OBJECT);
+            return $wpdb->get_row( "SELECT id, name, description, sl_url FROM `wp_xYopZtwU192_huge_it_videogallery_videos` ORDER BY videogallery_id, ordering ASC LIMIT 1", OBJECT);
         }
         else{ //get video by ID
-            return $wpdb->get_row( "SELECT id, name, description, sl_url FROM `wp_xyopztwu192_huge_it_videogallery_videos` WHERE id = $id", OBJECT);
+            return $wpdb->get_row( "SELECT id, name, description, sl_url FROM `wp_xYopZtwU192_huge_it_videogallery_videos` WHERE id = $id", OBJECT);
         }
     }
 
@@ -16,10 +16,10 @@
     function getVideos($id = null){
         global $wpdb; //call wp_database
         if($id === null){ //all videos in database
-             return $wpdb->get_results( "SELECT id, name, description, sl_url, thumb_url FROM `wp_xyopztwu192_huge_it_videogallery_videos` ORDER BY videogallery_id, ordering ASC", OBJECT);
+             return $wpdb->get_results( "SELECT id, name, description, sl_url, thumb_url FROM `wp_xYopZtwU192_huge_it_videogallery_videos` ORDER BY videogallery_id, ordering ASC", OBJECT);
         }
         else{ //get videos excluding ID
-            return $wpdb->get_results( "SELECT id, name, description, sl_url, thumb_url FROM `wp_xyopztwu192_huge_it_videogallery_videos` WHERE id NOT IN ($id) ORDER BY videogallery_id, ordering ASC", OBJECT);
+            return $wpdb->get_results( "SELECT id, name, description, sl_url, thumb_url FROM `wp_xYopZtwU192_huge_it_videogallery_videos` WHERE id NOT IN ($id) ORDER BY videogallery_id, ordering ASC", OBJECT);
         }
     }
 
