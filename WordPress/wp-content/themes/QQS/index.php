@@ -12,11 +12,6 @@
 </head>
 
 <body>
-   <?php
-        $imgPath = get_bloginfo('template_url') . '/assets/img/Index/banner/';  //relative path
-        $dir = str_replace('\\', '/', __DIR__) . '/assets/img/Index/banner/';   //gets 'banner' directory
-        $files = array_values(array_diff(scandir($dir), array('.', '..')));     //gets files from 'banner' directory
-    ?>
     <div class="_black-cover">
         <div class="_alert">
             <div class="_alert-top">
@@ -26,9 +21,10 @@
                 <h1>A vida está corrida, não é?</h1>
                 <p>Receba informativos do Quem Quero Ser no seu e-mail. <br> Escreva ele abaixo e... aproveite o dia!</p>
             </div>
-            <?php get_template_part('newsletter'); ?>
+            <?php include('newsletter.php'); ?>
         </div>
     </div>
+    <?php include('banner.php'); ?>
     <header id="Banner" class="_center-child">
         <div id="banner_bg" <?php echo (count($files) != 0) ? 'style="background-image: url(\'' . $imgPath . $files[0] . '\')"' : '' ?>></div>
         <div id="banner_fade"></div>

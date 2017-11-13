@@ -1,7 +1,7 @@
 /* --- SUPER GLOBAL VARIABLES --- */
 var $colors = ['whitesmoke', '#e54347', '#621e56', '#f3b31b', '#61b1c4', '#2e2d2c'];
 var $banners = [];
-var $currentBanner = -1;
+var $currentBanner = 0;
 var $secaoAtual = null;
 var $menu_mobile = true; //menu_mobile first click
 
@@ -11,6 +11,7 @@ var reN = /[^0-9]/g; // |search|global match -> NOT digit
 
 /* --- DOCUMENT INDEPENDENT FUNCTIONS --- */
 var $YT_Player;
+
 function onYouTubeIframeAPIReady() {
     $YT_Player = new YT.Player('YT_player', {
         events: {
@@ -18,6 +19,7 @@ function onYouTubeIframeAPIReady() {
         }
     });
 }
+
 function onPlayerReady(event) {
     event.target.mute();
 }
@@ -121,34 +123,30 @@ $(document).ready(function () {
     }
 
     //Banner Background Images
-//    function nextBackground() {
-//        $('#banner_bg').fadeTo('slow', 0, function () {
-//            $currentBanner++;
-//            $currentBanner = $currentBanner % $banners.length; //Ao chegar o nº total zera novamente (módulo de 21 é 0)
-//            $("#banner_bg").css('background-image', "url(" + $banner_folder + $banners[$currentBanner] + ")");
-//        }).fadeTo('slow', 1);
-//    }
+    function nextBackground() {
+        $('#banner_bg').fadeTo('slow', 0, function () {
+            $currentBanner++;
+            $currentBanner = $currentBanner % $banners.length; //Ao chegar o nº total zera novamente (módulo de 21 é 0)
+            $("#banner_bg").css('background-image', "url(" + $banner_folder + $banners[$currentBanner] + ")");
+        }).fadeTo('slow', 1);
+    }
 
     //TODO: catch files with PHP
     /* EVENTS & CODING */
     //Preparar imagens
     $.ajax({
-        url: $banner_folder,
+        url: $templateDir + '/update_banner.php',
         type: "POST",
         dataType: 'json',
         success: function (data) {
-            console.log(data);
-            $(data).find('li>a').attr('href', function (i, val){
-                if (val.match(/.(jpe?g|png|gif)$/g)) {
-                    $banners.push(val);
-                }
-            });
-         }
+            $banners = data;
+            $banners.sort(sortAlphaNum);
+            setInterval(nextBackground, 9000);
+        },
+        error: function (event) {
+            console.log(event);
+        }
     });
-    $banners.sort(sortAlphaNum);
-//    nextBackground();
-//    setInterval(nextBackground, 9000);
-
 
     //Configurações de acordo com o dispositivo
     if ($(window).width() >= 920) { //Desktop
