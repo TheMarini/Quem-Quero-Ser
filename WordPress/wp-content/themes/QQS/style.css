@@ -73,6 +73,8 @@ input[type="submit"] {
     opacity: 0;
 }
 
+._round-border{border-radius: 10px}
+
 ._center-child {
     display: flex;
     flex-flow: column;
@@ -282,12 +284,14 @@ input[type="submit"] {
 
 #mc-embedded-subscribe-form input:not([type="submit"]) {
     width: 100%;
-    height: 100%
+    height: 100%;
+    border-radius: 0 0 0 10px
 }
 
 #mc-embedded-subscribe-form input[type="submit"] {
     width: 20%;
-    cursor: pointer
+    cursor: pointer;
+     border-radius: 0 0 10px 0
 }
 
 #mce-responses {
@@ -295,13 +299,17 @@ input[type="submit"] {
     color: whitesmoke;
     font-size: 1.2em;
     text-align: justify;
-    font-weight: 100
+    font-weight: 100;
+    border-radius: 0 0 10px 10px
 }
 
 #mce-success-response,
 #mce-error-response {
     box-sizing: border-box;
-    padding: 10px;
+    padding: 14px;
+    margin-top: -7px;
+
+    border-radius: 0 0 10px 10px
 }
 
 #mce-success-response {

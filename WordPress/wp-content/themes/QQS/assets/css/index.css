@@ -583,19 +583,11 @@
 .artigo_thumb {
     height: 190px;
     width: 100%;
-    /* border-radius: 10px; */
 }
 
 .artigo_thumb > img {
     object-fit: cover;
-    /*  border-radius: 10px; */
 }
-
-/*
-.show {
-    border-radius: 10px;
-}
- */
 
 .artigo_titulo {
     font-size: 1.1em;
@@ -624,7 +616,6 @@
 
     cursor: pointer;
     transition: 0.8s;
-    /*  border-radius: 10px */
 }
 
 .artigo_mais:hover {

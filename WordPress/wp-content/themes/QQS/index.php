@@ -13,7 +13,7 @@
 
 <body>
     <div class="_black-cover">
-        <div class="_alert">
+        <div class="_alert _round-border">
             <div class="_alert-top">
                 <div class="_alert-close _center-child">X</div>
             </div>
