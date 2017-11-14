@@ -65,7 +65,8 @@ body {
 
 #text {
     font-size: 1.2em;
-    text-align: justify
+    text-align: justify;
+    min-height: 19.9vh /* FIXME: different height sizes */
 }
 
 #text a {

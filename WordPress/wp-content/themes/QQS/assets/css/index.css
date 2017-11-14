@@ -575,7 +575,7 @@
 
 .artigo {
     transition: 0.5s;
-    max-width: 250px;
+    width: 250px;
     color: white;
     text-align: center;
 }
@@ -668,14 +668,6 @@
 
 
 /*-------------EMAIL (left side)-------------*/
-
-/*
-#emailContainer{
-    display: flex;
-    margin-top: 10px;
-    box-sizing: content-box;
-    padding: 0 50px;
-} */
 
 #form {
     z-index: 10;
@@ -835,7 +827,7 @@
         margin-right: 15px
     }
     .artigo {
-        max-width: 450px;
+        width: 450px;
         margin: 10px 0;
     }
     .artigo p {
@@ -996,11 +988,16 @@
         align-items: center;
     }
     .artigo {
-        max-width: 100%;
+        width: 100%;
         margin: 18px 0;
     }
     .artigo_desc {
-        height: auto
+        height: auto;
+        padding-bottom: 10px
+    }
+
+    .artigo:first-child {
+        margin-right: 0
     }
 }
 
@@ -1075,19 +1072,3 @@
         margin-right: 0
     }
 }
-
-
-/* #email_icon {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding-bottom: 8px
-}
-
-#email_icon img {
-    height: 30px;
-    background-color: whitesmoke;
-    border-radius: 100%;
-    padding: 3px
-} */

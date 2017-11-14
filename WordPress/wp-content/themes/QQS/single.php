@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/single.css">
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59fd1a20924b1fe2"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a09fc89f0dd7d78"></script>
 </head>
 
 <body>

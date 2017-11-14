@@ -307,7 +307,7 @@
                             <?php endwhile; ?>
                             <?php endif; ?>
                         </div>
-                        <a href="artigos" target="_blank" class="_btn _center-child _center-X">ver todos</a>
+                        <a href="artigos" class="_btn _center-child _center-X">ver todos</a>
                     </div>
             </section>
         </section>
