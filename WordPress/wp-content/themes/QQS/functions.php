@@ -1,5 +1,5 @@
 <?php
-    add_theme_support('post-thumbnails'); //Theme thumbnail
+    add_theme_support('post-thumbnails');   //Posts thumbnails
 
     //Custom excerpt
     function get_excerpt($excerpt, $length, $more_char = '...'){

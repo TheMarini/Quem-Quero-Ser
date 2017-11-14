@@ -291,7 +291,7 @@
                                                 <img src="<?php bloginfo('template_url'); ?>/assets/img/_all/icons/article.svg" alt="">
                                             </div>
                                             <?php if (has_post_thumbnail()): ?>
-                                            <img class="artigo_thumb" src="<?php the_post_thumbnail_url(); ?>" alt="">
+                                            <img class="artigo_thumb" src="<?php the_post_thumbnail_url('medium'); ?>" alt="">
                                             <?php endif ?>
                                         </div>
                                     </a>
