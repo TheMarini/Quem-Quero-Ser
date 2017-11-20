@@ -535,7 +535,7 @@ input[type="submit"] {
 
 footer {
     background-color: gainsboro;
-    color: black;
+    color: dimgray;
     font-size: 0.8em;
     position: relative;
     z-index: 10;
@@ -547,10 +547,44 @@ footer {
 footer ._wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center
 }
 
-footer a {
-    color: dodgerblue
+footer a p{
+    color: dimgray;
+    font-weight: bold;
+    text-shadow: 1px 1px white
+}
+
+footer ._NP {
+    font-size: 1.3em;
+    font-size: bold;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-shadow: 2px 2px white
+}
+
+footer img{
+    height: 20px;
+    margin-right: 4px;
+    border: 2px solid white
+}
+
+footer span{
+    font-family: 'Lato', sans-serif;
+}
+
+footer ._New{
+    color: #00b8ae;
+    margin-right: 3px
+}
+
+footer ._Program{
+    color: #00BEEF
 }
 
 /*------------MEDIAS-----------------*/
